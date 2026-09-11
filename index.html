@@ -25,7 +25,7 @@
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <title>treehouse. events | new york city</title>
-  <meta name="description" content="treehouse. throws the best parties in New York. Invite only. Open bar. Next event: July 15th in the Hamptons.">
+  <meta name="description" content="treehouse. throws the best parties in New York. Invite only. Open bar. Next event: October 17th, Tribeca.">
   <meta property="og:title" content="treehouse. events | new york city">
   <meta property="og:description" content="The best night out in New York. Invite only. Open bar. You'll want to be there.">
   <meta property="og:image" content="/img/hero-new.jpg">
@@ -35,7 +35,7 @@
   <meta name="twitter:title" content="treehouse. events | new york city">
   <meta name="twitter:image" content="/img/hero-new.jpg">
   <!-- PHASE 2 FIX #2 — Additional SEO meta tags -->
-  <meta name="twitter:description" content="NYC's most sought-after invite-only event series. Open bar. Next event: July 15th in the Hamptons.">
+  <meta name="twitter:description" content="NYC's most sought-after invite-only event series. Open bar. Next event: October 17th, Tribeca.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,7 +106,7 @@
     <!-- REMOVED R17: hero tagline -- "you already know someone who's been." -->
     <!-- ROUND 4 FIX #3 — Countdown replaces static hero badge -->
     <div class="hero-countdown" data-a="u" data-d="4" aria-live="polite">
-      <span class="countdown-label">next event · july 15th · the hamptons</span>
+      <span class="countdown-label" id="next-event-label">next event · new york</span>
       <div class="countdown-display">
         <span class="countdown-num" id="countdown-days">--</span><span class="countdown-sep">D</span>
         <span class="countdown-colon">:</span>
@@ -155,7 +155,9 @@
     <!-- REMOVED R6: <span class="marquee-item">Dinner Parties<span class="marquee-dot"></span></span> -->
     <!-- ROUND 16 FIX #1 — renamed Knox Day to Party on Perry St --><span class="marquee-item">Party on Perry St<span class="marquee-dot"></span></span>
     <span class="marquee-item">West Village<span class="marquee-dot"></span></span>
-    <span class="marquee-item">The Hamptons<span class="marquee-dot"></span></span>
+    <!-- REMOVED 11 Sep 2026: "The Hamptons" listed among past events, but the
+         15 July Hamptons party was cancelled and no gallery exists for it.
+         Restore this line if there was in fact a Hamptons event. -->
     <span class="marquee-item">April 25th<span class="marquee-dot"></span></span>
     <span class="marquee-item">Tribeca Rooftop<span class="marquee-dot"></span></span>
     <span class="marquee-item">SoHo Soiree<span class="marquee-dot"></span></span>
@@ -163,7 +165,9 @@
     <!-- REMOVED R6: <span class="marquee-item">Dinner Parties<span class="marquee-dot"></span></span> -->
     <!-- ROUND 16 FIX #1 — renamed Knox Day to Party on Perry St --><span class="marquee-item">Party on Perry St<span class="marquee-dot"></span></span>
     <span class="marquee-item">West Village<span class="marquee-dot"></span></span>
-    <span class="marquee-item">The Hamptons<span class="marquee-dot"></span></span>
+    <!-- REMOVED 11 Sep 2026: "The Hamptons" listed among past events, but the
+         15 July Hamptons party was cancelled and no gallery exists for it.
+         Restore this line if there was in fact a Hamptons event. -->
     <span class="marquee-item">April 25th<span class="marquee-dot"></span></span>
   </div>
 </div>
@@ -204,13 +208,11 @@
   ></video>
 </section>
 
-<!-- HIDDEN 2026-05-04 - reuse for next event, update date/location/link/copy -->
-<!--
-<!-- NEXT EVENT -->
+<!-- NEXT EVENT — driven by TH_NEXT_EVENT at the bottom of this file -->
 <!-- ROUND 2 FIX #2 — Next event moved above galleries -->
 <!-- ROUND 8 FIX #4 — April 25 section expanded to 80vh, full-bleed image -->
 <!-- ROUND 30 POLISH — no-pad on full-bleed events section -->
-<section class="dk grain no-pad" id="events" style="padding:0;min-height:80vh;position:relative;overflow:visible;display:flex;align-items:stretch;">
+<section class="dk grain no-pad" id="events" hidden style="padding:0;min-height:80vh;position:relative;overflow:visible;display:flex;align-items:stretch;">
   <!-- ROUND 8 FIX #4 — Full-bleed carousel background with overlay text -->
   <!-- Background carousel (absolute, fills section) -->
   <div class="event-bg-carousel" id="venueCarousel" style="position:absolute;inset:0;z-index:0;">
@@ -234,13 +236,13 @@
     <!-- Top-left: event title -->
     <div style="align-self:flex-start;max-width:700px;">
       <!-- ROUND 25 FIX #6 — Event title above countdown -->
-      <h1 style="font-family:var(--ff-d);font-size:clamp(3rem,8vw,7rem);line-height:0.9;color:#E8E6DF;margin-bottom:0;letter-spacing:0.02em;text-align:left;">NEXT EVENT: SPRINGTIME OPENER</h1>
+      <h1 style="font-family:var(--ff-d);font-size:clamp(3rem,8vw,7rem);line-height:0.9;color:#E8E6DF;margin-bottom:0;letter-spacing:0.02em;text-align:left;"id="event-title">NEXT EVENT</h1>
     </div>
     <!-- Bottom-right: countdown + details + CTA -->
     <!-- FIX #1 Round 46 — dark green frosted panel for readability -->
     <div class="event-details-panel" style="align-self:flex-end;text-align:right;max-width:520px;">
       <span class="lbl reveal-child" style="margin-bottom:1rem;color:rgba(240,237,232,0.65);display:block;">// Next Event</span>
-      <h2 class="event-date reveal-child" style="font-size:clamp(2.5rem,6vw,5rem);line-height:0.9;margin-bottom:1rem;">July 15th</h2>
+      <h2 class="event-date reveal-child" id="event-date-big" style="font-size:clamp(2.5rem,6vw,5rem);line-height:0.9;margin-bottom:1rem;">&nbsp;</h2>
       <!-- ROUND 8 FIX #4 — Prominent countdown in this section -->
       <!-- ROUND 28 FIX #2 — Reduced margin-bottom to close gap between countdown and venue -->
       <div style="margin-bottom:0.75rem;">
@@ -253,17 +255,16 @@
       </div>
       <!-- ROUND 28 FIX #2 — Reduced margin-bottom on event-time to tighten spacing -->
       <!-- ROUND 30 POLISH — corrected event time -->
-            <p class="event-time reveal-child" style="margin-bottom:0.25rem;">Doors 2:00pm ET</p>
+            <p class="event-time reveal-child js-doors" style="margin-bottom:0.25rem;">&nbsp;</p>
       <div class="venue" style="margin-bottom:1rem;">
-        <p class="venue-n">The Hamptons</p>
-        <p class="venue-l">New York</p>
+        <p class="venue-n js-venue-n">&nbsp;</p>
+        <p class="venue-l js-venue-l">New York</p>
       </div>
-      <p class="event-meta" style="margin-bottom:2rem;">500 guests · Invite Only · Open Bar</p>
+      <p class="event-meta js-event-meta" style="margin-bottom:2rem;">Invite Only · Open Bar</p>
       <!-- FORM URL TBD — update href when form link is ready --><!-- ROUND 28 FIX #1 — Button enlarged --><a href="#join" class="btn btn-p" style="align-self:flex-end;padding:20px 60px;font-size:1.1rem;min-width:280px;border-radius:6px;">request your invite &rarr;</a>
     </div>
   </div>
 </section>
--->
 <!-- ROUND 8 FIX #5 — Main video restored directly below April 25 section -->
 <!-- ROUND 30 POLISH — vibe section has its own padding -->
 <section class="dk grain no-pad" id="vibe" style="padding:4rem 0;">
@@ -320,12 +321,12 @@
     <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-015.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-017.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- REMOVED R8: tribeca-022 replaced by tribeca-new-01 and tribeca-new-02 -->
-    <!-- <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-022.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-022.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div> -->
         <!-- ROUND 12 FIX #2 — tribeca-new-05.jpg added to Tribeca gallery at position 7 -->
         <div class="gallery-item">
           <img src="/img/tribeca-new-05.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
           <div class="if">tribeca</div>
-        </div> -->
+        </div>
     <!-- ROUND 8 FIX #6 — 2 new Tribeca photos added -->
     <div class="gallery-item"><img src="/img/tribeca-new-01.jpg" alt="treehouse. NYC — Tribeca Rooftop" loading="lazy"></div>
     <!-- ROUND 15 FIX #2 — tribeca-new-09 -->
@@ -579,9 +580,9 @@
   <div class="join-inner">
     <span class="lbl reveal-child" data-a="u">// Get Access</span>
     <h2 data-a="l">Get on the list.</h2>
-    <p class="join-body" data-a="u" data-d="1">Invite only. Drop your email and we'll reach out before July 15th. No spam, just the invite.</p>
+    <p class="join-body" id="join-body-line" data-a="u" data-d="1">Invite only. Drop your email and we'll reach out before the next one. No spam, just the invite.</p>
     <!-- AUDIT FIX #9 — Scarcity line above email form -->
-    <p class="scarcity-line">July 15 · The Hamptons · 500 guests · Waitlist open</p>
+    <p class="scarcity-line js-next-event-short">Invite only · Waitlist open</p>
     <form class="join-form" action="https://formspree.io/f/xwpbkqod" method="POST" novalidate data-a="u" data-d="2">
       <div class="join-row">
         <input type="email" id="join-email" name="email" placeholder="your@email.com" aria-label="Email address" required autocomplete="email">
@@ -616,7 +617,7 @@
     </a>
     <p class="foot-tag">Events · New York City</p>
     <!-- Next event scarcity line -->
-    <p style="font-family:var(--ff-b);font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);opacity:0.85;margin-top:0.5rem;">July 15 · The Hamptons · 500 guests · Waitlist open</p>
+    <p style="font-family:var(--ff-b);font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);opacity:0.85;margin-top:0.5rem;" class="js-next-event-short">Invite only · Waitlist open</p>
   </div>
   <nav class="foot-links" aria-label="Footer links">
     <!-- Instagram icon link -->
@@ -960,9 +961,80 @@ document.querySelectorAll('img').forEach(function(img){
   });
 })();
 
+/* ── NEXT EVENT · SINGLE SOURCE OF TRUTH ───────────────────────────────
+   To announce the next event: set `announced` to true.
+   To change the date:         edit `iso` (ISO 8601, with offset).
+   Everything else on the page follows: hero label, countdown,
+   scarcity lines, and the signup copy.
+
+   If `announced` is false, or `iso` is in the past, the site falls back
+   to an undated state automatically. It will never again show a
+   countdown to an event that has already happened.
+--------------------------------------------------------------------- */
+/* Venue: 75 Varick St, Tribeca. The operator brands it
+   Tribeca Rooftop + Tribeca 360 and lists 10 Desbrosses St on
+   correspondence. Same building, same room as October 18 2025.
+   The public label below uses "Tribeca Rooftop" to stay consistent
+   with the past-events marquee, which already names it that way.
+   Swap to "75 varick" here if you would rather lead with the address. */
+var TH_NEXT_EVENT = {
+  announced: true,                      // <- flip to false to un-announce everything
+  iso:      '2026-10-17T16:00:00-04:00',
+  label:    'next event · october 17th · tribeca rooftop',
+  short:    'October 17 · Tribeca Rooftop · Invite only',
+  joinLine: "Invite only. Drop your email and we'll reach out before October 17th. No spam, just the invite.",
+  title:    'NEXT EVENT: OCTOBER 17',
+  dateBig:  'October 17th',
+  doors:    'Doors 4:00pm ET',
+  venueN:   'Tribeca Rooftop',
+  venueL:   '75 Varick Street, New York',
+  meta:     '400 guests · Invite Only · Open Bar'
+};
+
+function thNextEventIsLive() {
+  if (!TH_NEXT_EVENT.announced) return false;
+  var d = new Date(TH_NEXT_EVENT.iso);
+  return !isNaN(d) && (d - new Date()) > 0;
+}
+
+function renderNextEvent() {
+  var live = thNextEventIsLive();
+
+  var label = document.getElementById('next-event-label');
+  if (label) label.textContent = live ? TH_NEXT_EVENT.label : 'next event · new york';
+
+  document.querySelectorAll('.js-next-event-short').forEach(function(el){
+    el.textContent = live ? TH_NEXT_EVENT.short : 'Invite only · Waitlist open';
+  });
+
+  var join = document.getElementById('join-body-line');
+  if (join && live) join.textContent = TH_NEXT_EVENT.joinLine;
+
+  // Hide the clock entirely unless there is a real future date to count to.
+  document.querySelectorAll('.countdown-display').forEach(function(el){
+    el.style.display = live ? '' : 'none';
+  });
+
+  // The full-bleed next-event section only exists when there is an event.
+  var sec = document.getElementById('events');
+  if (sec) sec.hidden = !live;
+  if (live) {
+    var set = function(sel, val){
+      document.querySelectorAll(sel).forEach(function(el){ el.textContent = val; });
+    };
+    set('#event-title',   TH_NEXT_EVENT.title);
+    set('#event-date-big',TH_NEXT_EVENT.dateBig);
+    set('.js-doors',      TH_NEXT_EVENT.doors);
+    set('.js-venue-n',    TH_NEXT_EVENT.venueN);
+    set('.js-venue-l',    TH_NEXT_EVENT.venueL);
+    set('.js-event-meta', TH_NEXT_EVENT.meta);
+  }
+}
+
 // COUNTDOWN FIX — unified function sets all hero + event section IDs directly
 function updateCountdown() {
-  var eventDate = new Date('2026-07-15T14:00:00-04:00');
+  if (!thNextEventIsLive()) return;
+  var eventDate = new Date(TH_NEXT_EVENT.iso);
   var now = new Date();
   var diff = eventDate - now;
 
@@ -981,6 +1053,7 @@ function updateCountdown() {
   document.querySelectorAll('[id^="countdown-hours"]').forEach(function(el){ el.textContent = String(hours).padStart(2, '0'); });
   document.querySelectorAll('[id^="countdown-mins"]').forEach(function(el){ el.textContent = String(mins).padStart(2, '0'); });
 }
+renderNextEvent();
 updateCountdown();
 setInterval(updateCountdown, 60000);
 
