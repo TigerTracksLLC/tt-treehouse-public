@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!-- treehouse build v5 · 11 Sep 2026 · partiful + saturday + QA + no em dashes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ANALYTICS — Google Analytics 4 -->
+  <!-- TODO: Replace G-WD595DSJ3K with your actual GA4 Measurement ID -->
+  <!-- Get your ID at: https://analytics.google.com → Admin → Data Streams → Web → Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WD595DSJ3K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WD595DSJ3K');
+  </script>
+
+  <!-- ANALYTICS — Vercel Analytics (free, zero-config, works automatically on Vercel hosting) -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <!-- ANALYTICS — Vercel Speed Insights (Core Web Vitals tracking) -->
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+
+  <!-- PHASE 2 FIX #1 — Canonical URL -->
+  <link rel="canonical" href="https://treehouseevents.cliffeliz.ai/">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <title>treehouse. events | new york city</title>
+  <meta name="description" content="treehouse. throws the best parties in New York. Invite only. Open bar. Next event: Saturday October 17th, 75 Varick Street Rooftop.">
+  <meta property="og:title" content="treehouse. events | new york city">
+  <meta property="og:description" content="The best night out in New York. Invite only. Open bar. You'll want to be there.">
+  <meta property="og:image" content="/img/hero-new.jpg">
+  <meta property="og:url" content="https://treehouseevents.cliffeliz.ai">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="treehouse. events | new york city">
+  <meta name="twitter:image" content="/img/hero-new.jpg">
+  <!-- PHASE 2 FIX #2 — Additional SEO meta tags -->
+  <meta name="twitter:description" content="NYC's most sought-after invite-only event series. Open bar. Next event: Saturday October 17th, 75 Varick Street Rooftop.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- AUDIT FIX #15 — font-display:swap confirmed via Google Fonts URL -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- EXPANSION FIX #1 — CSS extracted to styles.css for shared use with sponsor.html -->
+  <link rel="stylesheet" href="/styles.css">
+<script src="/photos.js"></script>
+<!-- COUNTDOWN FIX — syncCountdown2 removed; unified updateCountdown handles all IDs -->
+</head>
+<body>
+
+<!-- PHASE 2 FIX #4 — Skip-to-content link (must be first focusable element) -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div class="cur" id="cur" aria-hidden="true"></div>
+<div class="cur-r" id="cur-r" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="treehouse. home">
+    <img src="/img/logo.png" alt="treehouse. Events" height="40" style="filter:brightness(0) invert(1);">
+  </a>
+  <!-- AUDIT FIX #10 — Nav simplified to 3 links: Past Events | Sponsor | Get Tickets -->
+  <div class="nav-links">
+    <!-- ROUND 25 FIX #4 — Home added as first nav item -->
+    <a href="#about">home</a>
+    <a href="#tribeca-rooftop">past events</a>
+    <!-- EXPANSION FIX #3 — sponsor nav link now points to sponsor.html --><a href="/sponsor.html" class="hi">sponsor</a>
+    <a target="_blank" rel="noopener noreferrer" href="https://partiful.com/e/eJvazSDmeNKwWZoSWOmk">get tickets</a>
+  </div>
+  <button class="ham" id="ham" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<!-- ROUND 4 FIX #9 — Mobile nav backdrop -->
+<div class="nav-mobile-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+<div class="mob" id="mob" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+  <button class="mob-x" id="mob-x" aria-label="Close navigation menu">&times;</button>
+  <!-- AUDIT FIX #10 — Mobile nav simplified -->
+  <nav aria-label="Mobile navigation">
+    <!-- ROUND 25 FIX #4 — Home added as first mobile nav item -->
+    <a href="#about">home</a>
+    <a href="#tribeca-rooftop">past events</a>
+    <!-- EXPANSION FIX #3 — mobile sponsor nav link --><a href="/sponsor.html">sponsor</a>
+    <a target="_blank" rel="noopener noreferrer" href="https://partiful.com/e/eJvazSDmeNKwWZoSWOmk">get tickets</a>
+  </nav>
+</div>
+
+<main id="main-content">
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<section class="dk hero grain" id="hero">
+  <div class="hero-bg" role="img" aria-label="Packed crowd at treehouse. NYC event">
+    <img src="/img/hero-new.jpg" alt="Packed rooftop crowd at treehouse. NYC, One WTC skyline golden hour" fetchpriority="high" style="object-position:center 35%;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+    <div class="if">treehouse.</div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-eye" data-a="f" aria-label="New York City · Invite Only">
+      New York City <span aria-hidden="true">·</span> Invite Only
+    </div>
+    <div class="hero-wm" data-a="f" data-d="1">
+      <img src="/img/logo.png" alt="treehouse." height="120" style="filter:brightness(0) invert(1);">
+    </div>
+    <div class="hero-rule" data-a="f" data-d="2" aria-hidden="true"></div>
+    <!-- REMOVED R17: hero tagline -- "you already know someone who's been." -->
+    <!-- ROUND 4 FIX #3 — Countdown replaces static hero badge -->
+    <div class="hero-countdown" data-a="u" data-d="4" aria-live="polite">
+      <span class="countdown-label" id="next-event-label">next event · new york</span>
+      <div class="countdown-display">
+        <span class="countdown-num" id="countdown-days">--</span><span class="countdown-sep">D</span>
+        <span class="countdown-colon">:</span>
+        <span class="countdown-num" id="countdown-hours">--</span><span class="countdown-sep">H</span>
+        <span class="countdown-colon">:</span>
+        <span class="countdown-num" id="countdown-mins">--</span><span class="countdown-sep">M</span>
+      </div>
+    </div>
+    <div class="hero-ctas" data-a="u" data-d="5">
+      <a target="_blank" rel="noopener noreferrer" href="https://partiful.com/e/eJvazSDmeNKwWZoSWOmk" class="btn btn-p">request invite</a>
+      <!-- REMOVED R4: become a sponsor hero button — sponsor link exists in nav -->
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">
+    <div class="scroll-hint-line"></div>
+  </div>
+</section>
+
+<!-- AUDIT FIX #6 — Stats section commented out (update numbers before restoring) -->
+<!-- REMOVED: Stats section
+<section class="dk">
+  <div class="stats-band reveal">
+    <div class="stat" data-a="u"><span class="stat-v" data-count="1500">0</span><span class="stat-l">people in the room</span></div>
+    <div class="stat-div"></div>
+    <div class="stat" data-a="u" data-d="1"><span class="stat-v" data-count="5">0</span><span class="stat-l">events, all sold out</span></div>
+    <div class="stat-div"></div>
+    <div class="stat" data-a="u" data-d="2"><span class="stat-v">NYC</span><span class="stat-l">invite only</span></div>
+    <div class="stat-div"></div>
+    <div class="stat" data-a="u" data-d="3"><span class="stat-v">Jul 15</span><span class="stat-l">next event</span></div>
+  </div>
+</section>
+-->
+
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Tribeca Rooftop<span class="marquee-dot"></span></span>
+    <span class="marquee-item">SoHo Soiree<span class="marquee-dot"></span></span>
+<!-- ABOUT: duplicate removed (nested comment caused rendering bug) -->
+
+<!-- VIDEO REEL -->
+<!-- AUDIT FIX #2 — Video: poster frame, preload metadata, full-bleed, proper height -->
+<!-- ROUND 8 FIX #5 — vibe section moved below April 25 -->
+
+    <span class="marquee-item">Christmas in NYC<span class="marquee-dot"></span></span>
+    <!-- REMOVED R6: <span class="marquee-item">Dinner Parties<span class="marquee-dot"></span></span> -->
+    <!-- ROUND 16 FIX #1 — renamed Knox Day to Party on Perry St --><span class="marquee-item">Party on Perry St<span class="marquee-dot"></span></span>
+    <span class="marquee-item">West Village<span class="marquee-dot"></span></span>
+    <!-- REMOVED 11 Sep 2026: "The Hamptons" listed among past events, but the
+         15 July Hamptons party was cancelled and no gallery exists for it.
+         Restore this line if there was in fact a Hamptons event. -->
+    <span class="marquee-item">April 25th<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Tribeca Rooftop<span class="marquee-dot"></span></span>
+    <span class="marquee-item">SoHo Soiree<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Christmas in NYC<span class="marquee-dot"></span></span>
+    <!-- REMOVED R6: <span class="marquee-item">Dinner Parties<span class="marquee-dot"></span></span> -->
+    <!-- ROUND 16 FIX #1 — renamed Knox Day to Party on Perry St --><span class="marquee-item">Party on Perry St<span class="marquee-dot"></span></span>
+    <span class="marquee-item">West Village<span class="marquee-dot"></span></span>
+    <!-- REMOVED 11 Sep 2026: "The Hamptons" listed among past events, but the
+         15 July Hamptons party was cancelled and no gallery exists for it.
+         Restore this line if there was in fact a Hamptons event. -->
+    <span class="marquee-item">April 25th<span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<!-- ROUND 2 FIX #2 — Curate section moved above galleries -->
+<section class="curate-section" id="about">
+  <!-- ROUND 2 FIX #3 — Background swapped from dj.jpg to curate-room.jpg (golden-hour rooftop crowd) -->
+  <img src="/img/curate-room.jpg" alt="treehouse. NYC, packed rooftop crowd at golden hour" class="dj-photo" fetchpriority="high" onerror="this.onerror=null;this.parentNode.style.background='#1a3a1a'">
+  <!-- REMOVED R5: curate-overlay div removed, gradient overlay eliminated -->
+  <div class="curate-copy reveal">
+    <!-- ROUND 8 FIX #3 — Heading reworded: guest-first, no brand ego (Option B) -->
+    <h2>Some nights<br>stay with you.</h2>
+    <!-- ROUND 8 FIX #3 — Body copy rewritten: guest experience, not brand pitch -->
+    <p>Open bar. Good music. The kind of crowd that makes the night. Five events in, still selling out.</p>
+    <!-- ROUND 25 FIX #5 — Tags converted to anchor links; dinner nights→house parties; brand nights removed -->
+    <div class="tags" style="justify-content:center;margin-top:1.5rem;">
+      <a class="tag" href="#tribeca-rooftop">rooftop parties</a>
+      <a class="tag" href="#christmas-nyc">holiday events</a>
+      <!-- ROUND 25 FIX #5C — Renamed: dinner nights → house parties -->
+      <a class="tag" href="#west-village">house parties</a>
+      <!-- REMOVED R25: brand nights button — deleted, now only 3 buttons -->
+    </div>
+  </div>
+</section>
+
+<!-- ROUND 17 FIX #1 — Video between curate section and April 25 next event -->
+<section class="dk curate-video-section">
+  <video
+    src="/img/curate-video.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="/img/hero-new.jpg"
+    class="curate-video"
+  ></video>
+</section>
+
+<!-- NEXT EVENT — driven by TH_NEXT_EVENT at the bottom of this file -->
+<!-- ROUND 2 FIX #2 — Next event moved above galleries -->
+<!-- ROUND 8 FIX #4 — April 25 section expanded to 80vh, full-bleed image -->
+<!-- ROUND 30 POLISH — no-pad on full-bleed events section -->
+<section class="dk grain no-pad" id="events" hidden style="padding:0;min-height:80vh;position:relative;overflow:visible;display:flex;align-items:stretch;">
+  <!-- ROUND 8 FIX #4 — Full-bleed carousel background with overlay text -->
+  <!-- Background carousel (absolute, fills section) -->
+  <div class="event-bg-carousel" id="venueCarousel" style="position:absolute;inset:0;z-index:0;">
+    <div class="vc-slide active" style="position:absolute;inset:0;"><img src="/img/varick-1.jpg" alt="75 Varick Rooftop, NYC skyline at dusk" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/varick-2.jpg" alt="75 Varick Rooftop, venue interior" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/varick-3.jpg" alt="75 Varick Rooftop, event space" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/varick-4.jpg" alt="75 Varick Rooftop, rooftop view" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(10,28,10,0.85) 0%, rgba(10,28,10,0.55) 55%, rgba(10,28,10,0.1) 100%);z-index:1;pointer-events:none;"></div>
+    <button class="vc-btn vc-prev" aria-label="Previous photo" style="z-index:3;">&#8592;</button>
+    <button class="vc-btn vc-next" aria-label="Next photo" style="z-index:3;">&#8594;</button>
+    <div class="vc-dots" style="z-index:3;">
+      <button class="vc-dot active" aria-label="Photo 1"></button>
+      <button class="vc-dot" aria-label="Photo 2"></button>
+      <button class="vc-dot" aria-label="Photo 3"></button>
+      <button class="vc-dot" aria-label="Photo 4"></button>
+    </div>
+  </div>
+  <!-- Event details overlay -->
+  <!-- ROUND 26 FIX #1 — Editorial layout: title top-left, details bottom-right -->
+  <div style="position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(3rem,8vw,6rem) clamp(1.5rem,6vw,5rem);min-height:80vh;width:100%;box-sizing:border-box;">
+    <!-- Top-left: event title -->
+    <div style="align-self:flex-start;max-width:700px;">
+      <!-- ROUND 25 FIX #6 — Event title above countdown -->
+      <h1 style="font-family:var(--ff-d);font-size:clamp(3rem,8vw,7rem);line-height:0.9;color:#E8E6DF;margin-bottom:0;letter-spacing:0.02em;text-align:left;"id="event-title">NEXT EVENT</h1>
+    </div>
+    <!-- Bottom-right: countdown + details + CTA -->
+    <!-- FIX #1 Round 46 — dark green frosted panel for readability -->
+    <div class="event-details-panel" style="align-self:flex-end;text-align:right;max-width:520px;">
+      <span class="lbl reveal-child" style="margin-bottom:1rem;color:rgba(240,237,232,0.65);display:block;">// Next Event</span>
+      <h2 class="event-date reveal-child" id="event-date-big" style="font-size:clamp(2.5rem,6vw,5rem);line-height:0.9;margin-bottom:1rem;">&nbsp;</h2>
+      <!-- ROUND 8 FIX #4 — Prominent countdown in this section -->
+      <!-- ROUND 28 FIX #2 — Reduced margin-bottom to close gap between countdown and venue -->
+      <div style="margin-bottom:0.75rem;">
+        <span style="font-family:var(--ff-b);font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,237,232,0.5);display:block;margin-bottom:0.5rem;">until doors open</span>
+        <div style="display:flex;align-items:baseline;gap:0.1rem;justify-content:flex-end;">
+          <span class="countdown-num" id="countdown-days-2" style="font-size:clamp(2.8rem,6vw,5rem);line-height:1;">--</span><span style="font-family:var(--ff-b);font-size:0.9rem;letter-spacing:0.1em;color:rgba(240,237,232,0.5);margin-right:0.75rem;align-self:flex-end;padding-bottom:0.3rem;">D</span>
+          <span class="countdown-num" id="countdown-hours-2" style="font-size:clamp(2.8rem,6vw,5rem);line-height:1;">--</span><span style="font-family:var(--ff-b);font-size:0.9rem;letter-spacing:0.1em;color:rgba(240,237,232,0.5);margin-right:0.75rem;align-self:flex-end;padding-bottom:0.3rem;">H</span>
+          <span class="countdown-num" id="countdown-mins-2" style="font-size:clamp(2.8rem,6vw,5rem);line-height:1;">--</span><span style="font-family:var(--ff-b);font-size:0.9rem;letter-spacing:0.1em;color:rgba(240,237,232,0.5);align-self:flex-end;padding-bottom:0.3rem;">M</span>
+        </div>
+      </div>
+      <!-- ROUND 28 FIX #2 — Reduced margin-bottom on event-time to tighten spacing -->
+      <!-- ROUND 30 POLISH — corrected event time -->
+            <p class="event-time reveal-child js-doors" style="margin-bottom:0.25rem;">&nbsp;</p>
+      <div class="venue" style="margin-bottom:1rem;">
+        <p class="venue-n js-venue-n">&nbsp;</p>
+        <p class="venue-l js-venue-l">New York</p>
+      </div>
+      <p class="event-meta js-event-meta" style="margin-bottom:2rem;">Invite Only · Open Bar</p>
+      <!-- FORM URL TBD — update href when form link is ready --><!-- ROUND 28 FIX #1 — Button enlarged --><a target="_blank" rel="noopener noreferrer" href="https://partiful.com/e/eJvazSDmeNKwWZoSWOmk" class="btn btn-p" style="align-self:flex-end;padding:20px 60px;font-size:1.1rem;min-width:280px;border-radius:6px;">request your invite &rarr;</a>
+    </div>
+  </div>
+</section>
+<!-- ROUND 8 FIX #5 — Main video restored directly below April 25 section -->
+<!-- ROUND 30 POLISH — vibe section has its own padding -->
+<section class="dk grain no-pad" id="vibe" style="padding:4rem 0;">
+  <div style="width:100%;max-width:100%;padding:0;text-align:center;">
+    <span class="lbl reveal-child" style="display:block;margin-bottom:1.5rem;padding:0 clamp(1.5rem,5vw,5rem);">// The Vibe</span>
+    <div style="width:100%;overflow:hidden;border-radius:0;">
+      <video autoplay muted loop playsinline controls
+        poster="/img/hero-new.jpg"
+        preload="metadata"
+        style="width:100%;max-height:80vh;object-fit:cover;display:block;border-radius:0;">
+        <source src="/img/hero-video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- REMOVED R8: Inside the Room section (the-energy) deleted per Round 8 spec -->
+
+<!-- ROUND 2 FIX #2 — Tribeca gallery now appears after curate+next-event -->
+<!-- AUDIT FIX #1 — Gallery moved up: appears within first 2 scroll-depths -->
+<!-- PARTY 1: TRIBECA ROOFTOP -->
+<!-- AUDIT FIX #11 — Gallery unified to dark theme -->
+<!-- ROUND 30 POLISH — gallery sections are full-bleed -->
+<section class="dk ev-section no-pad" id="tribeca-rooftop">
+  <div class="ev-header reveal">
+    <span class="lbl reveal-child">//  · treehouse. NYC</span>
+    <!-- AUDIT FIX #12 — Dates added to all event titles -->
+    <h2 class="ev-title reveal-child">TRIBECA ROOFTOP</h2>
+    <p class="ev-desc reveal-child">Pumpkins, disco balls, and the Tribeca skyline. The bar opens at three and lasts through sunset.</p> <!-- FIX -->
+    <div class="ev-meta-row">
+      <!-- REMOVED R20: location text under gallery header <span class="ev-date">Tribeca, New York City</span> -->
+      <a href="https://curtispan.pic-time.com/-treehouse_1018/gallery" target="_blank" rel="noopener" class="btn btn-s" style="font-size:0.65rem;padding:0.6rem 1.4rem;">See Full Gallery →</a>
+    </div>
+  </div>
+  <!-- AUDIT FIX #7 — First 8 Tribeca images eager-loaded, first 4 fetchpriority=high -->
+  <div class="gallery-visible" id="gallery-visible-tribeca-rooftop">
+<!-- REMOVED R6: old gallery photos for gallery-visible-tribeca-rooftop -->
+    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-001.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-024.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+        <!-- ROUND 12 FIX #2 — tribeca-new-03.jpg added to Tribeca gallery at position 2 -->
+        <div class="gallery-item">
+          <img src="/img/tribeca-new-03.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <div class="if">tribeca</div>
+        </div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-011.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-013.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 15 FIX #2 — tribeca-new-08 -->
+    <div class="gallery-item"><img src="/img/tribeca-new-08.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+        <!-- ROUND 12 FIX #2 — tribeca-new-04.jpg added to Tribeca gallery at position 4 -->
+        <div class="gallery-item">
+          <img src="/img/tribeca-new-04.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <div class="if">tribeca</div>
+        </div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-015.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-017.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- REMOVED R8: tribeca-022 replaced by tribeca-new-01 and tribeca-new-02 -->
+    <!-- <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-022.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div> -->
+        <!-- ROUND 12 FIX #2 — tribeca-new-05.jpg added to Tribeca gallery at position 7 -->
+        <div class="gallery-item">
+          <img src="/img/tribeca-new-05.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <div class="if">tribeca</div>
+        </div>
+    <!-- ROUND 8 FIX #6 — 2 new Tribeca photos added -->
+    <div class="gallery-item"><img src="/img/tribeca-new-01.jpg" alt="treehouse. NYC, Tribeca Rooftop" loading="lazy"></div>
+    <!-- ROUND 15 FIX #2 — tribeca-new-09 -->
+    <div class="gallery-item"><img src="/img/tribeca-new-09.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/tribeca-new-02.jpg" alt="treehouse. NYC, Tribeca Rooftop" loading="lazy"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-046.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+        <!-- ROUND 12 FIX #2 — tribeca-new-06.jpg added to Tribeca gallery at position 10 -->
+        <div class="gallery-item">
+          <img src="/img/tribeca-new-06.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <div class="if">tribeca</div>
+        </div>
+        <!-- ROUND 12 FIX #2 — tribeca-new-07.jpg added to Tribeca gallery at end (position 15) -->
+        <div class="gallery-item">
+          <img src="/img/tribeca-new-07.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <div class="if">tribeca</div>
+        </div>
+  </div>
+  <!-- REMOVED: Stray empty div between Tribeca and Soho galleries (orphaned from R6 toggle removal) -->
+</section>
+
+
+<!-- ═══════════════ 6 PARTY SECTIONS — v6 FINAL + Design Audit ═══════════════ -->
+
+<!-- PARTY 2: SOHO SOIREE -->
+<section class="dk ev-section grain" id="soho-soiree">
+  <div class="ev-header reveal">
+    <span class="lbl reveal-child">// treehouse. NYC</span>
+    <h2 class="ev-title reveal-child">SOHO SOIREE</h2>
+    <p class="ev-desc reveal-child">SoHo rooftop, late spring, birthday cake. The kind of party that makes people cancel their other plans.</p>
+    <div class="ev-meta-row">
+      <!-- REMOVED R20: location text under gallery header <span class="ev-date">SoHo, New York City</span> -->
+      <a href="https://curtispan.pic-time.com/-treehouse0531/gallery" target="_blank" rel="noopener" class="btn btn-s" style="font-size:0.65rem;padding:0.6rem 1.4rem;">See Full Gallery →</a>
+    </div>
+  </div>
+  <!-- AUDIT FIX #7 — First 8 SoHo images eager-loaded -->
+  <div class="gallery-visible" id="gallery-visible-soho-soiree">
+<!-- REMOVED R6: old gallery photos for gallery-visible-soho-soiree -->
+    <!-- REMOVED R14: duplicate soho first photo (soho-001.jpg) — keeping second instance -->
+    <!-- ROUND 15 FIX #3a — swapped: was photo 2, now photo 1 -->
+    <div class="gallery-item"><img src="/img/soho-new-01.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <!-- ROUND 8 FIX #6 — soho-new-01 -->
+    <!-- ROUND 15 FIX #3a — swapped: was photo 1, now photo 2 -->
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-005.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-010.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-012.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 8 FIX #6 — soho-new-02 -->
+    <div class="gallery-item"><img src="/img/soho-new-02.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <!-- ROUND 15 FIX #3b — soho-new-08 -->
+    <div class="gallery-item"><img src="/img/soho-new-08.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-014.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-016.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 8 FIX #6 — soho-new-03 -->
+    <div class="gallery-item"><img src="/img/soho-new-03.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-023.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-025.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 15 FIX #3b — soho-new-09 -->
+    <div class="gallery-item"><img src="/img/soho-new-09.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 8 FIX #6 — soho-new-04 -->
+    <div class="gallery-item"><img src="/img/soho-new-04.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-030.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-039.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 8 FIX #6 — soho-new-05 -->
+    <div class="gallery-item"><img src="/img/soho-new-05.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-042.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 15 FIX #3b — soho-new-10 -->
+    <div class="gallery-item"><img src="/img/soho-new-10.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-048.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 8 FIX #6 — soho-new-06 -->
+    <div class="gallery-item"><img src="/img/soho-new-06.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-049.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 8 FIX #6 — soho-new-07 -->
+    <div class="gallery-item"><img src="/img/soho-new-07.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+
+  <!-- REMOVED: Stray empty div between Soho and Christmas galleries (orphaned from R6 toggle removal) -->
+</section>
+<!-- PARTY 3: CHRISTMAS IN NYC -->
+<section class="dk ev-section grain" id="christmas-nyc">
+  <div class="ev-header reveal">
+    <span class="lbl reveal-child">//  · treehouse. NYC</span>
+    <h2 class="ev-title reveal-child">CHRISTMAS IN NYC</h2>
+    <p class="ev-desc reveal-child">December in New York. Everyone dressed up and nobody left early.</p>
+    <div class="ev-meta-row">
+      <!-- REMOVED R20: location text under gallery header <span class="ev-date">Midtown, New York City</span> -->
+      <a href="https://curtispan.pic-time.com/-treehouse1212/gallery" target="_blank" rel="noopener" class="btn btn-s" style="font-size:0.65rem;padding:0.6rem 1.4rem;">See Full Gallery →</a>
+    </div>
+  </div>
+  <!-- ROUND 5 FIX #3 — Christmas gallery replaced with 15 specific photos in exact order -->
+  <div class="gallery-visible" id="gallery-visible-christmas-nyc">
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-009.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-010.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 15 FIX #4 — xmas-new-02 near top for visual impact -->
+    <div class="gallery-item"><img src="/img/xmas-new-02.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 8 FIX #6 — xmas-new-01 added at position 2 -->
+    <div class="gallery-item"><img src="/img/xmas-new-01.jpg" alt="treehouse. NYC, Christmas in NYC" loading="lazy"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-016.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-018.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-019.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-021.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-022.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 15 FIX #4 — xmas-new-03 mid gallery -->
+    <div class="gallery-item"><img src="/img/xmas-new-03.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-024.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-025.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-027.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-028.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-033.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 15 FIX #4 — xmas-new-04 near end -->
+    <div class="gallery-item"><img src="/img/xmas-new-04.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-038.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-040.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-048.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+
+  <!-- REMOVED: Stray empty div between Christmas and Perry St galleries (orphaned from R5 toggle removal) -->
+</section>
+<!-- REMOVED R18: Empty Dinner Parties section — malformed comment fixed -->
+<!-- PARTY 5: KNOX DAY -->
+<!-- ROUND 16 FIX #1 — section id renamed from knox-day to perry-st -->
+        <section class="dk ev-section grain" id="perry-st">
+  <div class="ev-header reveal">
+    <span class="lbl reveal-child">// treehouse. NYC</span>
+    <h2 class="ev-title reveal-child"><!-- ROUND 16 FIX #1 — heading renamed -->PARTY ON PERRY ST</h2>
+    <p class="ev-desc reveal-child">Open sky, open bar, DJ set that runs until the sun goes down. Brooklyn does it right.</p>
+    <div class="ev-meta-row">
+      <!-- REMOVED R20: location text under gallery header <span class="ev-date">Brooklyn, New York City</span> -->
+    </div>
+  </div>
+  <div class="gallery-visible" id="gallery-visible-perry-st">
+<!-- REMOVED R6: old gallery photos for gallery-visible-knox-day -->
+    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-002.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+        <!-- ROUND 12 FIX #1 — knox-new-01.jpg added to Knox Day gallery -->
+        <div class="gallery-item">
+          <img src="/img/knox-new-01.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <div class="if">knox</div>
+        </div>
+    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-008.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-010.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 16 FIX #2 — perry-new-01 at position 4 -->
+    <div class="gallery-item"><img src="/img/perry-new-01.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-013.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-014.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-015.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-016.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 16 FIX #2 — perry-new-02 at position 8 -->
+    <div class="gallery-item"><img src="/img/perry-new-02.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+        <!-- ROUND 12 FIX #1 — knox-new-02.jpg added to Knox Day gallery -->
+        <div class="gallery-item">
+          <img src="/img/knox-new-02.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <div class="if">knox</div>
+        </div>
+    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-017.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-018.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-020.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <!-- ROUND 16 FIX #2 — perry-new-03 near end -->
+    <div class="gallery-item"><img src="/img/perry-new-03.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+  </div>
+  <!-- REMOVED: Stray empty div between Perry St and West Village galleries (orphaned from R6 toggle removal) -->
+</section>
+<!-- PARTY 6: WEST VILLAGE -->
+<section class="dk ev-section grain" id="west-village">
+  <div class="ev-header reveal">
+    <span class="lbl reveal-child">// treehouse. NYC</span>
+    <h2 class="ev-title reveal-child">WEST VILLAGE</h2><!-- ROUND 3 FIX #7 — date removed -->
+    <p class="ev-desc reveal-child">The West Village at night. Cocktails, good lighting, the crowd that always shows up dressed.</p>
+    <div class="ev-meta-row">
+      <!-- REMOVED R20: location text under gallery header <span class="ev-date">West Village, New York City</span> -->
+    </div>
+  </div>
+  <div class="gallery-visible" id="gallery-visible-west-village">
+<!-- REMOVED R6: old gallery photos for gallery-visible-west-village -->
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-001.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-004.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-005.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-006.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-007.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-010.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-013.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-018.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-022.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-027.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-035.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-038.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+  </div>
+  <!-- REMOVED: Stray empty div after West Village gallery (orphaned from R6 toggle removal) -->
+
+<!-- PARTY 7: SPRINGTIME OPENER -->
+<section class="dk ev-section grain" id="springtime-opener">
+  <div class="ev-header reveal">
+    <span class="lbl reveal-child">// treehouse. NYC</span>
+    <h2 class="ev-title reveal-child">SPRINGTIME OPENER. APRIL 25, 2026.</h2>
+    <p class="ev-desc reveal-child">Open bar on the rooftop at 75 Varick. The first party of the season. 390 guests, in the rain.</p>
+    <div class="ev-meta-row">
+    </div>
+  </div>
+  <div class="gallery-visible" id="gallery-visible-springtime-opener">
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-01.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-02.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-03.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-04.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-05.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-06.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-07.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-08.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-09.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-10.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-11.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-12.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-13.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-14.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-15.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-16.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-17.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-18.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-19.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-20.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-21.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-22.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-23.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-24.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-25.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-26.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-27.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-28.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-29.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-30.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+  </div>
+</section>
+</section>
+<!-- REMOVED R18: Moved to sponsor.html — In Good Company / why-sponsor section -->
+<!-- REMOVED R18: Moved to sponsor.html — Sponsorship Packages / tiers section -->
+<!-- REMOVED R18: Moved to sponsor.html — Brands That Showed Up / past activations section -->
+
+<!-- AUDIT FIX #4 — How It Works section commented out (filler) -->
+<!-- REMOVED: How It Works
+<section class="lt" id="how-it-works">
+  <div class="w hiw-inner">
+    <span class="lbl reveal-child" data-a="u" style="margin-bottom:1rem">// How It Works</span>
+    <h2 data-a="l">How to<br>get in.</h2>
+    <div class="hiw-steps" data-a="u" data-d="1">
+      <div class="hiw-step"><span class="hiw-n">01</span><h3 class="hiw-t">Apply</h3><p class="hiw-d">Drop your email below. We'll reach out before the next event.</p></div>
+      <div class="hiw-step"><span class="hiw-n">02</span><h3 class="hiw-t">Get Approved</h3><p class="hiw-d">We keep the list tight. Not everyone gets in, and that's the point.</p></div>
+      <div class="hiw-step"><span class="hiw-n">03</span><h3 class="hiw-t">Show Up</h3><p class="hiw-d">Show up. Open bar from the jump. You'll know people.</p></div>
+      <div class="hiw-step"><span class="hiw-n">04</span><h3 class="hiw-t">Come Back</h3><p class="hiw-d">We run events all year. Once you're in, you're in.</p></div>
+    </div>
+  </div>
+</section>
+-->
+
+
+<!-- JOIN -->
+<section class="dk grain join" id="join">
+  <div class="join-inner">
+    <span class="lbl reveal-child" data-a="u">// Get Access</span>
+    <h2 data-a="l">Get on the list.</h2>
+    <p class="join-body" id="join-body-line" data-a="u" data-d="1">Invite only. Drop your email and we'll reach out before the next one. No spam, just the invite.</p>
+    <!-- AUDIT FIX #9 — Scarcity line above email form -->
+    <p class="scarcity-line js-next-event-short">Invite only · Waitlist open</p>
+    <form class="join-form" action="https://formspree.io/f/xwpbkqod" method="POST" novalidate data-a="u" data-d="2">
+      <div class="join-row">
+        <input type="email" id="join-email" name="email" placeholder="your@email.com" aria-label="Email address" required autocomplete="email">
+        <input type="hidden" name="_subject" value="New treehouse. invite request">
+        <input type="hidden" name="_replyto" value="">
+        <input type="text" name="_gotcha" style="display:none">
+        <button type="submit" class="btn btn-p">join</button>
+      </div>
+      <p class="join-ok" id="join-ok" role="status" aria-live="polite">you're on the list.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- AUDIT FIX #13 — Footer beefed up: larger logo, thumbnail photos, scarcity line, Instagram icon -->
+<!-- FOOTER -->
+<footer class="dk" role="contentinfo">
+  <!-- Thumbnail photo strip -->
+  <!-- ROUND 45 MOBILE FIX — added foot-photos class for responsive grid override -->
+  <div class="foot-photos" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;height:clamp(120px,15vw,200px);overflow:hidden;">
+    <!-- REMOVED R17: old footer photos — tribeca-005, soho-006, xmas-003, knox-001 -->
+    <!-- ROUND 17 FIX #2 — New footer photos -->
+    <div style="overflow:hidden;"><img src="/img/footer-02.jpg" alt="Treehouse event" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.7;"></div>
+    <div style="overflow:hidden;"><img src="/img/footer-01.jpg" alt="Treehouse event" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.7;"></div>
+    <div style="overflow:hidden;"><img src="/img/footer-03.jpg" alt="Treehouse event" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.7;"></div>
+    <div style="overflow:hidden;"><img src="/img/footer-04.jpg" alt="Treehouse event" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.7;"></div>
+  </div>
+  <div class="foot-top" style="padding-top:3rem;">
+    <a href="#hero" class="foot-logo" aria-label="treehouse. back to top" title="Back to top">
+      <img src="/img/logo.png" alt="treehouse. Events | New York City" height="120" style="filter:brightness(0) invert(1);">
+    </a>
+    <p class="foot-tag">Events · New York City</p>
+    <!-- Next event scarcity line -->
+    <p style="font-family:var(--ff-b);font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);opacity:0.85;margin-top:0.5rem;" class="js-next-event-short">Invite only · Waitlist open</p>
+  </div>
+  <nav class="foot-links" aria-label="Footer links">
+    <!-- Instagram icon link -->
+    <a href="https://www.instagram.com/treehouseevents.nyc" target="_blank" rel="noopener noreferrer" aria-label="Instagram @treehouseevents.nyc" style="display:inline-flex;align-items:center;gap:0.4rem;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @treehouseevents.nyc
+    </a>
+    <a href="mailto:events@tigertracks.ai" target="_blank" rel="noopener">events@tigertracks.ai</a>
+    <a href="tel:+13016467758">(301) 646-7758</a>
+    <!-- EXPANSION FIX #6 — sponsorship inquiries link in footer -->
+    <a href="/sponsor.html#sp-contact">sponsorship inquiries</a>
+  </nav>
+  <div class="foot-btm">
+    <p class="foot-copy">&copy; 2026 treehouse. events &middot; new york city</p>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+/* CURSOR */
+(function(){
+  if(!window.matchMedia('(hover:hover)').matches) return;
+  var dot=document.getElementById('cur'), ring=document.getElementById('cur-r');
+  if(!dot||!ring) return;
+  var mx=0,my=0,rx=0,ry=0,raf=null;
+  document.addEventListener('mousemove',function(e){
+    mx=e.clientX; my=e.clientY;
+    dot.style.left=mx+'px'; dot.style.top=my+'px';
+    if(!raf) raf=requestAnimationFrame(ar);
+  },{passive:true});
+  function ar(){ rx+=(mx-rx)*0.16; ry+=(my-ry)*0.16; ring.style.left=rx+'px'; ring.style.top=ry+'px'; raf=requestAnimationFrame(ar); }
+  document.querySelectorAll('a,button,input,[role="button"],.photo-item,.tag').forEach(function(el){
+    el.addEventListener('mouseenter',function(){ document.body.classList.add('ch'); });
+    el.addEventListener('mouseleave',function(){ document.body.classList.remove('ch'); });
+  });
+  document.querySelectorAll('.lt').forEach(function(s){
+    s.addEventListener('mouseenter',function(){ document.body.classList.add('ci'); });
+    s.addEventListener('mouseleave',function(){ document.body.classList.remove('ci'); });
+  });
+  document.addEventListener('mouseleave',function(){ dot.style.opacity='0'; ring.style.opacity='0'; });
+  document.addEventListener('mouseenter',function(){ dot.style.opacity='1'; ring.style.opacity='0.7'; });
+})();
+
+/* NAV */
+(function(){
+  var nav=document.getElementById('nav');
+  if(!nav) return;
+  function check(){ nav.classList.toggle('sc', window.scrollY>60); }
+  window.addEventListener('scroll',check,{passive:true});
+  check();
+})();
+
+/* HAMBURGER */
+(function(){
+  var btn=document.getElementById('ham'), menu=document.getElementById('mob'), x=document.getElementById('mob-x');
+  if(!btn||!menu) return;
+  function open(){ menu.hidden=false; btn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  function shut(){ menu.hidden=true; btn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  btn.addEventListener('click',open);
+  if(x) x.addEventListener('click',shut);
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',shut); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!menu.hidden){ shut(); btn.focus(); } });
+})();
+
+/* SMOOTH SCROLL */
+(function(){
+  var nh=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav'))||72;
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var h=a.getAttribute('href');
+      if(h==='#') return;
+      var t=document.querySelector(h);
+      if(!t) return;
+      e.preventDefault();
+      window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-nh,behavior:'smooth'});
+    });
+  });
+})();
+
+/* SCROLL ANIMATIONS */
+(function(){
+  if(!('IntersectionObserver' in window)){
+    document.querySelectorAll('[data-a]').forEach(function(el){ el.classList.add('on'); });
+    return;
+  }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
+  },{threshold:0.06,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-a]').forEach(function(el){ obs.observe(el); });
+})();
+
+/* REVEAL SCROLL ANIMATIONS */
+(function(){
+  var revEls=document.querySelectorAll(".reveal");
+  if(!revEls.length) return;
+  if(!("IntersectionObserver" in window)){ revEls.forEach(function(el){ el.classList.add("is-visible"); }); return; }
+  var revObs=new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("is-visible"); revObs.unobserve(e.target); } }); },{threshold:0.15});
+  revEls.forEach(function(el){ revObs.observe(el); });
+})();
+
+/* IMAGE FALLBACKS */
+document.querySelectorAll('img').forEach(function(img){
+  if(img.complete&&img.naturalWidth===0) img.parentNode.classList.add('fail');
+  img.addEventListener('error',function(){ img.parentNode.classList.add('fail'); });
+});
+
+/* JOIN FORM, wired to Formspree */
+(function(){
+  var form=document.querySelector('.join-form'), email=document.getElementById('join-email'), ok=document.getElementById('join-ok');
+  if(!form||!email||!ok) return;
+  var re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var val=email.value.trim();
+    if(!re.test(val)){ email.focus(); return; }
+    var btn=form.querySelector('button[type="submit"]');
+    if(btn) btn.disabled=true;
+    fetch(form.action,{
+      method:'POST',
+      headers:{'Accept':'application/json','Content-Type':'application/json'},
+      body:JSON.stringify({email:val,_subject:'New treehouse. invite request'})
+    }).then(function(r){
+      if(r.ok){
+        ok.textContent="you're on the list.";
+        ok.classList.add('show');
+        email.value='';
+        setTimeout(function(){ ok.classList.remove('show'); },6000);
+      } else {
+        ok.textContent="something went wrong, email events@tigertracks.ai";
+        ok.classList.add('show');
+        setTimeout(function(){ ok.classList.remove('show'); },8000);
+      }
+    }).catch(function(){
+      ok.textContent="offline, email events@tigertracks.ai";
+      ok.classList.add('show');
+      setTimeout(function(){ ok.classList.remove('show'); },8000);
+    }).finally(function(){
+      if(btn) btn.disabled=false;
+    });
+  });
+})();
+
+/* PARALLAX */
+(function(){
+  var img=document.querySelector('.hero-bg img');
+  if(!img||window.innerWidth<768) return;
+  window.addEventListener('scroll',function(){ img.style.transform='translateY('+Math.min(window.scrollY*0.28,90)+'px)'; },{passive:true});
+})();
+
+/* VENUE CAROUSEL */
+(function(){
+  var car=document.getElementById('venueCarousel');
+  if(!car) return;
+  var slides=car.querySelectorAll('.vc-slide');
+  var dots=car.querySelectorAll('.vc-dot');
+  var prev=car.querySelector('.vc-prev');
+  var next=car.querySelector('.vc-next');
+  var idx=0, timer=null;
+  function go(n){
+    slides[idx].classList.remove('active');
+    dots[idx].classList.remove('active');
+    idx=(n+slides.length)%slides.length;
+    slides[idx].classList.add('active');
+    dots[idx].classList.add('active');
+  }
+  function auto(){ timer=setInterval(function(){ go(idx+1); },4000); }
+  if(prev) prev.addEventListener('click',function(){ clearInterval(timer); go(idx-1); auto(); });
+  if(next) next.addEventListener('click',function(){ clearInterval(timer); go(idx+1); auto(); });
+  dots.forEach(function(d,i){ d.addEventListener('click',function(){ clearInterval(timer); go(i); auto(); }); });
+  auto();
+})();
+
+/* ANIMATED STATS COUNTER */
+(function(){
+  var els=document.querySelectorAll('.stat-v[data-count]');
+  if(!els.length) return;
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target;
+      var target=parseInt(el.dataset.count);
+      var suffix=target>=1000?'+':'';
+      var dur=1600, start=null;
+      function step(ts){
+        if(!start) start=ts;
+        var p=Math.min((ts-start)/dur,1);
+        var ease=1-Math.pow(1-p,3);
+        el.textContent=Math.floor(ease*target)+(p>=1?suffix:'');
+        if(p<1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      obs.unobserve(el);
+    });
+  },{threshold:0.5});
+  els.forEach(function(el){ obs.observe(el); });
+})();
+
+</script>
+
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-close" id="lbClose">&times;</button>
+  <button class="lightbox-prev" id="lbPrev">&#8592;</button>
+  <div class="lightbox-media" id="lbMedia"></div>
+  <button class="lightbox-next" id="lbNext">&#8594;</button>
+  <div class="lightbox-counter" id="lbCount"></div>
+</div>
+
+<script>
+/* LIGHTBOX */
+(function(){
+  var lb=document.getElementById("lightbox");
+  var lbMedia=document.getElementById("lbMedia");
+  var lbClose=document.getElementById("lbClose");
+  var lbPrev=document.getElementById("lbPrev");
+  var lbNext=document.getElementById("lbNext");
+  var lbCount=document.getElementById("lbCount");
+  if(!lb) return;
+
+  var items=[], idx=0;
+
+  function openLightbox(arr, i){
+    items=arr; idx=i;
+    // Pause all gallery videos when lightbox opens
+    document.querySelectorAll(".gallery-video").forEach(function(v){ v.pause(); });
+    showItem();
+    lb.classList.add("is-open");
+    document.body.style.overflow="hidden";
+  }
+
+  function closeLightbox(){
+    lb.classList.remove("is-open");
+    document.body.style.overflow="";
+    var vid=lbMedia.querySelector("video");
+    if(vid) vid.pause();
+    lbMedia.innerHTML="";
+  }
+
+  function showItem(){
+    var vid=lbMedia.querySelector("video");
+    if(vid) vid.pause();
+    lbMedia.innerHTML="";
+    lbMedia.classList.remove("loaded");
+    var item=items[idx];
+    if(item.type==="video"){
+      var v=document.createElement("video");
+      v.controls=true; v.autoplay=true;
+      var s=document.createElement("source");
+      s.src=item.src; s.type="video/mp4";
+      v.appendChild(s);
+      lbMedia.appendChild(v);
+      lbMedia.classList.add("loaded");
+    } else {
+      var img=document.createElement("img");
+      img.src=item.src; img.alt=item.alt||"";
+      img.onload=function(){ lbMedia.classList.add("loaded"); };
+      lbMedia.appendChild(img);
+    }
+    lbCount.textContent=(idx+1)+" / "+items.length;
+    lbPrev.style.display=items.length<2?"none":"flex";
+    lbNext.style.display=items.length<2?"none":"flex";
+  }
+
+  function nav(dir){
+    idx=(idx+dir+items.length)%items.length;
+    showItem();
+  }
+
+  lbClose.addEventListener("click", closeLightbox);
+  lbPrev.addEventListener("click", function(){ nav(-1); });
+  lbNext.addEventListener("click", function(){ nav(1); });
+
+  lb.addEventListener("click", function(e){
+    if(e.target===lb) closeLightbox();
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(!lb.classList.contains("is-open")) return;
+    if(e.key==="Escape") closeLightbox();
+    if(e.key==="ArrowLeft") nav(-1);
+    if(e.key==="ArrowRight") nav(1);
+  });
+
+  /* Attach to all gallery items */
+  document.querySelectorAll(".gallery-visible, .gallery-collapsed").forEach(function(grid){
+    var galleryItems=[];
+    grid.querySelectorAll(".gallery-item").forEach(function(item){
+      var img=item.querySelector("img");
+      var vid=item.querySelector("video source");
+      if(img) galleryItems.push({type:"image", src:img.src, alt:img.alt});
+      else if(vid) galleryItems.push({type:"video", src:vid.src});
+    });
+    grid.querySelectorAll(".gallery-item").forEach(function(item, i){
+      item.addEventListener("click", function(){
+        openLightbox(galleryItems, i);
+      });
+      item.style.cursor="zoom-in";
+    });
+  });
+
+  /* Gallery collapse/expand toggles */
+  document.querySelectorAll(".gallery-toggle").forEach(function(btn){
+    var colId=btn.dataset.target;
+    var col=document.getElementById(colId);
+    if(!col){ btn.style.display="none"; return; }
+    var n=parseInt(btn.dataset.count)||col.querySelectorAll(".gallery-item").length;
+    btn.textContent="View All Photos ("+n+" more)";
+    btn.addEventListener("click",function(){
+      var isOpen=col.classList.contains("is-open");
+      col.classList.toggle("is-open");
+      btn.textContent=isOpen?"View All Photos ("+n+" more)":"Show Less \u2191";
+      if(isOpen){
+        var sec=btn.closest("section");
+        if(sec){
+          var nh=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav'))||72;
+          var top=sec.getBoundingClientRect().top+window.scrollY-nh-16;
+          window.scrollTo({top:top,behavior:"smooth"});
+        }
+      }
+    });
+  });
+})();
+
+/* Fix D: Scroll-triggered video autoplay in gallery tiles */
+(function(){
+  var videoObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var video = entry.target;
+      if(entry.isIntersecting){
+        if(video.readyState === 0) video.load();
+        video.play().catch(function(){});
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }, { threshold: 0.4, rootMargin: "0px" });
+
+  document.querySelectorAll(".gallery-video").forEach(function(video){
+    videoObs.observe(video);
+  });
+})();
+
+/* ── NEXT EVENT · SINGLE SOURCE OF TRUTH ───────────────────────────────
+   To announce the next event: set `announced` to true.
+   To change the date:         edit `iso` (ISO 8601, with offset).
+   Everything else on the page follows: hero label, countdown,
+   scarcity lines, and the signup copy.
+
+   If `announced` is false, or `iso` is in the past, the site falls back
+   to an undated state automatically. It will never again show a
+   countdown to an event that has already happened.
+--------------------------------------------------------------------- */
+/* Venue: 75 Varick St, Tribeca. The operator brands it
+   Tribeca Rooftop + Tribeca 360 and lists 10 Desbrosses St on
+   correspondence. Same building, same room as October 18 2025.
+   The public label below uses "Tribeca Rooftop" to stay consistent
+   with the past-events marquee, which already names it that way.
+   Swap to "75 varick" here if you would rather lead with the address. */
+var TH_NEXT_EVENT = {
+  announced: true,                      // <- flip to false to un-announce everything
+  iso:      '2026-10-17T16:00:00-04:00',
+  label:    'next event · saturday october 17 · 75 varick',
+  short:    'Saturday October 17 · 75 Varick Rooftop · Invite only',
+  joinLine: "Invite only. Drop your email and we'll reach out before October 17th. No spam, just the invite.",
+  title:    'NEXT EVENT: SATURDAY OCTOBER 17',
+  dateBig:  'October 17th',
+  doors:    'Doors 4:00pm ET',
+  venueN:   '75 Varick Street Rooftop',
+  venueL:   'New York, NY',
+  meta:     '400 guests · Invite Only · Open Bar'
+};
+
+function thNextEventIsLive() {
+  if (!TH_NEXT_EVENT.announced) return false;
+  var d = new Date(TH_NEXT_EVENT.iso);
+  return !isNaN(d) && (d - new Date()) > 0;
+}
+
+function renderNextEvent() {
+  var live = thNextEventIsLive();
+
+  var label = document.getElementById('next-event-label');
+  if (label) label.textContent = live ? TH_NEXT_EVENT.label : 'next event · new york';
+
+  document.querySelectorAll('.js-next-event-short').forEach(function(el){
+    el.textContent = live ? TH_NEXT_EVENT.short : 'Invite only · Waitlist open';
+  });
+
+  var join = document.getElementById('join-body-line');
+  if (join && live) join.textContent = TH_NEXT_EVENT.joinLine;
+
+  // Hide the clock entirely unless there is a real future date to count to.
+  document.querySelectorAll('.countdown-display').forEach(function(el){
+    el.style.display = live ? '' : 'none';
+  });
+
+  // The full-bleed next-event section only exists when there is an event.
+  var sec = document.getElementById('events');
+  if (sec) sec.hidden = !live;
+  if (live) {
+    var set = function(sel, val){
+      document.querySelectorAll(sel).forEach(function(el){ el.textContent = val; });
+    };
+    set('#event-title',   TH_NEXT_EVENT.title);
+    set('#event-date-big',TH_NEXT_EVENT.dateBig);
+    set('.js-doors',      TH_NEXT_EVENT.doors);
+    set('.js-venue-n',    TH_NEXT_EVENT.venueN);
+    set('.js-venue-l',    TH_NEXT_EVENT.venueL);
+    set('.js-event-meta', TH_NEXT_EVENT.meta);
+  }
+}
+
+// COUNTDOWN FIX, unified function sets all hero + event section IDs directly
+function updateCountdown() {
+  if (!thNextEventIsLive()) return;
+  var eventDate = new Date(TH_NEXT_EVENT.iso);
+  var now = new Date();
+  var diff = eventDate - now;
+
+  if (diff <= 0) {
+    document.querySelectorAll('[id^="countdown-days"]').forEach(function(el){ el.textContent = '0'; });
+    document.querySelectorAll('[id^="countdown-hours"]').forEach(function(el){ el.textContent = '0'; });
+    document.querySelectorAll('[id^="countdown-mins"]').forEach(function(el){ el.textContent = '0'; });
+    return;
+  }
+
+  var days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.querySelectorAll('[id^="countdown-days"]').forEach(function(el){ el.textContent = String(days).padStart(2, '0'); });
+  document.querySelectorAll('[id^="countdown-hours"]').forEach(function(el){ el.textContent = String(hours).padStart(2, '0'); });
+  document.querySelectorAll('[id^="countdown-mins"]').forEach(function(el){ el.textContent = String(mins).padStart(2, '0'); });
+}
+renderNextEvent();
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
+// ROUND 4 FIX #9, Mobile nav backdrop click to close
+var backdrop = document.getElementById('nav-backdrop');
+if (backdrop) {
+  backdrop.addEventListener('click', function() {
+    var navMobile = document.querySelector('.nav-mobile');
+    var hamburger = document.querySelector('.hamburger, .nav-toggle, [aria-controls="nav-mobile"]');
+    if (navMobile) navMobile.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+  });
+}
+
+// ROUND 4 FIX #9, Sync backdrop with nav open/close
+(function() {
+  var hamburger = document.querySelector('.hamburger, .nav-toggle, [aria-controls="nav-mobile"]');
+  var navMobile = document.querySelector('.nav-mobile');
+  var backdrop = document.getElementById('nav-backdrop');
+  if (!hamburger || !navMobile || !backdrop) return;
+  var orig = hamburger.onclick;
+  hamburger.addEventListener('click', function() {
+    setTimeout(function() {
+      if (navMobile.classList.contains('is-open')) {
+        backdrop.classList.add('is-open');
+      } else {
+        backdrop.classList.remove('is-open');
+      }
+    }, 10);
+  });
+  // Also close on nav link click
+  navMobile.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      navMobile.classList.remove('is-open');
+      backdrop.classList.remove('is-open');
+      if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+<!-- ANALYTICS — GA4 Event Tracking -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ANALYTICS, Track all Partiful link clicks (primary conversion)
+  document.querySelectorAll('a[href*="partiful.com"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click_request_invite', {
+          'event_category': 'conversion',
+          'event_label': this.textContent.trim(),
+          'page': window.location.pathname
+        });
+      }
+    });
+  });
+
+  // ANALYTICS, Track email link clicks
+  document.querySelectorAll('a[href*="mailto:"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click_email', {
+          'event_category': 'contact',
+          'event_label': this.href
+        });
+      }
+    });
+  });
+
+  // ANALYTICS, Track form submissions (waitlist signup)
+  document.querySelectorAll('form').forEach(function(form) {
+    form.addEventListener('submit', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'form_submit', {
+          'event_category': 'conversion',
+          'event_label': 'waitlist_signup'
+        });
+      }
+    });
+  });
+
+  // ANALYTICS, Track gallery section scroll depth
+  if ('IntersectionObserver' in window) {
+    var gallerySections = document.querySelectorAll('[class*="ev-section"]');
+    var galleryObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'view_gallery', {
+              'event_category': 'engagement',
+              'event_label': entry.target.id || entry.target.getAttribute('aria-label') || 'gallery_section'
+            });
+          }
+          galleryObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    gallerySections.forEach(function(section) { galleryObserver.observe(section); });
+  }
+
+});
+</script>
+
+</body>
+</html>
