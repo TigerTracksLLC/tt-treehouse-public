@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>drop your pics and videos | treehouse.</title>
-  <meta name="description" content="Thank you for coming to treehouse. at Tribeca Rooftop. Drop your pics and videos from the night, and if you're single, let us set you up.">
+  <meta name="description" content="Thank you for coming to treehouse. at Tribeca Rooftop. Drop your pics and videos from the night, and if you're single, we know people.">
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0d1c0a">
   <meta property="og:title" content="treehouse. 10.17 · drop your pics and videos">
@@ -39,16 +39,16 @@
         <span class="hh-a">drop your</span>
         <span class="hh-b">pics &amp; videos.</span>
       </h1>
-      <p class="lede rise">Add yours from Saturday for a chance to be featured on our website and Instagram, plus early access to the professional photos and videos.</p>
+      <p class="lede rise">Add yours from Saturday. Our favorites get featured on our site and Instagram, and you get the pro shots first.</p>
 
       <div class="doors rise">
         <a href="#send" class="door door-main" id="heroCta">
           <span class="door-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0l-4.5 4.5M12 4l4.5 4.5M4 15v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg></span>
-          <span class="door-txt"><b>Add pics and videos</b><small>for a chance to be featured on our site and Instagram</small></span>
+          <span class="door-txt"><b>Add pics and videos</b><small>straight from your camera roll</small></span>
         </a>
         <a href="#connect" class="door door-alt">
           <span class="door-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.35-7-10a4 4 0 017-2.65A4 4 0 0119 10c0 5.65-7 10-7 10z"/></svg></span>
-          <span class="door-txt"><b>Single? Let us set you up</b><small>we've set up multiple couples</small></span>
+          <span class="door-txt"><b>Single? We know people.</b><small>quiet intros, only if it's mutual</small></span>
         </a>
       </div>
     </div>
@@ -111,7 +111,7 @@
 
   <ul class="promise rv">
     <li><b>Get featured.</b> Our favorites go on the treehouse. website and @treehouseevents.nyc, tagged to you.</li>
-    <li><b>Full quality.</b> No compressing or texting files around.</li>
+    <li><b>Full quality.</b> No more blurry texted copies.</li>
     <li><b>Reviewed first.</b> Nothing goes in the gallery until we've looked.</li>
       </ul>
 </main>
@@ -139,17 +139,17 @@
   <div class="connect-in">
     <div class="connect-copy">
       <p class="sec-n sec-n-ink rv"><span>02</span>missed connections</p>
-      <h2 class="connect-h rv" id="connectTitle">single? <em>let us set you up.</em></h2>
-      <p class="connect-lede rv">Caught someone's eye at the party, or just open to meeting someone from the room? Add your info and let us work our magic.</p>
+      <h2 class="connect-h rv" id="connectTitle">single? <em>we know people.</em></h2>
+      <p class="connect-lede rv">Caught someone's eye at the party, or just open to meeting someone from the room? Add your info and we'll take it from there.</p>
 
       <ol class="steps rv">
-        <li><b>01</b><span>Tell us who caught your eye, or that you're open to meeting people.</span></li>
-        <li><b>02</b><span>We quietly check if it's mutual.</span></li>
-        <li><b>03</b><span>If it is, we introduce you on Instagram. If not, it stays between us.</span></li>
+        <li><b>1</b><span>Tell us who caught your eye, or that you're open to meeting people.</span></li>
+        <li><b>2</b><span>We quietly check if it's mutual.</span></li>
+        <li><b>3</b><span>If it is, we introduce you on Instagram. If not, it stays between us.</span></li>
       </ol>
 
       <figure class="wall rv"><img src="/img/drop/wall.jpg" alt="The polaroid wall from the party" width="1600" height="1200" loading="lazy"></figure>
-      <p class="connect-trust rv">we've set up multiple couples · everyone here came through a friend</p>
+      <p class="connect-trust rv">everyone here came through a friend</p>
     </div>
 
     <div class="slip rv">
@@ -158,7 +158,7 @@
       <form class="connect-form" id="connectForm" novalidate>
         <div class="seg" role="radiogroup" aria-label="What are you looking for">
           <label><input type="radio" name="cMode" value="specific" checked><span>someone specific</span></label>
-          <label><input type="radio" name="cMode" value="open"><span>open to meeting people</span></label>
+          <label><input type="radio" name="cMode" value="open"><span>open to anyone</span></label>
         </div>
         <div class="fields">
           <label class="pfield">
@@ -170,11 +170,11 @@
             <input id="cIg" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="@" maxlength="60" required>
           </label>
           <label class="pfield pfield-wide" id="cCrushWrap">
-            <span>what do you remember? <em>optional</em></span>
-            <textarea id="cCrush" rows="2" maxlength="400" placeholder="green dress, by the DJ, around 7"></textarea>
+            <span>who caught your eye?</span>
+            <textarea id="cCrush" rows="2" maxlength="400" placeholder="green dress, by the DJ, around 7, or their @ if you got it"></textarea>
           </label>
           <fieldset class="pfield pfield-wide pchips">
-            <legend>interested in <em>optional</em></legend>
+            <legend>interested in <em id="intOpt">optional</em></legend>
             <label><input type="radio" name="cInterest" value="men"><span>men</span></label>
             <label><input type="radio" name="cInterest" value="women"><span>women</span></label>
             <label><input type="radio" name="cInterest" value="everyone"><span>everyone</span></label>
@@ -201,7 +201,7 @@
 </footer>
 
 <!-- mobile quick dock -->
-<nav class="dock" id="dock" aria-label="Quick actions">
+<nav class="dock" id="dock" aria-label="Quick actions" inert>
   <a href="#send" data-go="send">Add pics</a>
   <a href="#connect" data-go="connect" class="dock-alt">Single?</a>
 </nav>
