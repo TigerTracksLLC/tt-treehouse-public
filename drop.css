@@ -158,9 +158,10 @@ button { font: inherit; cursor: pointer; }
 .done-p { color: var(--cream); opacity: .85; max-width: 32ch; margin: .9rem auto 1.3rem; }
 
 /* ---------- hero extras ---------- */
-.hero-single { display: block; margin-top: 1.1rem; max-width: 360px; padding: .85rem 1rem; border-radius: 14px; border: 1px solid var(--cream-30); background: rgba(13,28,10,.35); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); text-decoration: none; color: var(--cream); font-size: .92rem; line-height: 1.35; transition: border-color .2s, background .2s; }
-.hero-single span { opacity: .85; }
-.hero-single strong { font-weight: 600; white-space: nowrap; text-decoration: underline; text-decoration-color: var(--lime); text-underline-offset: 3px; }
+.hero-single { display: block; margin-top: 1.4rem; max-width: 520px; padding: 1.15rem 1.3rem 1.2rem; border-radius: 18px; border: 1px solid var(--cream-30); background: rgba(13,28,10,.45); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); text-decoration: none; color: var(--cream); transition: border-color .2s, background .2s; }
+.hero-single .hs-q { display: block; font: italic 400 clamp(1.45rem, 5.6vw, 2.1rem)/1.12 var(--ff-e); letter-spacing: -.01em; }
+.hero-single .hs-sub { display: block; margin-top: .55rem; font-size: .95rem; line-height: 1.4; opacity: .85; }
+.hero-single strong { display: inline-block; margin-top: .85rem; font-weight: 600; font-size: 1rem; text-decoration: underline; text-decoration-color: var(--lime); text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .hero-single:hover { border-color: var(--cream); background: rgba(13,28,10,.55); }
 .done-acts { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; }
 
