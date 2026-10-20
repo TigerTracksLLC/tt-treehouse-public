@@ -40,6 +40,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 10l4.55-2.28A1 1 0 0121 8.62v6.76a1 1 0 01-1.45.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
       Add pics and videos
     </a>
+    <a href="#connect" class="hero-alt">or jump to missed connections</a>
   </div>
   <div class="scroll-hint" aria-hidden="true"></div>
 </header>
@@ -95,7 +96,10 @@
       <p class="done-k">got it</p>
       <h2 class="display done-h" id="doneHead">thank you.</h2>
       <p class="done-p" id="doneText">You'll have access to all the uploads, plus early access to the professional photos and videos.</p>
-      <button type="button" class="btn btn-ghost" id="addMore">Add more</button>
+      <div class="done-acts">
+        <button type="button" class="btn btn-ghost" id="addMore">Add more</button>
+        <a href="#connect" class="btn btn-cream">Missed connections</a>
+      </div>
     </div>
   </div>
 
@@ -104,6 +108,48 @@
     <li><strong>Full quality.</strong> Straight from your camera roll, no compressing or texting files around.</li>
     <li><strong>Shared with care.</strong> Everything is reviewed before it goes into the gallery.</li>
   </ol>
+
+  <section class="connect" id="connect" aria-labelledby="connectTitle">
+    <p class="connect-k">missed connections</p>
+    <h2 class="display connect-h" id="connectTitle">everyone here is<br><span class="hl">three degrees<br>from you.</span></h2>
+    <p class="connect-p">Same friends, same circles, same taste. treehouse. is invite only, so the person you noticed across the roof already knows someone you know.</p>
+    <p class="connect-p">Single and open to meeting someone from the party? Add yourself below, and if the feeling's mutual, we'll introduce you.</p>
+
+    <form class="card connect-card" id="connectForm" novalidate>
+      <div class="fields">
+        <label class="field">
+          <span>First name</span>
+          <input id="cFirst" type="text" autocomplete="given-name" placeholder="Your first name" maxlength="40" required>
+        </label>
+        <label class="field">
+          <span>Instagram</span>
+          <input id="cIg" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="@yourhandle" maxlength="60" required>
+        </label>
+        <fieldset class="field field-wide chips">
+          <legend>Interested in <em class="opt">optional</em></legend>
+          <label class="chip"><input type="radio" name="cInterest" value="men"><span>Men</span></label>
+          <label class="chip"><input type="radio" name="cInterest" value="women"><span>Women</span></label>
+          <label class="chip"><input type="radio" name="cInterest" value="everyone"><span>Everyone</span></label>
+        </fieldset>
+        <label class="field field-wide">
+          <span>Who caught your eye? <em class="opt">optional</em></span>
+          <textarea id="cCrush" rows="3" maxlength="400" placeholder="A name or @handle if you have it. If not, a description works: green dress, by the DJ around 7."></textarea>
+        </label>
+      </div>
+      <label class="consent">
+        <input type="checkbox" id="cConsent">
+        <span>I'm single and 21+, and treehouse. can introduce me to people who also opted in. Only the treehouse. team sees this.</span>
+      </label>
+      <p class="field-err" id="cErr" role="alert" hidden></p>
+      <button type="submit" class="btn btn-cream connect-btn" id="cSubmit">Count me in</button>
+      <div class="connect-done" id="cDone" hidden>
+        <h3 class="display">you're on the list.</h3>
+        <p>If the feeling's mutual, we'll introduce you over Instagram. Nothing happens unless it's mutual.</p>
+      </div>
+    </form>
+    <p class="tagline">bringing people together, in person.</p>
+  </section>
+
 </main>
 
 <footer class="foot">
