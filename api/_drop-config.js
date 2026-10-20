@@ -8,5 +8,6 @@ module.exports = {
   PENDING_PREFIX: `${EVENT}/pending/`,
   APPROVED_PREFIX: `${EVENT}/approved/`,
   PEOPLE_PREFIX: `${EVENT}/people/`,
+  CONNECT_PREFIX: `${EVENT}/connect/`,
   MAX_FILE_BYTES: 4 * 1024 * 1024 * 1024, // 4 GB per file
 };
