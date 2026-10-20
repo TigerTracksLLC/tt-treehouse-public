@@ -124,7 +124,7 @@ module.exports = async function handler(req, res) {
 
     // ---------- missed connections opt-in ----------
     if (body.action === 'connect') {
-      const first = clean(body.first, 40);
+      const first = clean(body.first, 80);
       const ig = clean(body.instagram, 60).replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[/?#].*$/, '').replace(/[^A-Za-z0-9._]/g, '').slice(0, 30);
       const interest = ['men', 'women', 'everyone'].includes(body.interest) ? body.interest : '';
       const crush = clean(body.crush, 400);
