@@ -29,7 +29,7 @@ igEl.addEventListener('change', () => {
   sentHandle = h;
   fetch('/api/drop', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'checkin', instagram: h, files: 0, slug: getSlug() }) }).catch(() => {});
   doneHead.textContent = `thank you, @${h}.`;
-  doneText.textContent = doneText.textContent.replace(' Add your Instagram above so we know where to send them.', '');
+  doneText.textContent = doneText.textContent.replace(' Add your Instagram above so we can tag you and send them.', '');
 });
 
 const handle = () => igEl.value.trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[^A-Za-z0-9._]/g, '').slice(0, 30);
@@ -187,7 +187,7 @@ async function maybeFinish() {
   const h = handle();
   const videos = items.filter((i) => i.state === 'ok' && isVideo(i.file)).length;
   doneHead.textContent = h ? `thank you, @${h}.` : 'thank you.';
-  doneText.textContent = `${ok} ${ok === 1 ? 'file' : 'files'}${videos ? ` (${videos} ${videos === 1 ? 'video' : 'videos'})` : ''} sent. You'll have access to all the uploads, plus early access to the professional photos and videos.${h ? '' : ' Add your Instagram above so we know where to send them.'}`;
+  doneText.textContent = `${ok} ${ok === 1 ? 'file' : 'files'}${videos ? ` (${videos} ${videos === 1 ? 'video' : 'videos'})` : ''} sent. If yours gets picked for the website or Instagram, we'll feature it, and you'll get early access to the professional photos and videos.${h ? '' : ' Add your Instagram above so we can tag you and send them.'}`;
   doneEl.hidden = false;
   doneEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
   try {
@@ -226,13 +226,13 @@ syncMode();
 cForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const igHandle = cIg.value.trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[/?#].*$/, '');
-  const okFirst = cFirst.value.trim().length >= 1;
+  const okFirst = cFirst.value.trim().split(/\s+/).filter(Boolean).length >= 2;
   const okIg = /^[A-Za-z0-9._]{1,30}$/.test(igHandle);
   cFirst.classList.toggle('bad', !okFirst);
   cIg.classList.toggle('bad', !okIg);
   cConsent.closest('.pconsent').classList.toggle('bad', !cConsent.checked);
   if (!okFirst || !okIg || !cConsent.checked) {
-    cErr.textContent = !okFirst ? 'Add your first name.' : !okIg ? 'Add your Instagram handle so we can make the intro.' : 'Tick the box above to send.';
+    cErr.textContent = !okFirst ? 'Add your full name, first and last.' : !okIg ? 'Add your Instagram handle so we can make the intro.' : 'Tick the box above to send.';
     cErr.hidden = false;
     return;
   }
