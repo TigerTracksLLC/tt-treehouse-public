@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>review | treehouse.</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/drop.css">
+</head>
+<body>
+
+<div class="gate" id="gate">
+  <img src="/img/logo.png" alt="treehouse." class="logo" style="margin:0 auto">
+  <h1 class="display" style="font-size:3rem;margin-top:1.5rem">review</h1>
+  <label class="field"><span>Admin key</span><input id="key" type="password" autocomplete="current-password"></label>
+  <button type="button" class="btn btn-cream" id="enter" style="width:100%">Open</button>
+  <p class="field-err" id="gateErr" hidden></p>
+</div>
+
+<div class="admin" id="admin" hidden>
+  <div class="hero-top">
+    <img src="/img/logo.png" alt="treehouse." class="logo">
+    <a class="btn btn-ghost btn-small" href="/reel" target="_blank" rel="noopener">View reel</a>
+  </div>
+  <div class="admin-bar">
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab" role="tab" data-tab="pending" aria-selected="true">To review <span id="nPending"></span></button>
+      <button type="button" class="tab" role="tab" data-tab="approved" aria-selected="false">On the reel <span id="nApproved"></span></button>
+      <button type="button" class="tab" role="tab" data-tab="people" aria-selected="false">Who sent <span id="nPeople"></span></button>
+    </div>
+    <div class="tabs" id="bulk">
+      <button type="button" class="btn btn-ghost btn-small" id="selAll">Select all</button>
+      <button type="button" class="btn btn-cream btn-small" id="bulkYes">Add selected to reel</button>
+      <button type="button" class="btn btn-ghost btn-small" id="bulkNo">Remove selected</button>
+    </div>
+  </div>
+  <p class="muted" id="hint" style="font-size:.88rem;margin:0 0 1rem"></p>
+  <div id="view"></div>
+</div>
+
+<script type="module" src="/js/review.js"></script>
+</body>
+</html>

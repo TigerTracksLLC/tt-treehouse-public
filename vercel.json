@@ -2,32 +2,91 @@
   "version": 2,
   "name": "tt-treehouse-public",
   "routes": [
-    { "src": "/api/contact", "dest": "/api/contact.js", "methods": ["POST", "OPTIONS"] },
-    { "src": "/(.*)", "dest": "/$1" }
+    {
+      "src": "/api/contact",
+      "dest": "/api/contact.js",
+      "methods": [
+        "POST",
+        "OPTIONS"
+      ]
+    },
+    {
+      "src": "/api/drop-upload",
+      "dest": "/api/drop-upload.js",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "src": "/api/drop",
+      "dest": "/api/drop.js",
+      "methods": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "src": "/drop/?",
+      "dest": "/drop.html",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
+    },
+    {
+      "src": "/reel/?",
+      "dest": "/reel.html",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
+    },
+    {
+      "src": "/review/?",
+      "dest": "/review.html",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow",
+        "Cache-Control": "no-store"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
   ],
   "headers": [
     {
       "source": "/img/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.css",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/index.html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/sponsor.html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     }
   ]
