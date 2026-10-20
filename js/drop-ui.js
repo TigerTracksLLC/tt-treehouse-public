@@ -6,7 +6,7 @@
   var links = dock.querySelectorAll('a[data-go]');
   var hero = document.getElementById('top');
   var hidden = new Set([hero]);
-  function sync() { dock.classList.toggle('show', hidden.size === 0); }
+  function sync() { var on = hidden.size === 0; dock.classList.toggle('show', on); if (on) dock.removeAttribute('inert'); else dock.setAttribute('inert', ''); }
   var hideObs = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) hidden.add(e.target); else hidden.delete(e.target); });
     sync();
