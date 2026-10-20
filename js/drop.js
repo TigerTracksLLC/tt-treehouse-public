@@ -205,3 +205,45 @@ async function holdWake() {
 function releaseWake() { try { wakeLock && wakeLock.release(); } catch {} wakeLock = null; }
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && active) holdWake(); });
 window.addEventListener('beforeunload', (e) => { if (active || items.some((i) => i.state === 'wait' || i.state === 'retry')) { e.preventDefault(); e.returnValue = ''; } });
+
+// ---------- missed connections ----------
+const cForm = $('connectForm'), cFirst = $('cFirst'), cIg = $('cIg'), cCrush = $('cCrush'), cConsent = $('cConsent');
+const cErr = $('cErr'), cSubmit = $('cSubmit'), cDone = $('cDone');
+try { if (!cIg.value) cIg.value = localStorage.getItem('th_drop_ig') || ''; } catch {}
+igEl.addEventListener('input', () => { if (!cIg.dataset.touched) cIg.value = igEl.value; });
+cIg.addEventListener('input', () => { cIg.dataset.touched = '1'; });
+[cFirst, cIg].forEach((el) => el.addEventListener('input', () => el.classList.remove('bad')));
+cConsent.addEventListener('change', () => cConsent.closest('.consent').classList.remove('bad'));
+
+cForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const igHandle = cIg.value.trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[/?#].*$/, '');
+  const okFirst = cFirst.value.trim().length >= 1;
+  const okIg = /^[A-Za-z0-9._]{1,30}$/.test(igHandle);
+  cFirst.classList.toggle('bad', !okFirst);
+  cIg.classList.toggle('bad', !okIg);
+  cConsent.closest('.consent').classList.toggle('bad', !cConsent.checked);
+  if (!okFirst || !okIg || !cConsent.checked) {
+    cErr.textContent = !okFirst ? 'Add your first name.' : !okIg ? 'Add your Instagram handle so we can make the intro.' : 'Tick the box to confirm you\'re in.';
+    cErr.hidden = false;
+    return;
+  }
+  cErr.hidden = true;
+  cSubmit.disabled = true;
+  cSubmit.textContent = 'Adding you...';
+  try {
+    const interest = (cForm.querySelector('input[name="cInterest"]:checked') || {}).value || '';
+    const r = await fetch('/api/drop', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'connect', first: cFirst.value.trim(), instagram: igHandle, interest, crush: cCrush.value.trim(), consent: true }),
+    });
+    if (!r.ok) throw new Error('bad');
+    [...cForm.querySelectorAll('.fields, .consent, #cSubmit')].forEach((el) => { el.hidden = true; });
+    cDone.hidden = false;
+  } catch {
+    cErr.textContent = 'That did not go through. Try again in a moment.';
+    cErr.hidden = false;
+    cSubmit.disabled = false;
+    cSubmit.textContent = 'Count me in';
+  }
+});
