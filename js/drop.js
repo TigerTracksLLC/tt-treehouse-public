@@ -212,12 +212,14 @@ const cErr = $('cErr'), cSubmit = $('cSubmit'), cDone = $('cDone');
 try { if (!cIg.value) cIg.value = localStorage.getItem('th_drop_ig') || ''; } catch {}
 igEl.addEventListener('input', () => { if (!cIg.dataset.touched) cIg.value = igEl.value; });
 cIg.addEventListener('input', () => { cIg.dataset.touched = '1'; });
-[cFirst, cIg].forEach((el) => el.addEventListener('input', () => el.classList.remove('bad')));
+[cFirst, cIg, cCrush].forEach((el) => el.addEventListener('input', () => { el.classList.remove('bad'); el.removeAttribute('aria-invalid'); }));
+cForm.querySelectorAll('input[name="cInterest"]').forEach((r) => r.addEventListener('change', () => cForm.querySelector('.pchips').classList.remove('bad')));
 cConsent.addEventListener('change', () => cConsent.closest('.pconsent').classList.remove('bad'));
 const cMode = () => (cForm.querySelector('input[name="cMode"]:checked') || {}).value || 'specific';
 function syncMode() {
   const specific = cMode() === 'specific';
   $('cCrushWrap').hidden = !specific;
+  const io = document.getElementById('intOpt'); if (io) io.hidden = !specific;
   cSubmit.textContent = specific ? 'send' : 'keep me in mind';
 }
 cForm.querySelectorAll('input[name="cMode"]').forEach((r) => r.addEventListener('change', syncMode));
@@ -228,12 +230,22 @@ cForm.addEventListener('submit', async (e) => {
   const igHandle = cIg.value.trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[/?#].*$/, '');
   const okFirst = cFirst.value.trim().split(/\s+/).filter(Boolean).length >= 2;
   const okIg = /^[A-Za-z0-9._]{1,30}$/.test(igHandle);
-  cFirst.classList.toggle('bad', !okFirst);
-  cIg.classList.toggle('bad', !okIg);
+  const specific = cMode() === 'specific';
+  const okCrush = !specific || cCrush.value.trim().length >= 3;
+  const okInterest = specific || !!cForm.querySelector('input[name="cInterest"]:checked');
+  const flag = (el, bad) => { el.classList.toggle('bad', bad); el.setAttribute('aria-invalid', bad ? 'true' : 'false'); };
+  flag(cFirst, !okFirst); flag(cIg, !okIg); flag(cCrush, !okCrush);
+  cForm.querySelector('.pchips').classList.toggle('bad', !okInterest);
   cConsent.closest('.pconsent').classList.toggle('bad', !cConsent.checked);
-  if (!okFirst || !okIg || !cConsent.checked) {
-    cErr.textContent = !okFirst ? 'Add your full name, first and last.' : !okIg ? 'Add your Instagram handle so we can make the intro.' : 'Tick the box above to send.';
+  if (!okFirst || !okIg || !okCrush || !okInterest || !cConsent.checked) {
+    cErr.textContent = !okFirst ? 'Add your full name, first and last.'
+      : !okIg ? 'Add your Instagram handle so we can make the intro.'
+      : !okCrush ? 'Tell us a little about who caught your eye.'
+      : !okInterest ? 'Pick who you\'re interested in.'
+      : 'Check the box to send.';
     cErr.hidden = false;
+    const first = !okFirst ? cFirst : !okIg ? cIg : !okCrush ? cCrush : !okInterest ? cForm.querySelector('input[name="cInterest"]') : cConsent;
+    try { first.focus({ preventScroll: false }); } catch {}
     return;
   }
   cErr.hidden = true;
