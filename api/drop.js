@@ -1,6 +1,6 @@
 // api/drop.js · everything behind /drop, /reel and /review except the upload itself.
 //
-//   POST  { action: 'checkin', name, contact, instagram?, files }   guest finished uploading
+//   POST  { action: 'checkin', instagram?, files }   guest finished uploading
 //   GET   ?action=reel                                   approved media for /reel
 //   GET   ?action=pending      (admin)                   files waiting for review
 //   GET   ?action=people       (admin)                   who uploaded, for the reel text
@@ -102,7 +102,7 @@ module.exports = async function handler(req, res) {
       const instagram = ig ? '@' + ig : '';
       const files = Math.max(0, Math.min(500, parseInt(body.files, 10) || 0));
       const slug = clean(body.slug, 60).replace(/[^a-z0-9-]/g, '');
-      if (!name || !contact || !files) return res.status(400).json({ error: 'Missing details' });
+      if (!files && !instagram) return res.status(400).json({ error: 'Missing details' });
       const record = { name, contact, instagram, files, slug, at: new Date().toISOString() };
       // random suffix keeps the record URL unguessable
       await put(`${PEOPLE_PREFIX}${slug || 'guest'}.json`, JSON.stringify(record), {

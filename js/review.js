@@ -43,7 +43,7 @@ async function refresh() {
 function uniquePeople() {
   const by = new Map();
   for (const p of data.people) {
-    const k = p.contact.toLowerCase().replace(/[^a-z0-9@.]/g, '');
+    const k = (p.slug || p.instagram || '').toLowerCase() || Math.random();
     const cur = by.get(k);
     if (cur) { cur.files += p.files; cur.instagram = cur.instagram || p.instagram; } else by.set(k, { ...p });
   }
@@ -62,15 +62,15 @@ function render() {
 
   if (tab === 'people') {
     const ppl = uniquePeople();
-    $('hint').textContent = 'Everyone who sent something. Copy the list to text them the reel link.';
-    view.innerHTML = `<p><button type="button" class="btn btn-ghost btn-small" id="copy">Copy phones and emails</button>
+    $('hint').textContent = 'Everyone who sent something. Copy the handles to DM them the reel and the pro photos.';
+    view.innerHTML = `<p><button type="button" class="btn btn-ghost btn-small" id="copy">Copy Instagram handles</button>
       <button type="button" class="btn btn-ghost btn-small" id="csv">Download CSV</button></p>
-      <table class="people"><thead><tr><th>Name</th><th>Phone or email</th><th>Instagram</th><th>Files</th><th>When</th></tr></thead><tbody>
-      ${ppl.map((p) => `<tr><td>${esc(p.name)}</td><td>${esc(p.contact)}</td><td>${p.instagram ? `<a href="https://instagram.com/${esc(p.instagram.slice(1))}" target="_blank" rel="noopener">${esc(p.instagram)}</a>` : ''}</td><td>${p.files}</td><td>${new Date(p.at).toLocaleString()}</td></tr>`).join('')}
+      <table class="people"><thead><tr><th>Instagram</th><th>Files</th><th>When</th></tr></thead><tbody>
+      ${ppl.map((p) => `<tr><td>${p.instagram ? `<a href="https://instagram.com/${esc(p.instagram.slice(1))}" target="_blank" rel="noopener">${esc(p.instagram)}</a>` : '<span class="muted">no handle</span>'}</td><td>${p.files}</td><td>${new Date(p.at).toLocaleString()}</td></tr>`).join('')}
       </tbody></table>`;
-    $('copy').onclick = async () => { await navigator.clipboard.writeText(ppl.map((p) => p.contact).join('\n')); $('copy').textContent = 'Copied'; };
+    $('copy').onclick = async () => { await navigator.clipboard.writeText(ppl.filter((p) => p.instagram).map((p) => p.instagram).join('\n')); $('copy').textContent = 'Copied'; };
     $('csv').onclick = () => {
-      const rows = [['name', 'contact', 'instagram', 'files', 'at'], ...ppl.map((p) => [p.name, p.contact, p.instagram || '', p.files, p.at])];
+      const rows = [['instagram', 'files', 'at'], ...ppl.map((p) => [p.instagram || '', p.files, p.at])];
       const blob = new Blob([rows.map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n')], { type: 'text/csv' });
       const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'treehouse-oct17-uploaders.csv' });
       a.click();

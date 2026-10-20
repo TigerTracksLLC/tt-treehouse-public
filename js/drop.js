@@ -6,7 +6,7 @@ const CONCURRENCY = 2;
 const AUTO_RETRIES = 2;
 
 const $ = (id) => document.getElementById(id);
-const nameEl = $('name'), contactEl = $('contact'), igEl = $('ig'), errEl = $('detailsErr');
+const igEl = $('ig'), errEl = $('detailsErr');
 const filesEl = $('files'), picker = $('picker'), queueEl = $('queue');
 const statusEl = $('status'), statusText = $('statusText'), statusPct = $('statusPct'), statusBar = $('statusBar'), statusNote = $('statusNote');
 const doneEl = $('done'), doneHead = $('doneHead'), doneText = $('doneText');
@@ -17,44 +17,26 @@ let slug = '';
 let sentCount = 0;       // successful uploads already reported in a check-in
 let wakeLock = null;
 
-// ---------- details ----------
-try {
-  nameEl.value = localStorage.getItem('th_drop_name') || '';
-  contactEl.value = localStorage.getItem('th_drop_contact') || '';
-  igEl.value = localStorage.getItem('th_drop_ig') || '';
-} catch {}
-
-function validDetails(showErrors) {
-  const name = nameEl.value.trim();
-  const contact = contactEl.value.trim();
-  const digits = contact.replace(/\D/g, '');
-  const okName = name.length >= 2;
-  const okContact = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact) || digits.length >= 10;
-  if (showErrors) {
-    nameEl.classList.toggle('bad', !okName);
-    contactEl.classList.toggle('bad', !okContact);
-    if (!okName || !okContact) {
-      errEl.textContent = !okName ? 'Add your name so we know who sent these.' : 'Add a phone number or email so we can send you the reel.';
-      errEl.hidden = false;
-    } else errEl.hidden = true;
-  }
-  return okName && okContact;
-}
-
-[nameEl, contactEl].forEach((el) => el.addEventListener('input', () => {
-  el.classList.remove('bad');
-  if (!errEl.hidden) validDetails(true);
-  try { localStorage.setItem('th_drop_name', nameEl.value); localStorage.setItem('th_drop_contact', contactEl.value); } catch {}
-  if (validDetails(false)) pump();
-}));
-nameEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); contactEl.focus(); } });
-contactEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); igEl.focus(); } });
-igEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); igEl.blur(); } });
+// ---------- details (Instagram only, optional) ----------
+try { igEl.value = localStorage.getItem('th_drop_ig') || ''; } catch {}
 igEl.addEventListener('input', () => { try { localStorage.setItem('th_drop_ig', igEl.value); } catch {} });
+igEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); igEl.blur(); } });
+// handle added after files already went up: attach it to this upload session
+let sentHandle = '';
+igEl.addEventListener('change', () => {
+  const h = handle();
+  if (!sentCount || !h || h === sentHandle) return;
+  sentHandle = h;
+  fetch('/api/drop', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'checkin', instagram: h, files: 0, slug: getSlug() }) }).catch(() => {});
+  doneHead.textContent = `thank you, @${h}.`;
+  doneText.textContent = doneText.textContent.replace(' Add your Instagram above so we know where to send it.', '');
+});
+
+const handle = () => igEl.value.trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[^A-Za-z0-9._]/g, '').slice(0, 30);
 
 function getSlug() {
   if (!slug) {
-    const base = nameEl.value.trim().toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'guest';
+    const base = handle().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'guest';
     slug = `${base}-${Math.random().toString(36).slice(2, 8)}`;
   }
   return slug;
@@ -69,7 +51,6 @@ picker.addEventListener('drop', (e) => addFiles(e.dataTransfer.files));
 $('heroCta').addEventListener('click', (e) => {
   e.preventDefault();
   $('send').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  setTimeout(() => (nameEl.value ? (contactEl.value ? null : contactEl) : nameEl)?.focus({ preventScroll: true }), 500);
 });
 
 $('addMore').addEventListener('click', () => { doneEl.hidden = true; filesEl.click(); });
@@ -111,10 +92,6 @@ function addFiles(list) {
     queueEl.appendChild(li);
     items.push({ file, li, state: 'wait', loaded: 0, tries: 0 });
   }
-  if (!validDetails(true)) {
-    nameEl.value ? contactEl.focus() : nameEl.focus();
-    errEl.textContent += ' Your files are ready and will start uploading right after.';
-  }
   render();
   pump();
 }
@@ -133,7 +110,6 @@ function setState(it, state, label) {
 }
 
 function pump() {
-  if (!validDetails(false)) { render(); return; }
   while (active < CONCURRENCY) {
     const next = items.find((i) => i.state === 'wait');
     if (!next) break;
@@ -189,11 +165,7 @@ function render() {
   const pct = bytes ? Math.min(100, Math.floor((done / bytes) * 100)) : 0;
   const running = items.some((i) => i.state === 'up' || i.state === 'wait' || i.state === 'retry');
   statusEl.hidden = !running && !err;
-  if (!validDetails(false) && running) {
-    statusText.textContent = `${total} ready to go`;
-    statusPct.textContent = '';
-    statusNote.textContent = 'Add your name and phone or email above and they start uploading.';
-  } else if (running) {
+  if (running) {
     statusText.textContent = `Uploading ${Math.min(ok + 1, total)} of ${total}`;
     statusPct.textContent = pct + '%';
     statusNote.textContent = 'Keep this page open until it says done. Big videos can take a minute.';
@@ -212,16 +184,16 @@ async function maybeFinish() {
   if (!ok || ok === sentCount) return;
   const newFiles = ok - sentCount;
   sentCount = ok;
-  const first = nameEl.value.trim().split(/\s+/)[0];
+  const h = handle();
   const videos = items.filter((i) => i.state === 'ok' && isVideo(i.file)).length;
-  doneHead.textContent = `thank you, ${first}.`;
-  doneText.textContent = `${ok} ${ok === 1 ? 'file' : 'files'}${videos ? ` (${videos} ${videos === 1 ? 'video' : 'videos'})` : ''} sent. You're on the list for first access to the pro photos and video, and we'll send them your way before anyone else sees them.`;
+  doneHead.textContent = h ? `thank you, @${h}.` : 'thank you.';
+  doneText.textContent = `${ok} ${ok === 1 ? 'file' : 'files'}${videos ? ` (${videos} ${videos === 1 ? 'video' : 'videos'})` : ''} sent. You'll have access to all the uploads, plus early access to all the professional videos and pictures.${h ? '' : ' Add your Instagram above so we know where to send it.'}`;
   doneEl.hidden = false;
   doneEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
   try {
     await fetch('/api/drop', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'checkin', name: nameEl.value, contact: contactEl.value, instagram: igEl.value, files: newFiles, slug: getSlug() }),
+      body: JSON.stringify({ action: 'checkin', instagram: (sentHandle = handle()), files: newFiles, slug: getSlug() }),
     });
   } catch {}
 }
