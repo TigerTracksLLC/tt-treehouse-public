@@ -15,7 +15,13 @@ function tile(it, i) {
   b.setAttribute('aria-label', it.kind === 'video' ? 'Play video' : 'Open photo');
   b.innerHTML = it.kind === 'video'
     ? `<video src="${esc(it.url)}#t=0.1" muted playsinline preload="metadata"></video>${PLAY}`
-    : `<img src="${esc(it.url)}" alt="" loading="lazy">`;
+    : `<img src="${esc(it.url)}" alt="" loading="lazy" decoding="async">`;
+  if (it.kind !== 'video') b.classList.add('is-loading');
+  // if this browser can't draw the file (e.g. iPhone HEIC photos), keep a visible tile instead of a blank gap
+  const m = b.querySelector('img,video');
+  const fallback = () => { b.innerHTML = `<span class="tile-fb">${it.kind === 'video' ? 'Video' : 'Photo'}<small>tap to open</small></span>`; b.onclick = () => window.open(it.url, '_blank', 'noopener'); };
+  if (m) m.addEventListener('error', () => { b.classList.remove('is-loading'); fallback(); });
+  if (m && m.tagName === 'IMG') m.addEventListener('load', () => b.classList.remove('is-loading'));
   b.onclick = () => open(i);
   return b;
 }
@@ -41,13 +47,13 @@ async function load() {
   items = [...videos, ...photos];
   if (!items.length) {
     countEl.textContent = 'The reel is filling up.';
-    main.innerHTML = '<div class="empty"><h2 class="display">coming soon.</h2><p>We are going through everything now. Check back shortly, or <a href="/drop">add yours</a>.</p></div>';
+    main.innerHTML = '<div class="empty"><h2 class="display">coming soon.</h2><p>We\'re going through everything now. Check back soon, or <a href="/drop">add yours</a>.</p></div>';
     return;
   }
   const parts = [];
   if (videos.length) parts.push(`${videos.length} ${videos.length === 1 ? 'video' : 'videos'}`);
   if (photos.length) parts.push(`${photos.length} ${photos.length === 1 ? 'photo' : 'photos'}`);
-  countEl.textContent = parts.join(' and ') + ' from Saturday night.';
+  countEl.textContent = parts.join(' and ') + ' from the night.';
   section('Videos', videos, 0);
   section('Photos', photos, videos.length);
 }
