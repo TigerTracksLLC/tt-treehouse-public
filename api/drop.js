@@ -5,12 +5,14 @@
 //   GET   ?action=pending      (admin)                   files waiting for review
 //   GET   ?action=people       (admin)                   who uploaded, for the reel text
 //   POST  { action: 'approve' | 'reject', urls: [] }  (admin)
+//   POST  { action: 'connect', first, instagram, interest?, crush?, consent }   missed connections opt-in
+//   GET   ?action=connections  (admin)              everyone who opted in to missed connections
 //
 // Admin calls need header x-drop-key matching the DROP_ADMIN_KEY env var.
 
 const crypto = require('crypto');
 const { list, put, copy, del, head } = require('@vercel/blob');
-const { PENDING_PREFIX, APPROVED_PREFIX, PEOPLE_PREFIX } = require('./_drop-config');
+const { PENDING_PREFIX, APPROVED_PREFIX, PEOPLE_PREFIX, CONNECT_PREFIX } = require('./_drop-config');
 
 const VIDEO_EXT = /\.(mov|mp4|m4v|webm|3gp|3gpp|avi|mkv)$/i;
 
@@ -74,6 +76,15 @@ module.exports = async function handler(req, res) {
     }
 
     // ---------- admin reads ----------
+    if (req.method === 'GET' && action === 'connections') {
+      if (!isAdmin(req)) return res.status(401).json({ error: 'Wrong key' });
+      const files = await listAll(CONNECT_PREFIX);
+      const rows = await Promise.all(files.map(async (f) => {
+        try { const r = await fetch(f.url, { cache: 'no-store' }); return await r.json(); } catch { return null; }
+      }));
+      return res.status(200).json({ connections: rows.filter(Boolean).sort((a, b) => new Date(b.at) - new Date(a.at)) });
+    }
+
     if (req.method === 'GET' && (action === 'pending' || action === 'people' || action === 'approved')) {
       if (!isAdmin(req)) return res.status(401).json({ error: 'Wrong key' });
 
@@ -106,6 +117,20 @@ module.exports = async function handler(req, res) {
       const record = { name, contact, instagram, files, slug, at: new Date().toISOString() };
       // random suffix keeps the record URL unguessable
       await put(`${PEOPLE_PREFIX}${slug || 'guest'}.json`, JSON.stringify(record), {
+        access: 'public', contentType: 'application/json', addRandomSuffix: true,
+      });
+      return res.status(200).json({ ok: true });
+    }
+
+    // ---------- missed connections opt-in ----------
+    if (body.action === 'connect') {
+      const first = clean(body.first, 40);
+      const ig = clean(body.instagram, 60).replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[/?#].*$/, '').replace(/[^A-Za-z0-9._]/g, '').slice(0, 30);
+      const interest = ['men', 'women', 'everyone'].includes(body.interest) ? body.interest : '';
+      const crush = clean(body.crush, 400);
+      if (!first || !ig || body.consent !== true) return res.status(400).json({ error: 'Missing details' });
+      const record = { first, instagram: '@' + ig, interest, crush, at: new Date().toISOString() };
+      await put(`${CONNECT_PREFIX}${ig.toLowerCase()}.json`, JSON.stringify(record), {
         access: 'public', contentType: 'application/json', addRandomSuffix: true,
       });
       return res.status(200).json({ ok: true });
