@@ -6,6 +6,8 @@ const CONCURRENCY = 2;
 const AUTO_RETRIES = 2;
 
 const $ = (id) => document.getElementById(id);
+// Vercel Web Analytics custom events (Pro allows 2 properties per event)
+const track = (name, data) => { try { window.va && window.va('event', { name, data }); } catch {} };
 const igEl = $('ig'), errEl = $('detailsErr');
 const filesEl = $('files'), picker = $('picker'), queueEl = $('queue');
 const statusEl = $('status'), statusText = $('statusText'), statusPct = $('statusPct'), statusBar = $('statusBar'), statusNote = $('statusNote');
@@ -50,8 +52,11 @@ picker.addEventListener('drop', (e) => addFiles(e.dataTransfer.files));
 
 $('heroCta').addEventListener('click', (e) => {
   e.preventDefault();
+  track('Hero tap', { door: 'upload' });
   $('send').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
+
+document.querySelector('.door-alt')?.addEventListener('click', () => track('Hero tap', { door: 'single' }));
 
 $('addMore').addEventListener('click', () => { doneEl.hidden = true; filesEl.click(); });
 
@@ -189,6 +194,7 @@ async function maybeFinish() {
   doneHead.textContent = h ? `thank you, @${h}.` : 'thank you.';
   doneText.textContent = `${ok} ${ok === 1 ? 'file' : 'files'}${videos ? ` (${videos} ${videos === 1 ? 'video' : 'videos'})` : ''} sent. If yours gets picked for the website or Instagram, we'll feature it, and you'll get early access to the professional photos and videos.${h ? '' : ' Add your Instagram above so we can tag you and send them.'}`;
   doneEl.hidden = false;
+  track('Upload', { files: newFiles, videos });
   doneEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
   try {
     await fetch('/api/drop', {
@@ -260,6 +266,7 @@ cForm.addEventListener('submit', async (e) => {
     if (!r.ok) throw new Error('bad');
     [...cForm.querySelectorAll('.seg, .fields, .pconsent, #cSubmit')].forEach((el) => { el.hidden = true; });
     cDone.hidden = false;
+    track('Singles card', { mode: cMode() });
   } catch {
     cErr.textContent = 'That did not go through. Try again in a moment.';
     cErr.hidden = false;
