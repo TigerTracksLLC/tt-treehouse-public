@@ -34,15 +34,18 @@
 
   <div class="hero-copy">
     <p class="kicker">thank you for coming</p>
-    <h1 class="display">drop your<br><span class="hl">pics and videos.</span></h1>
-    <p class="lede">Thank you for making Saturday so special. Drop your pics and videos from the night and you'll get access to all the uploads, plus early access to the professional photos and videos.</p>
+    <h1 class="display rise">drop your<br><span class="hl">pics and videos.</span></h1>
+    <p class="lede">Add yours from Saturday and get early access to the professional photos and videos.</p>
     <a href="#send" class="btn btn-cream" id="heroCta">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 10l4.55-2.28A1 1 0 0121 8.62v6.76a1 1 0 01-1.45.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
       Add pics and videos
     </a>
-    <a href="#connect" class="hero-alt">or jump to missed connections</a>
+    <a href="#connect" class="hero-single"><span>Single and want to meet people from the party?</span> <strong>Drop your info</strong></a>
   </div>
-  <div class="scroll-hint" aria-hidden="true"></div>
+  <div class="marquee" aria-hidden="true"><div class="marquee-track">
+    <span>thank you for coming</span><i></i><span>drop your pics and videos</span><i></i><span>tribeca rooftop · 10.17</span><i></i><span>missed connections</span><i></i>
+    <span>thank you for coming</span><i></i><span>drop your pics and videos</span><i></i><span>tribeca rooftop · 10.17</span><i></i><span>missed connections</span><i></i>
+  </div></div>
 </header>
 
 <main id="send" class="send">
@@ -98,7 +101,7 @@
       <p class="done-p" id="doneText">You'll have access to all the uploads, plus early access to the professional photos and videos.</p>
       <div class="done-acts">
         <button type="button" class="btn btn-ghost" id="addMore">Add more</button>
-        <a href="#connect" class="btn btn-cream">Missed connections</a>
+        <a href="#connect" class="btn btn-cream">Single? Drop your info</a>
       </div>
     </div>
   </div>
@@ -108,49 +111,80 @@
     <li><strong>Full quality.</strong> Straight from your camera roll, no compressing or texting files around.</li>
     <li><strong>Shared with care.</strong> Everything is reviewed before it goes into the gallery.</li>
   </ol>
-
-  <section class="connect" id="connect" aria-labelledby="connectTitle">
-    <p class="connect-k">missed connections</p>
-    <h2 class="display connect-h" id="connectTitle">everyone here is<br><span class="hl">three degrees<br>from you.</span></h2>
-    <p class="connect-p">Same friends, same circles, same taste. treehouse. is invite only, so the person you noticed across the roof already knows someone you know.</p>
-    <p class="connect-p">Single and open to meeting someone from the party? Add yourself below, and if the feeling's mutual, we'll introduce you.</p>
-
-    <form class="card connect-card" id="connectForm" novalidate>
-      <div class="fields">
-        <label class="field">
-          <span>First name</span>
-          <input id="cFirst" type="text" autocomplete="given-name" placeholder="Your first name" maxlength="40" required>
-        </label>
-        <label class="field">
-          <span>Instagram</span>
-          <input id="cIg" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="@yourhandle" maxlength="60" required>
-        </label>
-        <fieldset class="field field-wide chips">
-          <legend>Interested in <em class="opt">optional</em></legend>
-          <label class="chip"><input type="radio" name="cInterest" value="men"><span>Men</span></label>
-          <label class="chip"><input type="radio" name="cInterest" value="women"><span>Women</span></label>
-          <label class="chip"><input type="radio" name="cInterest" value="everyone"><span>Everyone</span></label>
-        </fieldset>
-        <label class="field field-wide">
-          <span>Who caught your eye? <em class="opt">optional</em></span>
-          <textarea id="cCrush" rows="3" maxlength="400" placeholder="A name or @handle if you have it. If not, a description works: green dress, by the DJ around 7."></textarea>
-        </label>
-      </div>
-      <label class="consent">
-        <input type="checkbox" id="cConsent">
-        <span>I'm single and 21+, and treehouse. can introduce me to people who also opted in. Only the treehouse. team sees this.</span>
-      </label>
-      <p class="field-err" id="cErr" role="alert" hidden></p>
-      <button type="submit" class="btn btn-cream connect-btn" id="cSubmit">Count me in</button>
-      <div class="connect-done" id="cDone" hidden>
-        <h3 class="display">you're on the list.</h3>
-        <p>If the feeling's mutual, we'll introduce you over Instagram. Nothing happens unless it's mutual.</p>
-      </div>
-    </form>
-    <p class="tagline">bringing people together, in person.</p>
-  </section>
-
 </main>
+
+<section class="night" aria-label="From the night">
+  <div class="night-head">
+    <p class="night-k">from the night</p>
+    <a href="/reel" class="night-link">see the reel</a>
+  </div>
+  <div class="strip" id="strip"><div class="strip-track" id="stripTrack">
+    <figure><img src="/img/drop/strip-1.jpg" alt="" loading="lazy"></figure>
+    <figure><img src="/img/drop/strip-2.jpg" alt="" loading="lazy"></figure>
+    <figure><img src="/img/drop/strip-3.jpg" alt="" loading="lazy"></figure>
+    <figure><img src="/img/drop/strip-4.jpg" alt="" loading="lazy"></figure>
+    <figure><img src="/img/drop/strip-5.jpg" alt="" loading="lazy"></figure>
+    <figure><img src="/img/drop/strip-6.jpg" alt="" loading="lazy"></figure>
+    <figure><img src="/img/drop/strip-7.jpg" alt="" loading="lazy"></figure>
+    <figure><img src="/img/drop/strip-8.jpg" alt="" loading="lazy"></figure>
+  </div></div>
+</section>
+
+<section class="connect" id="connect" aria-labelledby="connectTitle">
+  <svg class="tear" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V18l40 6 38-10 44 8 36-12 52 10 30-8 48 12 40-14 46 9 34-6 50 11 38-13 44 10 30-7 52 12 36-11 46 8 42-9 34 7 48-12 40 10 32-6 50 13 44-12 38 8 46-10 36 9 40-8 52 11 30-7 44 10 38-12 40 9L1440 20V40z" fill="currentColor"/></svg>
+  <div class="connect-in">
+    <div class="connect-copy">
+      <p class="connect-k"><span>missed connections</span><span>no. 10.17</span></p>
+      <h2 class="connect-h rv" id="connectTitle">missed a connection? <em>add your info and let us work our magic.</em></h2>
+      <figure class="wall rv"><img src="/img/drop/wall.jpg" alt="The polaroid wall from the party" width="1600" height="1200" loading="lazy"></figure>
+      <ol class="steps rv">
+        <li><b>01</b><span>Tell us who caught your eye, or that you're open to meeting people.</span></li>
+        <li><b>02</b><span>We quietly check if it's mutual.</span></li>
+        <li><b>03</b><span>If it is, we introduce you on Instagram. If not, it stays between us.</span></li>
+      </ol>
+      <p class="connect-trust">everyone here came through a friend.</p>
+    </div>
+    <div class="slip rv">
+      <div class="slip-stamp" aria-hidden="true"><span>treehouse.</span><b>personals</b><span>nyc</span></div>
+      <form class="connect-form" id="connectForm" novalidate>
+        <div class="seg" role="radiogroup" aria-label="What are you looking for">
+          <label><input type="radio" name="cMode" value="specific" checked><span>someone specific</span></label>
+          <label><input type="radio" name="cMode" value="open"><span>open to meeting people</span></label>
+        </div>
+        <div class="fields">
+          <label class="pfield">
+            <span>first name</span>
+            <input id="cFirst" type="text" autocomplete="given-name" maxlength="40" required>
+          </label>
+          <label class="pfield">
+            <span>instagram</span>
+            <input id="cIg" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="@" maxlength="60" required>
+          </label>
+          <label class="pfield pfield-wide" id="cCrushWrap">
+            <span>what do you remember? <em>optional</em></span>
+            <textarea id="cCrush" rows="2" maxlength="400" placeholder="green dress, by the DJ, around 7"></textarea>
+          </label>
+          <fieldset class="pfield pfield-wide pchips">
+            <legend>interested in <em>optional</em></legend>
+            <label><input type="radio" name="cInterest" value="men"><span>men</span></label>
+            <label><input type="radio" name="cInterest" value="women"><span>women</span></label>
+            <label><input type="radio" name="cInterest" value="everyone"><span>everyone</span></label>
+          </fieldset>
+        </div>
+        <label class="pconsent">
+          <input type="checkbox" id="cConsent">
+          <span>I'm single, 21+, and fine with an intro if it's mutual.</span>
+        </label>
+        <p class="field-err" id="cErr" role="alert" hidden></p>
+        <button type="submit" class="pbtn" id="cSubmit">send</button>
+        <div class="connect-done" id="cDone" hidden>
+          <p class="connect-done-h">noted.</p>
+          <p>If it's mutual, you'll hear from us.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
 <footer class="foot">
   <img src="/img/logo.png" alt="treehouse." class="logo logo-sm">
