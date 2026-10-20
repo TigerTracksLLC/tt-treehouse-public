@@ -128,8 +128,9 @@ module.exports = async function handler(req, res) {
       const ig = clean(body.instagram, 60).replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[/?#].*$/, '').replace(/[^A-Za-z0-9._]/g, '').slice(0, 30);
       const interest = ['men', 'women', 'everyone'].includes(body.interest) ? body.interest : '';
       const crush = clean(body.crush, 400);
+      const mode = body.mode === 'open' ? 'open' : 'specific';
       if (!first || !ig || body.consent !== true) return res.status(400).json({ error: 'Missing details' });
-      const record = { first, instagram: '@' + ig, interest, crush, at: new Date().toISOString() };
+      const record = { first, instagram: '@' + ig, mode, interest, crush, at: new Date().toISOString() };
       await put(`${CONNECT_PREFIX}${ig.toLowerCase()}.json`, JSON.stringify(record), {
         access: 'public', contentType: 'application/json', addRandomSuffix: true,
       });
