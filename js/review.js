@@ -86,7 +86,7 @@ function render() {
       ${rows.map((r) => `<tr><td>${esc(r.first)}</td><td>${ig(r.instagram)}</td><td>${r.mode === 'open' ? 'open to meeting people' : 'someone specific'}</td><td>${esc(r.interest || '')}</td><td>${esc(r.crush || '')}</td><td>${r.mutual.length ? `<strong style="color:var(--lime)">mutual with ${r.mutual.map(ig).join(', ')}</strong>` : r.mentions.length ? `named ${r.mentions.map(ig).join(', ')} (on the list)` : ''}</td><td>${new Date(r.at).toLocaleString()}</td></tr>`).join('')}
       </tbody></table>`;
     $('ccsv').onclick = () => {
-      const out = [['first', 'instagram', 'looking_for', 'interested_in', 'who_caught_their_eye', 'mutual_with', 'at'], ...rows.map((r) => [r.first, r.instagram, r.mode || 'specific', r.interest || '', r.crush || '', r.mutual.join(' '), r.at])];
+      const out = [['full_name', 'instagram', 'looking_for', 'interested_in', 'who_caught_their_eye', 'mutual_with', 'at'], ...rows.map((r) => [r.first, r.instagram, r.mode || 'specific', r.interest || '', r.crush || '', r.mutual.join(' '), r.at])];
       const safe = (c) => { const v = String(c); return /^[=+\-@]/.test(v) ? "'" + v : v; };
       const blob = new Blob([out.map((x) => x.map((c) => `"${safe(c).replace(/"/g, '""')}"`).join(',')).join('\n')], { type: 'text/csv' });
       Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'treehouse-oct17-missed-connections.csv' }).click();
