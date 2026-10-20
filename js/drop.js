@@ -6,7 +6,7 @@ const CONCURRENCY = 2;
 const AUTO_RETRIES = 2;
 
 const $ = (id) => document.getElementById(id);
-const nameEl = $('name'), contactEl = $('contact'), errEl = $('detailsErr');
+const nameEl = $('name'), contactEl = $('contact'), igEl = $('ig'), errEl = $('detailsErr');
 const filesEl = $('files'), picker = $('picker'), queueEl = $('queue');
 const statusEl = $('status'), statusText = $('statusText'), statusPct = $('statusPct'), statusBar = $('statusBar'), statusNote = $('statusNote');
 const doneEl = $('done'), doneHead = $('doneHead'), doneText = $('doneText');
@@ -21,6 +21,7 @@ let wakeLock = null;
 try {
   nameEl.value = localStorage.getItem('th_drop_name') || '';
   contactEl.value = localStorage.getItem('th_drop_contact') || '';
+  igEl.value = localStorage.getItem('th_drop_ig') || '';
 } catch {}
 
 function validDetails(showErrors) {
@@ -47,7 +48,9 @@ function validDetails(showErrors) {
   if (validDetails(false)) pump();
 }));
 nameEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); contactEl.focus(); } });
-contactEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); contactEl.blur(); } });
+contactEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); igEl.focus(); } });
+igEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); igEl.blur(); } });
+igEl.addEventListener('input', () => { try { localStorage.setItem('th_drop_ig', igEl.value); } catch {} });
 
 function getSlug() {
   if (!slug) {
@@ -218,7 +221,7 @@ async function maybeFinish() {
   try {
     await fetch('/api/drop', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'checkin', name: nameEl.value, contact: contactEl.value, files: newFiles, slug: getSlug() }),
+      body: JSON.stringify({ action: 'checkin', name: nameEl.value, contact: contactEl.value, instagram: igEl.value, files: newFiles, slug: getSlug() }),
     });
   } catch {}
 }

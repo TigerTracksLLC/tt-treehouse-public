@@ -1,6 +1,6 @@
 // api/drop.js · everything behind /drop, /reel and /review except the upload itself.
 //
-//   POST  { action: 'checkin', name, contact, files }   guest finished uploading
+//   POST  { action: 'checkin', name, contact, instagram?, files }   guest finished uploading
 //   GET   ?action=reel                                   approved media for /reel
 //   GET   ?action=pending      (admin)                   files waiting for review
 //   GET   ?action=people       (admin)                   who uploaded, for the reel text
@@ -98,10 +98,12 @@ module.exports = async function handler(req, res) {
     if (body.action === 'checkin') {
       const name = clean(body.name, 80);
       const contact = clean(body.contact, 120);
+      const ig = clean(body.instagram, 40).replace(/^@+/, '').replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/[^A-Za-z0-9._]/g, '');
+      const instagram = ig ? '@' + ig : '';
       const files = Math.max(0, Math.min(500, parseInt(body.files, 10) || 0));
       const slug = clean(body.slug, 60).replace(/[^a-z0-9-]/g, '');
       if (!name || !contact || !files) return res.status(400).json({ error: 'Missing details' });
-      const record = { name, contact, files, slug, at: new Date().toISOString() };
+      const record = { name, contact, instagram, files, slug, at: new Date().toISOString() };
       // random suffix keeps the record URL unguessable
       await put(`${PEOPLE_PREFIX}${slug || 'guest'}.json`, JSON.stringify(record), {
         access: 'public', contentType: 'application/json', addRandomSuffix: true,
