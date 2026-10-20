@@ -29,15 +29,30 @@ $('enter').onclick = enter;
 $('key').addEventListener('keydown', (e) => { if (e.key === 'Enter') enter(); });
 
 async function refresh() {
-  const [p, a, ppl] = await Promise.all([
-    api('/api/drop?action=pending'), api('/api/drop?action=approved'), api('/api/drop?action=people'),
+  const [p, a, ppl, con] = await Promise.all([
+    api('/api/drop?action=pending'), api('/api/drop?action=approved'), api('/api/drop?action=people'), api('/api/drop?action=connections'),
   ]);
-  data = { pending: p.items, approved: a.items, people: ppl.people };
+  data = { pending: p.items, approved: a.items, people: ppl.people, connections: latestConnections(con.connections || []) };
+  $('nConnect').textContent = `(${data.connections.length})`;
   $('nPending').textContent = `(${data.pending.length})`;
   $('nApproved').textContent = `(${data.approved.length})`;
   $('nPeople').textContent = `(${uniquePeople().length})`;
   selected.clear();
   render();
+}
+
+// one row per Instagram handle (latest entry wins), with mutual-interest hints
+function latestConnections(rows) {
+  const by = new Map();
+  for (const r of rows) { const k = (r.instagram || '').toLowerCase(); if (k && !by.has(k)) by.set(k, r); }
+  const list = [...by.values()];
+  const handles = new Set(list.map((r) => r.instagram.toLowerCase()));
+  for (const r of list) {
+    r.mentions = [...new Set(((r.crush || '').match(/@[A-Za-z0-9._]+/g) || []).map((h) => h.toLowerCase().replace(/\.+$/, '')))].filter((h) => handles.has(h) && h !== r.instagram.toLowerCase());
+  }
+  const byHandle = new Map(list.map((r) => [r.instagram.toLowerCase(), r]));
+  for (const r of list) r.mutual = r.mentions.filter((h) => (byHandle.get(h).mentions || []).includes(r.instagram.toLowerCase()));
+  return list;
 }
 
 function uniquePeople() {
@@ -55,10 +70,29 @@ const sz = (b) => (b >= 1e9 ? (b / 1e9).toFixed(1) + ' GB' : b >= 1e6 ? Math.rou
 
 function render() {
   const view = $('view');
-  $('bulk').style.display = tab === 'people' ? 'none' : '';
+  $('bulk').style.display = (tab === 'people' || tab === 'connect') ? 'none' : '';
   $('bulkYes').style.display = tab === 'pending' ? '' : 'none';
   $('bulkNo').textContent = tab === 'pending' ? 'Delete selected' : 'Take off reel';
   document.querySelectorAll('.tab').forEach((t) => t.setAttribute('aria-selected', String(t.dataset.tab === tab)));
+
+  if (tab === 'connect') {
+    const rows = data.connections;
+    const mutualCount = rows.filter((r) => r.mutual.length).length;
+    $('hint').textContent = `Everyone who opted in. Only introduce people when it's mutual, meaning both named each other. Handles aren't verified, so DM both people to confirm before making an intro.${mutualCount ? ` ${mutualCount} ${mutualCount === 1 ? 'person has' : 'people have'} a mutual match.` : ''}`;
+    if (!rows.length) { view.innerHTML = '<p class="muted">Nobody has opted in yet.</p>'; return; }
+    const ig = (h) => `<a href="https://instagram.com/${esc(h.slice(1))}" target="_blank" rel="noopener">${esc(h)}</a>`;
+    view.innerHTML = `<p><button type="button" class="btn btn-ghost btn-small" id="ccsv">Download CSV</button></p>
+      <table class="people"><thead><tr><th>Name</th><th>Instagram</th><th>Interested in</th><th>Who caught their eye</th><th>Match</th><th>When</th></tr></thead><tbody>
+      ${rows.map((r) => `<tr><td>${esc(r.first)}</td><td>${ig(r.instagram)}</td><td>${esc(r.interest || '')}</td><td>${esc(r.crush || '')}</td><td>${r.mutual.length ? `<strong style="color:var(--lime)">mutual with ${r.mutual.map(ig).join(', ')}</strong>` : r.mentions.length ? `named ${r.mentions.map(ig).join(', ')} (on the list)` : ''}</td><td>${new Date(r.at).toLocaleString()}</td></tr>`).join('')}
+      </tbody></table>`;
+    $('ccsv').onclick = () => {
+      const out = [['first', 'instagram', 'interested_in', 'who_caught_their_eye', 'mutual_with', 'at'], ...rows.map((r) => [r.first, r.instagram, r.interest || '', r.crush || '', r.mutual.join(' '), r.at])];
+      const safe = (c) => { const v = String(c); return /^[=+\-@]/.test(v) ? "'" + v : v; };
+      const blob = new Blob([out.map((x) => x.map((c) => `"${safe(c).replace(/"/g, '""')}"`).join(',')).join('\n')], { type: 'text/csv' });
+      Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'treehouse-oct17-missed-connections.csv' }).click();
+    };
+    return;
+  }
 
   if (tab === 'people') {
     const ppl = uniquePeople();
