@@ -213,7 +213,15 @@ try { if (!cIg.value) cIg.value = localStorage.getItem('th_drop_ig') || ''; } ca
 igEl.addEventListener('input', () => { if (!cIg.dataset.touched) cIg.value = igEl.value; });
 cIg.addEventListener('input', () => { cIg.dataset.touched = '1'; });
 [cFirst, cIg].forEach((el) => el.addEventListener('input', () => el.classList.remove('bad')));
-cConsent.addEventListener('change', () => cConsent.closest('.consent').classList.remove('bad'));
+cConsent.addEventListener('change', () => cConsent.closest('.pconsent').classList.remove('bad'));
+const cMode = () => (cForm.querySelector('input[name="cMode"]:checked') || {}).value || 'specific';
+function syncMode() {
+  const specific = cMode() === 'specific';
+  $('cCrushWrap').hidden = !specific;
+  cSubmit.textContent = specific ? 'send' : 'keep me in mind';
+}
+cForm.querySelectorAll('input[name="cMode"]').forEach((r) => r.addEventListener('change', syncMode));
+syncMode();
 
 cForm.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -222,28 +230,44 @@ cForm.addEventListener('submit', async (e) => {
   const okIg = /^[A-Za-z0-9._]{1,30}$/.test(igHandle);
   cFirst.classList.toggle('bad', !okFirst);
   cIg.classList.toggle('bad', !okIg);
-  cConsent.closest('.consent').classList.toggle('bad', !cConsent.checked);
+  cConsent.closest('.pconsent').classList.toggle('bad', !cConsent.checked);
   if (!okFirst || !okIg || !cConsent.checked) {
-    cErr.textContent = !okFirst ? 'Add your first name.' : !okIg ? 'Add your Instagram handle so we can make the intro.' : 'Tick the box to confirm you\'re in.';
+    cErr.textContent = !okFirst ? 'Add your first name.' : !okIg ? 'Add your Instagram handle so we can make the intro.' : 'Tick the box above to send.';
     cErr.hidden = false;
     return;
   }
   cErr.hidden = true;
   cSubmit.disabled = true;
-  cSubmit.textContent = 'Adding you...';
+  cSubmit.textContent = 'sending...';
   try {
     const interest = (cForm.querySelector('input[name="cInterest"]:checked') || {}).value || '';
     const r = await fetch('/api/drop', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'connect', first: cFirst.value.trim(), instagram: igHandle, interest, crush: cCrush.value.trim(), consent: true }),
+      body: JSON.stringify({ action: 'connect', mode: cMode(), first: cFirst.value.trim(), instagram: igHandle, interest, crush: cMode() === 'specific' ? cCrush.value.trim() : '', consent: true }),
     });
     if (!r.ok) throw new Error('bad');
-    [...cForm.querySelectorAll('.fields, .consent, #cSubmit')].forEach((el) => { el.hidden = true; });
+    [...cForm.querySelectorAll('.seg, .fields, .pconsent, #cSubmit')].forEach((el) => { el.hidden = true; });
     cDone.hidden = false;
   } catch {
     cErr.textContent = 'That did not go through. Try again in a moment.';
     cErr.hidden = false;
     cSubmit.disabled = false;
-    cSubmit.textContent = 'Count me in';
+    syncMode();
   }
 });
+
+// ---------- reveal on scroll + live "from the night" strip ----------
+const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 }) : null;
+document.querySelectorAll('.rv').forEach((el) => (io ? io.observe(el) : el.classList.add('in')));
+(async () => {
+  try {
+    const r = await fetch('/api/drop?action=reel', { cache: 'no-store' });
+    const photos = ((await r.json()).items || []).filter((i) => i.kind !== 'video').slice(0, 12);
+    if (photos.length < 4) return; // keep the house photos until guests' shots are in
+    const track = $('stripTrack');
+    const html = photos.map((p) => `<figure><img src="${String(p.url).replace(/"/g, '')}" alt="" loading="lazy"></figure>`).join('');
+    track.innerHTML = html + html;
+  } catch {}
+})();
+// duplicate strip so the loop is seamless
+{ const t = $('stripTrack'); if (t) t.innerHTML += t.innerHTML; }
