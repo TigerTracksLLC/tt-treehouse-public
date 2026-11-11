@@ -61,6 +61,23 @@ Custom packages on request. These appear in `sponsor.html` and in the December
 sponsorship deck; change both together. Sponsor inquiries from the form go to
 treehouse@tigertracks.ai (see `api/contact.js`).
 
+## Past partners on sponsor.html
+
+The brand count ("27 brands", in the stats block and under the Past Partners
+heading) equals what the section shows: 17 logos plus 10 names in the
+October 17 2026 row. Add or remove a brand and change both numbers with it.
+
+The October 17 row is type, not logos, because there are no logo files for
+those brands. It lists the brands that sponsored with cash or product (Sponsor
+Tracker, "Oct 17 Results" tab, groups 1 and 2). Saint James Iced Tea is first
+and labelled Premium Partner: that listing is owed under their agreement, so
+do not remove it. Guest-perk brands (Vivrelle, Rent the Runway) are not
+partners and stay off.
+
+Any element with `data-until="<ISO date>"` hides itself once that time has
+passed. The "Packages confirm by Friday, November 20" line uses it. Give every
+dated line on this page a `data-until`.
+
 ## Brand
 
 Forest green `#2D4A1E` and warm cream `#E8E6DF`. Lowercase wordmark,
