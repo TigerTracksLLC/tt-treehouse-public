@@ -1,0 +1,11 @@
+# Internal notes and scripts. Kept in the repo, not served on the public site.
+CLAUDE.md
+DROP-SETUP.md
+audit-report.md
+server.log
+server.js
+version-history.json
+photo-curation.txt
+photo-notes.txt
+sequencing-plan.txt
+*.py

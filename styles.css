@@ -276,7 +276,7 @@ body.ci .cur-r { border-color:var(--g); }
 /* PHASE 2 FIX #8 — ARIA label on hamburger */
 .ham { display:none; flex-direction:column; gap:5px; padding:4px; }
 .ham span { display:block; width:22px; height:1.5px; background:var(--linen); transition:all var(--ts); }
-.mob { position:fixed; inset:0; z-index:990; background:linear-gradient(180deg,var(--g) 0%,#0a1c0a 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2.5rem; }
+.mob { position:fixed; inset:0; z-index:998; /* above .nav-mobile-backdrop (997) so the links can be tapped */ background:linear-gradient(180deg,var(--g) 0%,#0a1c0a 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2.5rem; }
 .mob[hidden] { display:none; }
 .mob::before { content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity:0.025; pointer-events:none; }
 .mob a { font-family:var(--ff-e); font-size:2.2rem; font-weight:700; color:var(--linen); opacity:0.85; display:block; text-align:center; transition:opacity var(--tf); }
@@ -1075,7 +1075,7 @@ body .sp-packages {
 /* ── PAST PARTNERS (BRANDS) SECTION ── */
 .brands-grid-r23 {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr)); /* minmax(0) keeps wide logos from pushing the grid off the page */
   gap: 40px 48px;
   align-items: center;
   justify-items: center;
@@ -1084,7 +1084,7 @@ body .sp-packages {
 .brands-grid-r23 .brand-logo {
   height: 90px;
   width: auto;
-  max-width: 180px;
+  max-width: min(180px, 100%);
   object-fit: contain;
   opacity: 0.72;
   filter: brightness(0) invert(1);

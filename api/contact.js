@@ -4,7 +4,9 @@
 
 const { Resend } = require('resend');
 
-const TO_EMAIL = 'events@tigertracks.ai';
+// Inquiries go to the Treehouse group inbox. The old events@ address stays on
+// as a second recipient until a test inquiry confirms the group receives them.
+const TO_EMAILS = ['treehouse@tigertracks.ai', 'events@tigertracks.ai'];
 const FROM_EMAIL = 'Treehouse Events <events@tigertracks.ai>'; // tigertracks.ai is verified in Resend
 
 module.exports = async function handler(req, res) {
@@ -46,10 +48,10 @@ module.exports = async function handler(req, res) {
 
   // Format tier label
   const tierLabels = {
-    bronze:   'Bronze — $5,000 / event',
-    gold:     'Gold — $10,000 / event',
-    platinum: 'Platinum — $15,000 / event',
-    custom:   'Custom activation',
+    bronze:   'Community, $5,000 / event',
+    gold:     'Featured, $7,500 / event',
+    platinum: 'Presenting, $15,000 / event',
+    custom:   'Custom package',
     unsure:   'Not sure yet',
   };
   const tierLabel = tierLabels[tier] || tier || 'Not specified';
@@ -99,7 +101,7 @@ module.exports = async function handler(req, res) {
   try {
     const { data, error } = await resend.emails.send({
       from:    FROM_EMAIL,
-      to:      [TO_EMAIL],
+      to:      TO_EMAILS,
       replyTo: email,
       subject: `Sponsorship Inquiry: ${name} — ${brand} (${tierLabel})`,
       html,
@@ -113,6 +115,6 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ ok: true, id: data.id });
   } catch (err) {
     console.error('Unexpected error:', err);
-    return res.status(500).json({ error: 'Server error. Please email us directly at events@tigertracks.ai' });
+    return res.status(500).json({ error: 'Server error. Please email us directly at treehouse@tigertracks.ai' });
   }
 };
