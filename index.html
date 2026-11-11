@@ -293,6 +293,8 @@
 <!-- AUDIT FIX #1 — Gallery moved up: appears within first 2 scroll-depths -->
 <!-- PARTY 8: TRIBECA ROOFTOP, OCTOBER 17 2026 (newest first) -->
 <style>
+  /* Links that jump to a section (from this page or another) stop below the fixed nav. */
+  section[id] { scroll-margin-top: var(--nav, 72px); }
   /* Video tiles: a play badge so the tile reads as a video even before it starts.
      It fades out while the clip is playing. */
   .gallery-item.is-video .vid-badge {
