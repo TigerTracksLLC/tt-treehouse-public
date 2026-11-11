@@ -50,7 +50,7 @@
         </a>
         <a href="#couples" class="door door-alt" id="heroCouples">
           <span class="door-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg></span>
-          <span class="door-txt"><b>We met at treehouse.</b><small>couples who started here</small></span>
+          <span class="door-txt"><b>Who's met here</b><small>dates, partners, book clubs</small></span>
         </a>
       </div>
     </div>
@@ -180,20 +180,28 @@
   </div>
 </section>
 
-<!-- ============ 04 couples ============ -->
+<!-- ============ 04 who's met here: every kind of connection, not only romance ============ -->
 <section class="mc-sec mc-couples" id="couples" aria-labelledby="couplesTitle">
   <div class="mc-in">
-    <p class="sec-n rv"><span>04</span>we met at treehouse.</p>
-    <h2 class="mc-h mc-h-xl rv" id="couplesTitle">it keeps <em>happening.</em></h2>
-    <p class="mc-p mc-p-lg rv">People who met at a treehouse. party are dating now. Some of them are engaged. If that's you two, we want the story.</p>
+    <p class="sec-n rv"><span>04</span>who's met here</p>
+    <h2 class="mc-h mc-h-xl rv" id="couplesTitle">not just <em>dates.</em></h2>
+    <p class="mc-p mc-p-lg rv">Put a room of friends of friends together and it doesn't stop at romance. Some of what has come out of treehouse. parties so far:</p>
 
-    <ol class="mc-arc rv" aria-label="How it tends to go">
-      <li><span>first</span><b>met at treehouse.</b></li>
-      <li><span>then</span><b>dating</b></li>
-      <li><span>now</span><b>engaged</b></li>
-    </ol>
+    <!-- Couples, engagements, business partners, tennis partners and book clubs: confirmed by Eliz 11 Nov 2026.
+         New jobs, run clubs, supper clubs and friend groups: added at Eliz's direction the same day ("add whatever you think we should list"), not individually confirmed. -->
+    <ul class="mc-ways rv" aria-label="What has come out of treehouse. parties">
+      <li>couples</li>
+      <li>engagements</li>
+      <li>business partners</li>
+      <li>new jobs</li>
+      <li>tennis partners</li>
+      <li>run clubs</li>
+      <li>book clubs</li>
+      <li>supper clubs</li>
+      <li>friend groups</li>
+    </ul>
 
-    <!-- Real couples only. Cards render from TH_COUPLES in /js/couples.js; this block stays hidden while that list is empty. -->
+    <!-- Real stories only. Cards render from TH_COUPLES in /js/couples.js; this block stays hidden while that list is empty. -->
     <div class="mc-stories" id="stories" hidden>
       <p class="mc-stories-k">their stories</p>
       <div class="mc-stories-grid" id="storiesGrid"></div>
@@ -201,8 +209,8 @@
 
     <div class="mc-tell rv" id="tell">
       <div class="mc-tell-copy">
-        <h3 class="mc-tell-h">is this you two?</h3>
-        <p>If you met your person at a treehouse. party, we want to hear it. Tell us where it started and where you are now. We only share a story if you say we can.</p>
+        <h3 class="mc-tell-h">met someone here?</h3>
+        <p>A date, a business partner, a new job, a doubles partner, a book club. Tell us how it started and where it's at now. We only share a story if you say we can.</p>
       </div>
       <form class="mc-story-form" id="storyForm" novalidate>
         <label class="mfield">
@@ -214,19 +222,26 @@
           <input id="sIg" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="@" maxlength="60" required>
         </label>
         <label class="mfield mfield-wide">
-          <span>which party did you meet at?</span>
+          <span>which party did you meet at? <em>optional</em></span>
           <input id="sParty" type="text" autocomplete="off" maxlength="80" placeholder="the Christmas party, the rooftop in October">
         </label>
         <fieldset class="mfield mfield-wide mchips" id="sStatusWrap">
-          <legend>where are you now?</legend>
+          <legend>what are you now?</legend>
           <label><input type="radio" name="sStatus" value="dating"><span>dating</span></label>
           <label><input type="radio" name="sStatus" value="engaged"><span>engaged</span></label>
           <label><input type="radio" name="sStatus" value="married"><span>married</span></label>
-          <label><input type="radio" name="sStatus" value="other"><span>it's a long story</span></label>
+          <label><input type="radio" name="sStatus" value="business partners"><span>business partners</span></label>
+          <label><input type="radio" name="sStatus" value="new job"><span>a new job</span></label>
+          <label><input type="radio" name="sStatus" value="tennis partners"><span>tennis partners</span></label>
+          <label><input type="radio" name="sStatus" value="run club"><span>a run club</span></label>
+          <label><input type="radio" name="sStatus" value="book club"><span>a book club</span></label>
+          <label><input type="radio" name="sStatus" value="supper club"><span>a supper club</span></label>
+          <label><input type="radio" name="sStatus" value="friends"><span>friends</span></label>
+          <label><input type="radio" name="sStatus" value="other"><span>something else</span></label>
         </fieldset>
         <label class="mfield mfield-wide">
           <span>how it happened <em>optional</em></span>
-          <textarea id="sStory" rows="3" maxlength="600" placeholder="who introduced you, what you talked about, when you knew"></textarea>
+          <textarea id="sStory" rows="3" maxlength="600" placeholder="who introduced you, what you talked about, what happened next"></textarea>
         </label>
         <fieldset class="mfield mfield-wide mchips" id="sShareWrap">
           <legend>can we share it?</legend>
@@ -235,7 +250,7 @@
           <label><input type="radio" name="sShare" value="private"><span>keep it between us</span></label>
         </fieldset>
         <p class="field-err mfield-wide" id="sErr" role="alert" hidden></p>
-        <button type="submit" class="mbtn mfield-wide" id="sSubmit">send our story</button>
+        <button type="submit" class="mbtn mfield-wide" id="sSubmit">send your story</button>
         <div class="mc-story-done mfield-wide" id="sDone" hidden>
           <p class="mc-story-done-h">we love that.</p>
           <p>Thank you for telling us. We'll be in touch before anything is shared.</p>

@@ -1,13 +1,13 @@
-// Couples who met at a treehouse. party. Shown as cards on /connections.
+// People who met at a treehouse. party (dates, partners, book clubs). Shown as cards on /connections.
 //
-// Real couples only, and only with their say-so. Stories come in through the
-// "is this you two?" form and land in /review under the Couples tab. To publish
+// Real stories only, and only with their say-so. Stories come in through the
+// "met someone here?" form and land in /review under the Met here tab. To publish
 // one, add it here. While this list is empty the cards block stays hidden and
 // the page shows the wording alone.
 //
 //   names   how they asked to be shown: "Sam and Alex", or "" to leave names off
 //   met     the party they met at, in words: "the Christmas party, 2025"
-//   status  "dating" | "engaged" | "married"
+//   status  what they are now, as shown on the card: "dating", "engaged", "business partners", "book club"
 //   quote   one or two lines in their words (optional)
 window.TH_COUPLES = [
 ];

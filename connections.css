@@ -83,6 +83,11 @@
 .mc-arc li:nth-child(2) b { font-style: italic; color: var(--green-2); }
 .mc-arc li:nth-child(3) b { font-style: italic; color: var(--blush); }
 
+/* the kinds of connection: big serif words, alternating roman and italic */
+.mc-ways { list-style: none; margin: 2.4rem 0 0; padding: 0; border-top: 1px solid var(--ink-20); }
+.mc-ways li { padding: .85rem 0; border-bottom: 1px solid var(--ink-20); font: 400 clamp(1.9rem, 8.5vw, 3rem)/1.05 var(--ff-e); letter-spacing: -.02em; }
+.mc-ways li:nth-child(even) { font-style: italic; color: var(--green-2); }
+.mc-ways li:last-child { color: var(--blush); }
 .mc-stories { margin-top: 3rem; }
 .mc-stories-k { margin: 0 0 1.2rem; font: 600 .7rem/1 var(--ff-b); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-70); }
 .mc-stories-grid { display: grid; gap: 1rem; }
@@ -153,6 +158,8 @@
   .mc-arc li { display: block; padding: 1.4rem 1.6rem 1.6rem 0; border-top: 1px solid var(--ink-20); border-bottom: 1px solid var(--ink-20); }
   .mc-arc li + li { padding-left: 1.6rem; border-left: 1px solid var(--ink-20); }
   .mc-arc span { display: block; margin-bottom: .9rem; }
+  .mc-ways { display: flex; flex-wrap: wrap; gap: 0 2.6rem; border-top: 1px solid var(--ink-20); border-bottom: 1px solid var(--ink-20); margin-top: 3.2rem; padding: 1.4rem 0; }
+  .mc-ways li { border-bottom: 0; padding: .3rem 0; font-size: clamp(2.4rem, 4.2vw, 3.6rem); }
   .mc-stories-grid { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
   .mc-tell { grid-template-columns: .8fr 1.2fr; gap: 4rem; padding: 3rem; margin-top: 4.5rem; }
   .mc-story-form { grid-template-columns: 1fr 1fr; column-gap: 2rem; }

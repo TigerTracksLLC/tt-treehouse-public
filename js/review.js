@@ -100,18 +100,18 @@ function render() {
 
   if (tab === 'couples') {
     const rows = data.stories;
-    $('hint').textContent = 'Couples who told us they met at a treehouse. party. Nothing here is public. To put one on the missed connections page, confirm with the couple first, then add it to the list in js/couples.js. Respect the "Can we share" column.';
+    $('hint').textContent = 'People who told us they met at a treehouse. party: dates, partners, book clubs. Nothing here is public. To put one on the missed connections page, confirm with the couple first, then add it to the list in js/couples.js. Respect the "Can we share" column.';
     if (!rows.length) { view.innerHTML = '<p class="muted">No stories yet.</p>'; return; }
     const ig = (h) => `<a href="https://instagram.com/${esc(h.slice(1))}" target="_blank" rel="noopener">${esc(h)}</a>`;
     view.innerHTML = `<p><button type="button" class="btn btn-ghost btn-small" id="scsv">Download CSV</button></p>
-      <table class="people"><thead><tr><th>Names</th><th>Instagram</th><th>Met at</th><th>Now</th><th>Their story</th><th>Can we share</th><th>When</th></tr></thead><tbody>
+      <table class="people"><thead><tr><th>Names</th><th>Instagram</th><th>Met at</th><th>What they are now</th><th>Their story</th><th>Can we share</th><th>When</th></tr></thead><tbody>
       ${rows.map((r) => `<tr><td>${esc(r.names)}</td><td>${ig(r.instagram)}</td><td>${esc(r.party || '')}</td><td>${esc(r.status || '')}</td><td>${esc(r.story || '')}</td><td>${SHARE[r.share] || ''}</td><td>${new Date(r.at).toLocaleString()}</td></tr>`).join('')}
       </tbody></table>`;
     $('scsv').onclick = () => {
       const out = [['names', 'instagram', 'met_at', 'now', 'story', 'can_we_share', 'at'], ...rows.map((r) => [r.names, r.instagram, r.party || '', r.status || '', r.story || '', SHARE[r.share] || '', r.at])];
       const safe = (c) => { const v = String(c); return /^[=+\-@]/.test(v) ? "'" + v : v; };
       const blob = new Blob([out.map((x) => x.map((c) => `"${safe(c).replace(/"/g, '""')}"`).join(',')).join('\n')], { type: 'text/csv' });
-      Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'treehouse-couples.csv' }).click();
+      Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'treehouse-met-here.csv' }).click();
     };
     return;
   }
