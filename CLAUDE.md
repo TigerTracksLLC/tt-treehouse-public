@@ -62,7 +62,10 @@ Sponsors read these pages and some have signed contracts against them.
 content" (`/drop`) is not on the main nav for now: it sits under "past events"
 (a hover and keyboard-focus sub-menu on desktop, `.nav-sub` in `index.html`,
 and an indented link in the phone menu, `.mob-sub`). Eliz asked for this on
-11 November 2026; ask before moving it back up. The `/drop` header keeps a
+11 November 2026; ask before moving it back up. The sponsor page carries the
+same nav (missed connections top-level, share your content under past
+events), with a copy of the sub-menu styles inline in `sponsor.html`. Change
+the nav on both pages together. The `/drop` header keeps a
 two-tab switch across to missed connections (`.mc-tabs`, styled in
 `connections.css`). The singles card posts to
 `api/drop.js` (`action: 'connect'`) and shows in `/review` under Missed

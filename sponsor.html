@@ -49,6 +49,22 @@
 
   <!-- PHASE 2 FIX #3 — Inline <style> block removed; all styles now in shared /styles.css -->
   <link rel="stylesheet" href="/styles.css">
+<style>
+  /* Nav sub-menu and phone-menu sub-link: the same rules as the inline block in index.html. Keep the two in step. */
+  /* nav: "share your content" sits under "past events" (hover or keyboard focus on desktop, indented on phones) */
+  .nav-sub { position: relative; display: flex; align-items: center; }
+  .nav-caret { display: inline-block; width: 6px; height: 6px; margin: 0 0 3px 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); transition: transform .25s ease; }
+  .nav-sub:hover .nav-caret, .nav-sub:focus-within .nav-caret { transform: translateY(2px) rotate(45deg); }
+  .nav-sub-menu { position: absolute; top: 100%; left: -1rem; padding-top: .8rem; opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity .2s ease, transform .2s ease, visibility .2s; }
+  .nav-sub:hover .nav-sub-menu, .nav-sub:focus-within .nav-sub-menu { opacity: 1; visibility: visible; transform: none; }
+  .nav-links .nav-sub-menu a { display: block; white-space: nowrap; padding: .75rem 1rem; border-radius: 6px; font-size: 1rem; opacity: .85; background: rgba(13,28,10,.94); border: 1px solid rgba(240,237,232,.16); box-shadow: 0 14px 34px rgba(0,0,0,.35); text-decoration: none; }
+  .nav-links .nav-sub-menu a:hover, .nav-links .nav-sub-menu a:focus-visible { opacity: 1; border-color: rgba(240,237,232,.4); }
+  .nav-links .nav-sub-menu a::after { display: none; }
+  /* just above the phone-menu breakpoint the links run into the logo; tighten them there */
+  @media (min-width: 769px) and (max-width: 900px) { .nav-links { gap: 1rem; } .nav-links a { font-size: .95rem; letter-spacing: .03em; } }
+  .mob a.mob-sub { font-size: 1.15rem; font-weight: 400; font-style: italic; opacity: .7; margin-top: -.5rem; }
+  .mob a.mob-sub::before { content: ""; display: inline-block; width: 18px; height: 1px; margin-right: .6rem; vertical-align: middle; background: currentColor; opacity: .6; }
+</style>
 </head>
 <body>
 
@@ -64,9 +80,13 @@
   </a>
   <div class="nav-links">
     <a href="/index.html#about">home</a>
-    <a href="/index.html#tribeca-oct-2026">past events</a>
+    <div class="nav-sub">
+      <a href="/index.html#tribeca-oct-2026" aria-haspopup="true">past events<span class="nav-caret" aria-hidden="true"></span></a>
+      <div class="nav-sub-menu"><a href="/drop">share your content</a></div>
+    </div>
     <a href="/sponsor.html" class="hi nav-active" aria-current="page">sponsor</a>
     <a href="https://partiful.com/e/Ncw7yzgKZA7F48l3bpX5" target="_blank" rel="noopener noreferrer">get on the list</a>
+    <a href="/connections" class="hi">missed connections</a>
   </div>
   <!-- PHASE 2 FIX #5 — aria-label on hamburger button -->
   <button class="ham" id="ham" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
@@ -80,8 +100,10 @@
   <nav aria-label="Mobile navigation">
     <a href="/index.html#about">home</a>
     <a href="/index.html#tribeca-oct-2026">past events</a>
+    <a href="/drop" class="mob-sub">share your content</a>
     <a href="/sponsor.html" class="nav-active" aria-current="page">sponsor</a>
     <a href="https://partiful.com/e/Ncw7yzgKZA7F48l3bpX5" target="_blank" rel="noopener noreferrer">get on the list</a>
+    <a href="/connections" class="hi">missed connections</a>
   </nav>
 </div>
 
