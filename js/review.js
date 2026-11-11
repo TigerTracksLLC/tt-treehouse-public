@@ -29,11 +29,13 @@ $('enter').onclick = enter;
 $('key').addEventListener('keydown', (e) => { if (e.key === 'Enter') enter(); });
 
 async function refresh() {
-  const [p, a, ppl, con] = await Promise.all([
+  const [p, a, ppl, con, sto] = await Promise.all([
     api('/api/drop?action=pending'), api('/api/drop?action=approved'), api('/api/drop?action=people'), api('/api/drop?action=connections'),
+    api('/api/drop?action=stories').catch((e) => { if (e.message === 'auth') throw e; return { stories: [] }; }),
   ]);
-  data = { pending: p.items, approved: a.items, people: ppl.people, connections: latestConnections(con.connections || []) };
+  data = { pending: p.items, approved: a.items, people: ppl.people, connections: latestConnections(con.connections || []), stories: sto.stories || [] };
   $('nConnect').textContent = `(${data.connections.length})`;
+  $('nCouples').textContent = `(${data.stories.length})`;
   $('nPending').textContent = `(${data.pending.length})`;
   $('nApproved').textContent = `(${data.approved.length})`;
   $('nPeople').textContent = `(${uniquePeople().length})`;
@@ -65,12 +67,14 @@ function uniquePeople() {
   return [...by.values()];
 }
 
+const PARTY = { oct17: 'Oct 17', earlier: 'an earlier one' };
+const SHARE = { names: 'yes, first names', anonymous: 'yes, no names', private: 'no, private' };
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const sz = (b) => (b >= 1e9 ? (b / 1e9).toFixed(1) + ' GB' : b >= 1e6 ? Math.round(b / 1e6) + ' MB' : Math.max(1, Math.round(b / 1e3)) + ' KB');
 
 function render() {
   const view = $('view');
-  $('bulk').style.display = (tab === 'people' || tab === 'connect') ? 'none' : '';
+  $('bulk').style.display = (tab === 'people' || tab === 'connect' || tab === 'couples') ? 'none' : '';
   $('bulkYes').style.display = tab === 'pending' ? '' : 'none';
   $('bulkNo').textContent = tab === 'pending' ? 'Delete selected' : 'Take off reel';
   document.querySelectorAll('.tab').forEach((t) => t.setAttribute('aria-selected', String(t.dataset.tab === tab)));
@@ -82,14 +86,32 @@ function render() {
     if (!rows.length) { view.innerHTML = '<p class="muted">Nobody has opted in yet.</p>'; return; }
     const ig = (h) => `<a href="https://instagram.com/${esc(h.slice(1))}" target="_blank" rel="noopener">${esc(h)}</a>`;
     view.innerHTML = `<p><button type="button" class="btn btn-ghost btn-small" id="ccsv">Download CSV</button></p>
-      <table class="people"><thead><tr><th>Name</th><th>Instagram</th><th>Looking for</th><th>Interested in</th><th>Who caught their eye</th><th>Match</th><th>When</th></tr></thead><tbody>
-      ${rows.map((r) => `<tr><td>${esc(r.first)}</td><td>${ig(r.instagram)}</td><td>${r.mode === 'open' ? 'open to meeting people' : 'someone specific'}</td><td>${esc(r.interest || '')}</td><td>${esc(r.crush || '')}</td><td>${r.mutual.length ? `<strong style="color:var(--lime)">mutual with ${r.mutual.map(ig).join(', ')}</strong>` : r.mentions.length ? `named ${r.mentions.map(ig).join(', ')} (on the list)` : ''}</td><td>${new Date(r.at).toLocaleString()}</td></tr>`).join('')}
+      <table class="people"><thead><tr><th>Name</th><th>Instagram</th><th>Looking for</th><th>Interested in</th><th>Party</th><th>Who caught their eye</th><th>Match</th><th>When</th></tr></thead><tbody>
+      ${rows.map((r) => `<tr><td>${esc(r.first)}</td><td>${ig(r.instagram)}</td><td>${r.mode === 'open' ? 'open to meeting people' : 'someone specific'}</td><td>${esc(r.interest || '')}</td><td>${PARTY[r.party] || ''}</td><td>${esc(r.crush || '')}</td><td>${r.mutual.length ? `<strong style="color:var(--lime)">mutual with ${r.mutual.map(ig).join(', ')}</strong>` : r.mentions.length ? `named ${r.mentions.map(ig).join(', ')} (on the list)` : ''}</td><td>${new Date(r.at).toLocaleString()}</td></tr>`).join('')}
       </tbody></table>`;
     $('ccsv').onclick = () => {
-      const out = [['full_name', 'instagram', 'looking_for', 'interested_in', 'who_caught_their_eye', 'mutual_with', 'at'], ...rows.map((r) => [r.first, r.instagram, r.mode || 'specific', r.interest || '', r.crush || '', r.mutual.join(' '), r.at])];
+      const out = [['full_name', 'instagram', 'looking_for', 'interested_in', 'party', 'who_caught_their_eye', 'mutual_with', 'at'], ...rows.map((r) => [r.first, r.instagram, r.mode || 'specific', r.interest || '', PARTY[r.party] || '', r.crush || '', r.mutual.join(' '), r.at])];
       const safe = (c) => { const v = String(c); return /^[=+\-@]/.test(v) ? "'" + v : v; };
       const blob = new Blob([out.map((x) => x.map((c) => `"${safe(c).replace(/"/g, '""')}"`).join(',')).join('\n')], { type: 'text/csv' });
-      Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'treehouse-oct17-missed-connections.csv' }).click();
+      Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'treehouse-missed-connections.csv' }).click();
+    };
+    return;
+  }
+
+  if (tab === 'couples') {
+    const rows = data.stories;
+    $('hint').textContent = 'Couples who told us they met at a treehouse. party. Nothing here is public. To put one on the missed connections page, confirm with the couple first, then add it to the list in js/couples.js. Respect the "Can we share" column.';
+    if (!rows.length) { view.innerHTML = '<p class="muted">No stories yet.</p>'; return; }
+    const ig = (h) => `<a href="https://instagram.com/${esc(h.slice(1))}" target="_blank" rel="noopener">${esc(h)}</a>`;
+    view.innerHTML = `<p><button type="button" class="btn btn-ghost btn-small" id="scsv">Download CSV</button></p>
+      <table class="people"><thead><tr><th>Names</th><th>Instagram</th><th>Met at</th><th>Now</th><th>Their story</th><th>Can we share</th><th>When</th></tr></thead><tbody>
+      ${rows.map((r) => `<tr><td>${esc(r.names)}</td><td>${ig(r.instagram)}</td><td>${esc(r.party || '')}</td><td>${esc(r.status || '')}</td><td>${esc(r.story || '')}</td><td>${SHARE[r.share] || ''}</td><td>${new Date(r.at).toLocaleString()}</td></tr>`).join('')}
+      </tbody></table>`;
+    $('scsv').onclick = () => {
+      const out = [['names', 'instagram', 'met_at', 'now', 'story', 'can_we_share', 'at'], ...rows.map((r) => [r.names, r.instagram, r.party || '', r.status || '', r.story || '', SHARE[r.share] || '', r.at])];
+      const safe = (c) => { const v = String(c); return /^[=+\-@]/.test(v) ? "'" + v : v; };
+      const blob = new Blob([out.map((x) => x.map((c) => `"${safe(c).replace(/"/g, '""')}"`).join(',')).join('\n')], { type: 'text/csv' });
+      Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'treehouse-couples.csv' }).click();
     };
     return;
   }

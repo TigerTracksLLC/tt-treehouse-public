@@ -65,9 +65,13 @@
   <div class="nav-links">
     <!-- ROUND 25 FIX #4 — Home added as first nav item -->
     <a href="#about">home</a>
-    <a href="#tribeca-oct-2026">past events</a>
+    <div class="nav-sub">
+      <a href="#tribeca-oct-2026" aria-haspopup="true">past events<span class="nav-caret" aria-hidden="true"></span></a>
+      <div class="nav-sub-menu"><a href="/drop">share your content</a></div>
+    </div>
     <!-- EXPANSION FIX #3 — sponsor nav link now points to sponsor.html --><a href="/sponsor.html" class="hi">sponsor</a>
     <a href="https://partiful.com/e/Ncw7yzgKZA7F48l3bpX5" target="_blank" rel="noopener noreferrer" class="js-rsvp js-rsvp-nav">get on the list</a>
+    <a href="/connections" class="hi">missed connections</a>
   </div>
   <button class="ham" id="ham" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
     <span></span><span></span><span></span>
@@ -83,8 +87,10 @@
     <!-- ROUND 25 FIX #4 — Home added as first mobile nav item -->
     <a href="#about">home</a>
     <a href="#tribeca-oct-2026">past events</a>
+    <a href="/drop" class="mob-sub">share your content</a>
     <!-- EXPANSION FIX #3 — mobile sponsor nav link --><a href="/sponsor.html">sponsor</a>
     <a href="https://partiful.com/e/Ncw7yzgKZA7F48l3bpX5" target="_blank" rel="noopener noreferrer" class="js-rsvp js-rsvp-nav">get on the list</a>
+    <a href="/connections" class="hi">missed connections</a>
   </nav>
 </div>
 
@@ -210,6 +216,56 @@
     poster="/img/hero-new.jpg"
     class="curate-video"
   ></video>
+</section>
+
+<!-- MET HERE: couples who met at a party. Links to /connections. No counts on purpose: print a number only when it can be sourced. -->
+<style>
+  #met-here { padding: 96px 0; }
+  #met-here .met-in { max-width: 1280px; margin: 0 auto; padding: 0 clamp(1.5rem,5vw,5rem); display: grid; gap: 3rem; align-items: center; }
+  #met-here h2 { margin: 0; }
+  #met-here h2 em { font-style: italic; font-weight: 400; }
+  #met-here .met-p { margin: 1.25rem 0 0; max-width: 46ch; font-size: 1.1rem; line-height: 1.6; opacity: .82; }
+  #met-here .met-acts { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .75rem; }
+  #met-here .met-acts .btn { padding: 16px 28px; }
+  #met-here .met-arc { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(26,58,26,.2); }
+  #met-here .met-arc li { display: grid; grid-template-columns: 72px 1fr; align-items: baseline; gap: .75rem; padding: 1.1rem 0; border-bottom: 1px solid rgba(26,58,26,.2); }
+  #met-here .met-arc span { font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; opacity: .6; }
+  #met-here .met-arc b { font-family: var(--ff-e); font-weight: 400; font-size: clamp(1.9rem, 6vw, 3rem); line-height: 1; letter-spacing: -.02em; }
+  #met-here .met-arc li + li b { font-style: italic; }
+  #met-here .met-arc li:last-child b { color: #c9500f; }
+  @media (min-width: 900px) { #met-here .met-in { grid-template-columns: 1.1fr .9fr; gap: 6rem; } }
+  @media (max-width: 768px) { #met-here { padding: 64px 0; } #met-here .met-acts .btn { width: 100%; } }
+  /* nav: "share your content" sits under "past events" (hover or keyboard focus on desktop, indented on phones) */
+  .nav-sub { position: relative; display: flex; align-items: center; }
+  .nav-caret { display: inline-block; width: 6px; height: 6px; margin: 0 0 3px 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); transition: transform .25s ease; }
+  .nav-sub:hover .nav-caret, .nav-sub:focus-within .nav-caret { transform: translateY(2px) rotate(45deg); }
+  .nav-sub-menu { position: absolute; top: 100%; left: -1rem; padding-top: .8rem; opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity .2s ease, transform .2s ease, visibility .2s; }
+  .nav-sub:hover .nav-sub-menu, .nav-sub:focus-within .nav-sub-menu { opacity: 1; visibility: visible; transform: none; }
+  .nav-links .nav-sub-menu a { display: block; white-space: nowrap; padding: .75rem 1rem; border-radius: 6px; font-size: 1rem; opacity: .85; background: rgba(13,28,10,.94); border: 1px solid rgba(240,237,232,.16); box-shadow: 0 14px 34px rgba(0,0,0,.35); text-decoration: none; }
+  .nav-links .nav-sub-menu a:hover, .nav-links .nav-sub-menu a:focus-visible { opacity: 1; border-color: rgba(240,237,232,.4); }
+  .nav-links .nav-sub-menu a::after { display: none; }
+  /* just above the phone-menu breakpoint the links run into the logo; tighten them there */
+  @media (min-width: 769px) and (max-width: 900px) { .nav-links { gap: 1rem; } .nav-links a { font-size: .95rem; letter-spacing: .03em; } }
+  .mob a.mob-sub { font-size: 1.15rem; font-weight: 400; font-style: italic; opacity: .7; margin-top: -.5rem; }
+  .mob a.mob-sub::before { content: ""; display: inline-block; width: 18px; height: 1px; margin-right: .6rem; vertical-align: middle; background: currentColor; opacity: .6; }
+</style>
+<section class="lt" id="met-here" aria-labelledby="met-here-title">
+  <div class="met-in">
+    <div>
+      <span class="lbl">// Missed Connections</span>
+      <h2 id="met-here-title">People meet<br>here. <em>And stay.</em></h2>
+      <p class="met-p">treehouse. is invite only, and the room is friends of friends, so you're only ever a few degrees from the person you noticed. People who met at a treehouse. party are dating now. Some of them are engaged.</p>
+      <div class="met-acts">
+        <a href="/connections" class="btn btn-p">missed connections</a>
+        <a href="/connections#couples" class="btn btn-s">we met at treehouse.</a>
+      </div>
+    </div>
+    <ol class="met-arc" aria-label="How it tends to go">
+      <li><span>first</span><b>met at treehouse.</b></li>
+      <li><span>then</span><b>dating</b></li>
+      <li><span>now</span><b>engaged</b></li>
+    </ol>
+  </div>
 </section>
 
 <!-- NEXT EVENT — driven by TH_NEXT_EVENT at the bottom of this file -->

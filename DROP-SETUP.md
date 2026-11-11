@@ -6,7 +6,8 @@ Guests open treehouseevents.cliffeliz.ai/drop, add their name and phone or email
 
 - **/drop** is the link in the text blast. Videos come first, it's built for phones first, there's no size cap that matters (4 GB per file), and big videos upload in parallel chunks that retry on bad signal.
 - **/reel** shows approved videos and then photos. It isn't linked from the homepage. Send this link to everyone who uploaded.
-- **/review** is admin only and needs the key below. It has three tabs: To review, On the reel, and Who sent (with a copy-contacts button and a CSV download).
+- **/connections** is the missed connections page, with its own tab in the site nav. It holds the singles card and the form where couples who met at a party send their story. It uses the same storage and the same admin key as the rest.
+- **/review** is admin only and needs the key below. It has five tabs: To review, On the reel, Who sent (with a copy-contacts button and a CSV download), Missed connections, and Couples.
 
 ## One-time setup in Vercel (about 5 minutes)
 
