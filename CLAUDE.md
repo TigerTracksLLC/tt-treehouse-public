@@ -30,10 +30,12 @@ copy.
 - If `iso` is in the past, the countdown and `#events` hide themselves. A stale
   countdown should never ship again. Do not add a second hardcoded date anywhere.
 
-No event is announced right now (`announced: false`). The working date for the
-next one is Friday 4 December 2026 in Chelsea, not confirmed. Do not flip
-`announced` until Eliz confirms the date, venue and doors time. The venue
-carousel in `#events` still holds 75 Varick photos; replace them first.
+The December party is announced (`announced: true`): Friday 4 December 2026,
+Chelsea, 9pm, "A Very Sexy Christmas". Eliz confirmed the date, area and start
+time on 11 November 2026. The street address is not public; the site says it
+goes out to the list. The `#events` background carousel uses photos from the
+December 2025 party, not venue photos, so swap them if a venue shoot arrives.
+The nav link keeps the wording "get on the list" when an event is live.
 
 Last event: Saturday 17 October 2026, Tribeca Rooftop. 415 tickets sold from
 797 invite requests. Its section is `#tribeca-oct-2026`
