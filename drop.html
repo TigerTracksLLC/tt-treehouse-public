@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>drop your pics and videos | treehouse.</title>
-  <meta name="description" content="Thank you for coming to treehouse. at Tribeca Rooftop. Drop your pics and videos from the night, and if you're single, we know people.">
+  <meta name="description" content="Thank you for coming to treehouse. at Tribeca Rooftop. Drop your pics and videos from the night.">
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0d1c0a">
   <meta property="og:title" content="treehouse. 10.17 · drop your pics and videos">
@@ -20,6 +20,7 @@
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
   <link rel="stylesheet" href="/drop-page.css?v=2026-10-20b">
+  <link rel="stylesheet" href="/connections.css?v=2026-11-11">
 </head>
 <body class="dp">
 
@@ -28,8 +29,12 @@
   <div class="hero-bg" aria-hidden="true"><img src="/img/drop/hero-bg.jpg" alt=""></div>
   <div class="hero-shade" aria-hidden="true"></div>
 
-  <nav class="hero-top">
+  <nav class="hero-top" aria-label="Main navigation">
     <a href="/" aria-label="treehouse. home"><img src="/img/logo.png" alt="treehouse." class="logo"></a>
+    <div class="mc-tabs">
+      <a href="/drop" aria-current="page">share your content</a>
+      <a href="/connections">missed connections</a>
+    </div>
     <span class="tag-pill"><span class="dot" aria-hidden="true"></span>10.17 · tribeca rooftop</span>
   </nav>
 
@@ -47,7 +52,7 @@
           <span class="door-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0l-4.5 4.5M12 4l4.5 4.5M4 15v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg></span>
           <span class="door-txt"><b>Add pics and videos</b><small>straight from your camera roll</small></span>
         </a>
-        <a href="#connect" class="door door-alt">
+        <a href="/connections" class="door door-alt">
           <span class="door-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.35-7-10a4 4 0 017-2.65A4 4 0 0119 10c0 5.65-7 10-7 10z"/></svg></span>
           <span class="door-txt"><b>Single? We know people.</b><small>quiet intros, only if it's mutual</small></span>
         </a>
@@ -63,10 +68,10 @@
   <a href="#send" class="scroll-cue" aria-label="Scroll to upload"><span></span></a>
 </header>
 
-<!-- ============ 01 share the night ============ -->
+<!-- ============ share the night ============ -->
 <main id="send" class="sec send">
   <div class="sec-head rv">
-    <p class="sec-n"><span>01</span>share the night</p>
+    <p class="sec-n">share the night</p>
     <h2 class="sec-h">the DJ, the crowd, <em>golden hour, your friends.</em></h2>
   </div>
 
@@ -105,7 +110,7 @@
       <p class="done-p" id="doneText">If yours gets picked for the website or Instagram, we'll feature it, and you'll get early access to the professional photos and videos.</p>
       <div class="done-acts">
         <button type="button" class="btn btn-ghost" id="addMore">Add more</button>
-        <a href="#connect" class="btn btn-cream">Single? Drop your info</a>
+        <a href="/connections" class="btn btn-cream">Single? Missed connections</a>
       </div>
     </div>
   </div>
@@ -135,67 +140,6 @@
   </div></div>
 </section>
 
-<!-- ============ 02 missed connections ============ -->
-<section class="connect" id="connect" aria-labelledby="connectTitle">
-  <div class="connect-in">
-    <div class="connect-copy">
-      <p class="sec-n sec-n-ink rv"><span>02</span>missed connections</p>
-      <h2 class="connect-h rv" id="connectTitle">single? <em>we know people.</em></h2>
-      <p class="connect-lede rv">Caught someone's eye at the party, or just open to meeting someone from the room? Add your info and we'll take it from there.</p>
-
-      <ol class="steps rv">
-        <li><b>1</b><span>Tell us who caught your eye, or that you're open to meeting people.</span></li>
-        <li><b>2</b><span>We quietly check if it's mutual.</span></li>
-        <li><b>3</b><span>If it is, we introduce you on Instagram. If not, it stays between us.</span></li>
-      </ol>
-
-      <figure class="wall rv"><img src="/img/drop/wall.jpg" alt="The polaroid wall from the party" width="1600" height="1200" loading="lazy"></figure>
-      <p class="connect-trust rv">everyone here came through a friend</p>
-    </div>
-
-    <div class="slip rv">
-      <div class="slip-stamp" aria-hidden="true"><span>treehouse.</span><b>personals</b><span>nyc</span></div>
-      <p class="slip-k">your card</p>
-      <form class="connect-form" id="connectForm" novalidate>
-        <div class="seg" role="radiogroup" aria-label="What are you looking for">
-          <label><input type="radio" name="cMode" value="specific" checked><span>someone specific</span></label>
-          <label><input type="radio" name="cMode" value="open"><span>set me up</span></label>
-        </div>
-        <div class="fields">
-          <label class="pfield">
-            <span>full name</span>
-            <input id="cFirst" type="text" autocomplete="name" autocapitalize="words" maxlength="80" required>
-          </label>
-          <label class="pfield">
-            <span>instagram</span>
-            <input id="cIg" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="@" maxlength="60" required>
-          </label>
-          <label class="pfield pfield-wide" id="cCrushWrap">
-            <span>who caught your eye?</span>
-            <textarea id="cCrush" rows="2" maxlength="400" placeholder="green dress, by the DJ, around 7, or their @ if you got it"></textarea>
-          </label>
-          <fieldset class="pfield pfield-wide pchips">
-            <legend>interested in <em id="intOpt">optional</em></legend>
-            <label><input type="radio" name="cInterest" value="men"><span>men</span></label>
-            <label><input type="radio" name="cInterest" value="women"><span>women</span></label>
-            <label><input type="radio" name="cInterest" value="everyone"><span>everyone</span></label>
-          </fieldset>
-        </div>
-        <label class="pconsent">
-          <input type="checkbox" id="cConsent">
-          <span>I'm single, 21+, and fine with an intro if it's mutual.</span>
-        </label>
-        <p class="field-err" id="cErr" role="alert" hidden></p>
-        <button type="submit" class="pbtn" id="cSubmit">send</button>
-        <div class="connect-done" id="cDone" hidden>
-          <p class="connect-done-h">noted.</p>
-          <p>If it's mutual, you'll hear from us.</p>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
 <footer class="foot">
   <img src="/img/logo.png" alt="treehouse." class="logo logo-sm">
   <p>new york city · <a href="https://instagram.com/treehouseevents.nyc">@treehouseevents.nyc</a></p>
@@ -204,7 +148,7 @@
 <!-- mobile quick dock -->
 <nav class="dock" id="dock" aria-label="Quick actions" inert>
   <a href="#send" data-go="send">Add pics</a>
-  <a href="#connect" data-go="connect" class="dock-alt">Single?</a>
+  <a href="/connections" class="dock-alt">Single?</a>
 </nav>
 
 <script type="module" src="/js/drop.js"></script>

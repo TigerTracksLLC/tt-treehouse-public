@@ -33,6 +33,13 @@
       }
     },
     {
+      "src": "/(connections|missed-connections)/?",
+      "dest": "/connections.html",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
+    },
+    {
       "src": "/reel/?",
       "dest": "/reel.html",
       "headers": {

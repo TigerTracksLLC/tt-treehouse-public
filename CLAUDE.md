@@ -54,6 +54,32 @@ Sponsors read these pages and some have signed contracts against them.
 - Do not invent reach, impression or follower figures. If a number cannot be
   sourced to an event record or a signed agreement, leave it out.
 
+## Missed connections and couples (/connections)
+
+`connections.html` is its own page and its own tab in the main nav. "share your
+content" (`/drop`) is not on the main nav for now: it sits under "past events"
+(a hover and keyboard-focus sub-menu on desktop, `.nav-sub` in `index.html`,
+and an indented link in the phone menu, `.mob-sub`). Eliz asked for this on
+11 November 2026; ask before moving it back up. The `/drop` header keeps a
+two-tab switch across to missed connections (`.mc-tabs`, styled in
+`connections.css`). The singles card posts to
+`api/drop.js` (`action: 'connect'`) and shows in `/review` under Missed
+connections.
+
+The page describes how intros work: cards go to the team only, an intro is
+made only when both people named each other, and both are messaged to confirm
+first. That copy is a promise to guests. Change the process and the copy
+together.
+
+Couples: the site says people who met at a party are dating and some are
+engaged. It prints no count and names nobody, on purpose. Do not add a number
+or a couple that Eliz has not confirmed. Couples send their story through the
+"is this you two?" form (`action: 'story'`, stored under `stories/`, read in
+`/review` under Couples). To publish one, confirm with the couple, respect
+their "can we share" answer, then add it to `TH_COUPLES` in `js/couples.js`.
+The story cards stay hidden while that list is empty. The homepage strip
+`#met-here` carries the same wording and links here; keep the two in step.
+
 ## Sponsorship packages (keep these in sync)
 
 Presenting $15,000 (one per event) / Featured $7,500 (two) / Community $5,000.
