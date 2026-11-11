@@ -26,7 +26,7 @@
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <title>treehouse. events | new york city</title>
-  <meta name="description" content="treehouse. throws the best parties in New York. Invite only. Open bar. Next event: Saturday October 17th, 75 Varick Street Rooftop.">
+  <meta name="description" content="treehouse. throws the best parties in New York. Invite only. Open bar. Join the waitlist for the next one.">
   <meta property="og:title" content="treehouse. events | new york city">
   <meta property="og:description" content="The best night out in New York. Invite only. Open bar. You'll want to be there.">
   <meta property="og:image" content="/img/hero-new.jpg">
@@ -36,7 +36,7 @@
   <meta name="twitter:title" content="treehouse. events | new york city">
   <meta name="twitter:image" content="/img/hero-new.jpg">
   <!-- PHASE 2 FIX #2 — Additional SEO meta tags -->
-  <meta name="twitter:description" content="NYC's most sought-after invite-only event series. Open bar. Next event: Saturday October 17th, 75 Varick Street Rooftop.">
+  <meta name="twitter:description" content="NYC's most sought-after invite-only event series. Open bar. Join the waitlist for the next one.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,9 +65,9 @@
   <div class="nav-links">
     <!-- ROUND 25 FIX #4 — Home added as first nav item -->
     <a href="#about">home</a>
-    <a href="#tribeca-rooftop">past events</a>
+    <a href="#tribeca-oct-2026">past events</a>
     <!-- EXPANSION FIX #3 — sponsor nav link now points to sponsor.html --><a href="/sponsor.html" class="hi">sponsor</a>
-    <a target="_blank" rel="noopener noreferrer" href="https://partiful.com/e/aGkCOBZdBaGQtUwXwzbb?c=ItRQvhiz">get tickets</a>
+    <a href="#join" class="js-rsvp js-rsvp-nav">get on the list</a>
     <a href="/drop" class="hi">share your content</a>
   </div>
   <button class="ham" id="ham" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
@@ -83,9 +83,9 @@
   <nav aria-label="Mobile navigation">
     <!-- ROUND 25 FIX #4 — Home added as first mobile nav item -->
     <a href="#about">home</a>
-    <a href="#tribeca-rooftop">past events</a>
+    <a href="#tribeca-oct-2026">past events</a>
     <!-- EXPANSION FIX #3 — mobile sponsor nav link --><a href="/sponsor.html">sponsor</a>
-    <a target="_blank" rel="noopener noreferrer" href="https://partiful.com/e/aGkCOBZdBaGQtUwXwzbb?c=ItRQvhiz">get tickets</a>
+    <a href="#join" class="js-rsvp js-rsvp-nav">get on the list</a>
     <a href="/drop" class="hi">share your content</a>
   </nav>
 </div>
@@ -119,7 +119,7 @@
       </div>
     </div>
     <div class="hero-ctas" data-a="u" data-d="5">
-      <a target="_blank" rel="noopener noreferrer" href="https://partiful.com/e/aGkCOBZdBaGQtUwXwzbb?c=ItRQvhiz" class="btn btn-p">request invite</a>
+      <a href="#join" class="btn btn-p js-rsvp">request invite</a>
       <!-- REMOVED R4: become a sponsor hero button — sponsor link exists in nav -->
     </div>
   </div>
@@ -163,6 +163,7 @@
          15 July Hamptons party was cancelled and no gallery exists for it.
          Restore this line if there was in fact a Hamptons event. -->
     <span class="marquee-item">April 25th<span class="marquee-dot"></span></span>
+    <span class="marquee-item">October 17th<span class="marquee-dot"></span></span>
     <span class="marquee-item">Tribeca Rooftop<span class="marquee-dot"></span></span>
     <span class="marquee-item">SoHo Soiree<span class="marquee-dot"></span></span>
     <span class="marquee-item">Christmas in NYC<span class="marquee-dot"></span></span>
@@ -173,6 +174,7 @@
          15 July Hamptons party was cancelled and no gallery exists for it.
          Restore this line if there was in fact a Hamptons event. -->
     <span class="marquee-item">April 25th<span class="marquee-dot"></span></span>
+    <span class="marquee-item">October 17th<span class="marquee-dot"></span></span>
   </div>
 </div>
 
@@ -186,7 +188,7 @@
     <!-- ROUND 8 FIX #3 — Heading reworded: guest-first, no brand ego (Option B) -->
     <h2>Some nights<br>stay with you.</h2>
     <!-- ROUND 8 FIX #3 — Body copy rewritten: guest experience, not brand pitch -->
-    <p>Open bar. Good music. The kind of crowd that makes the night. Five events in, still selling out.</p>
+    <p>Open bar. Good music. The kind of crowd that makes the night. Seven events in, still selling out.</p>
     <!-- ROUND 25 FIX #5 — Tags converted to anchor links; dinner nights→house parties; brand nights removed -->
     <div class="tags" style="justify-content:center;margin-top:1.5rem;">
       <a class="tag" href="#tribeca-rooftop">rooftop parties</a>
@@ -265,7 +267,7 @@
         <p class="venue-l js-venue-l">New York</p>
       </div>
       <p class="event-meta js-event-meta" style="margin-bottom:2rem;">Invite Only · Open Bar</p>
-      <!-- FORM URL TBD — update href when form link is ready --><!-- ROUND 28 FIX #1 — Button enlarged --><a target="_blank" rel="noopener noreferrer" href="https://partiful.com/e/aGkCOBZdBaGQtUwXwzbb?c=ItRQvhiz" class="btn btn-p" style="align-self:flex-end;padding:20px 60px;font-size:1.1rem;min-width:280px;border-radius:6px;">request your invite &rarr;</a>
+      <!-- FORM URL TBD — update href when form link is ready --><!-- ROUND 28 FIX #1 — Button enlarged --><a href="#join" class="btn btn-p js-rsvp" style="align-self:flex-end;padding:20px 60px;font-size:1.1rem;min-width:280px;border-radius:6px;">request your invite &rarr;</a>
     </div>
   </div>
 </section>
@@ -289,6 +291,60 @@
 
 <!-- ROUND 2 FIX #2 — Tribeca gallery now appears after curate+next-event -->
 <!-- AUDIT FIX #1 — Gallery moved up: appears within first 2 scroll-depths -->
+<!-- PARTY 8: TRIBECA ROOFTOP, OCTOBER 17 2026 (newest first) -->
+<style>
+  /* Video tiles: a play badge so the tile reads as a video even before it starts.
+     It fades out while the clip is playing. */
+  .gallery-item.is-video .vid-badge {
+    position:absolute; left:50%; top:50%; width:64px; height:64px; margin:-32px 0 0 -32px;
+    border-radius:50%; background:rgba(20,36,12,0.62); border:1.5px solid rgba(240,237,232,0.85);
+    z-index:3; pointer-events:none; transition:opacity 0.3s ease;
+  }
+  .gallery-item.is-video .vid-badge::after {
+    content:""; position:absolute; left:26px; top:20px;
+    border-style:solid; border-width:12px 0 12px 19px; border-color:transparent transparent transparent rgba(240,237,232,0.95);
+  }
+  .gallery-item.is-video .vid-tag {
+    position:absolute; left:10px; bottom:10px; z-index:3; pointer-events:none;
+    font-family:var(--ff-b); font-size:0.6rem; letter-spacing:0.14em; text-transform:uppercase;
+    color:rgba(240,237,232,0.95); background:rgba(20,36,12,0.62); padding:4px 8px; border-radius:3px;
+  }
+  .gallery-item.is-video.is-playing .vid-badge { opacity:0; }
+</style>
+<section class="dk ev-section no-pad" id="tribeca-oct-2026">
+  <div class="ev-header reveal">
+    <span class="lbl reveal-child">// treehouse. NYC</span>
+    <h2 class="ev-title reveal-child">TRIBECA ROOFTOP. OCTOBER 17, 2026.</h2>
+    <p class="ev-desc reveal-child">Back on the Tribeca rooftop. Nearly 800 requests for the list, a sax player on the roof, and a surprise burger delivery.</p>
+    <div class="ev-meta-row">
+      <a href="https://curtispan.pic-time.com/client/treehouse2026" target="_blank" rel="noopener" class="btn btn-s" style="font-size:0.65rem;padding:0.6rem 1.4rem;">See Full Gallery →</a>
+    </div>
+  </div>
+  <div class="gallery-visible" id="gallery-visible-tribeca-oct-2026">
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-01.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: three guests holding up green treehouse. cups" width="933" height="1400" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-02.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: the DJ at the decks in front of the neon Treehouse sign" width="1400" height="933" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-03.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: two guests laughing with espresso martinis" width="933" height="1400" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-04.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: three guests in the afternoon sun" width="933" height="1400" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-05.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: the crowd around the DJ booth under a clear blue sky" width="933" height="1400" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-06.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: three guests smiling with their drinks" width="933" height="1400" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-07.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: an ice sculpture reading treehouse. x Saint James, with the skyline behind" width="1400" height="933" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-08.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: a saxophone player on the roof" width="933" height="1400" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-09.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: a guest in a Saint James cap at the decks" width="933" height="1400" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-10.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: two guests with their drinks" width="933" height="1400" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-11.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: pink flowers beside a cocktail menu, skyline behind" width="933" height="1400" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-12.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: three friends hugging with the skyline behind" width="933" height="1400" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-13.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: the downtown skyline at golden hour" width="1400" height="933" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-14.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: two guests with the downtown skyline behind" width="933" height="1400" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item is-video"><video class="gallery-video" width="720" height="1280" muted loop playsinline preload="none" poster="/img/gallery/tribeca-oct-2026/oct17-crowd-poster.jpg" aria-label="treehouse. Tribeca Rooftop, October 17, 2026: the crowd on the roof at sunset"><source src="/img/gallery/tribeca-oct-2026/oct17-crowd.mp4" type="video/mp4"></video><span class="vid-badge" aria-hidden="true"></span><span class="vid-tag" aria-hidden="true">video</span></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-15.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: four guests on the lawn at dusk, skyline behind" width="1400" height="933" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-16.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: two guests above the crowd by the neon sign at dusk, the skyline lit up behind" width="1400" height="933" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-17.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: a guest in front of the skyline after dark" width="1400" height="933" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-18.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: the crowd dancing after dark" width="1400" height="933" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-19.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: five guests posing at night" width="1400" height="933" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img src="/img/gallery/tribeca-oct-2026/oct17-20.jpg" alt="treehouse. Tribeca Rooftop, October 17, 2026: a group cheering at night, cups raised" width="1400" height="933" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+  </div>
+</section>
+
 <!-- PARTY 1: TRIBECA ROOFTOP -->
 <!-- AUDIT FIX #11 — Gallery unified to dark theme -->
 <!-- ROUND 30 POLISH — gallery sections are full-bleed -->
@@ -306,45 +362,45 @@
   <!-- AUDIT FIX #7 — First 8 Tribeca images eager-loaded, first 4 fetchpriority=high -->
   <div class="gallery-visible" id="gallery-visible-tribeca-rooftop">
 <!-- REMOVED R6: old gallery photos for gallery-visible-tribeca-rooftop -->
-    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-001.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-024.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/tribeca-rooftop/tribeca-001.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="360" height="540" src="/img/gallery/tribeca-rooftop/tribeca-024.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
         <!-- ROUND 12 FIX #2 — tribeca-new-03.jpg added to Tribeca gallery at position 2 -->
         <div class="gallery-item">
-          <img src="/img/tribeca-new-03.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <img width="1586" height="1982" src="/img/tribeca-new-03.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
           <div class="if">tribeca</div>
         </div>
-    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-011.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-013.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/tribeca-rooftop/tribeca-011.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/tribeca-rooftop/tribeca-013.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 15 FIX #2 — tribeca-new-08 -->
     <div class="gallery-item"><img src="/img/tribeca-new-08.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
         <!-- ROUND 12 FIX #2 — tribeca-new-04.jpg added to Tribeca gallery at position 4 -->
         <div class="gallery-item">
-          <img src="/img/tribeca-new-04.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <img width="4950" height="3300" src="/img/tribeca-new-04.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
           <div class="if">tribeca</div>
         </div>
-    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-015.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-017.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/tribeca-rooftop/tribeca-015.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/tribeca-rooftop/tribeca-017.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- REMOVED R8: tribeca-022 replaced by tribeca-new-01 and tribeca-new-02 -->
-    <!-- <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-022.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div> -->
+    <!-- <div class="gallery-item"><img width="792" height="990" src="/img/gallery/tribeca-rooftop/tribeca-022.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div> -->
         <!-- ROUND 12 FIX #2 — tribeca-new-05.jpg added to Tribeca gallery at position 7 -->
         <div class="gallery-item">
-          <img src="/img/tribeca-new-05.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <img width="3300" height="4950" src="/img/tribeca-new-05.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
           <div class="if">tribeca</div>
         </div>
     <!-- ROUND 8 FIX #6 — 2 new Tribeca photos added -->
-    <div class="gallery-item"><img src="/img/tribeca-new-01.jpg" alt="treehouse. NYC, Tribeca Rooftop" loading="lazy"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/tribeca-new-01.jpg" alt="treehouse. NYC, Tribeca Rooftop" loading="lazy"></div>
     <!-- ROUND 15 FIX #2 — tribeca-new-09 -->
-    <div class="gallery-item"><img src="/img/tribeca-new-09.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/tribeca-new-02.jpg" alt="treehouse. NYC, Tribeca Rooftop" loading="lazy"></div>
-    <div class="gallery-item"><img src="/img/gallery/tribeca-rooftop/tribeca-046.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1586" height="1982" src="/img/tribeca-new-09.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/tribeca-new-02.jpg" alt="treehouse. NYC, Tribeca Rooftop" loading="lazy"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/tribeca-rooftop/tribeca-046.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
         <!-- ROUND 12 FIX #2 — tribeca-new-06.jpg added to Tribeca gallery at position 10 -->
         <div class="gallery-item">
-          <img src="/img/tribeca-new-06.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <img width="4950" height="3300" src="/img/tribeca-new-06.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
           <div class="if">tribeca</div>
         </div>
         <!-- ROUND 12 FIX #2 — tribeca-new-07.jpg added to Tribeca gallery at end (position 15) -->
         <div class="gallery-item">
-          <img src="/img/tribeca-new-07.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <img width="3300" height="4950" src="/img/tribeca-new-07.jpg" alt="Tribeca Rooftop treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
           <div class="if">tribeca</div>
         </div>
   </div>
@@ -370,40 +426,40 @@
 <!-- REMOVED R6: old gallery photos for gallery-visible-soho-soiree -->
     <!-- REMOVED R14: duplicate soho first photo (soho-001.jpg) — keeping second instance -->
     <!-- ROUND 15 FIX #3a — swapped: was photo 2, now photo 1 -->
-    <div class="gallery-item"><img src="/img/soho-new-01.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="1639" height="2049" src="/img/soho-new-01.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
     <!-- ROUND 8 FIX #6 — soho-new-01 -->
     <!-- ROUND 15 FIX #3a — swapped: was photo 1, now photo 2 -->
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-005.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/soho-soiree/soho-005.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
 
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-010.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-012.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="665" height="1182" src="/img/gallery/soho-soiree/soho-010.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="959" height="1200" src="/img/gallery/soho-soiree/soho-012.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-02 -->
-    <div class="gallery-item"><img src="/img/soho-new-02.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-02.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
     <!-- ROUND 15 FIX #3b — soho-new-08 -->
-    <div class="gallery-item"><img src="/img/soho-new-08.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-014.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-016.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2172" height="1448" src="/img/soho-new-08.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="959" height="1200" src="/img/gallery/soho-soiree/soho-014.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="800" height="1200" src="/img/gallery/soho-soiree/soho-016.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-03 -->
-    <div class="gallery-item"><img src="/img/soho-new-03.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-023.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-025.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-03.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="360" height="638" src="/img/gallery/soho-soiree/soho-023.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1200" height="800" src="/img/gallery/soho-soiree/soho-025.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 15 FIX #3b — soho-new-09 -->
-    <div class="gallery-item"><img src="/img/soho-new-09.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2172" height="1448" src="/img/soho-new-09.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-04 -->
-    <div class="gallery-item"><img src="/img/soho-new-04.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-030.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-039.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-04.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="800" height="1200" src="/img/gallery/soho-soiree/soho-030.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1200" height="800" src="/img/gallery/soho-soiree/soho-039.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-05 -->
-    <div class="gallery-item"><img src="/img/soho-new-05.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-042.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-05.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="800" height="1200" src="/img/gallery/soho-soiree/soho-042.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 15 FIX #3b — soho-new-10 -->
-    <div class="gallery-item"><img src="/img/soho-new-10.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-048.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2172" height="1448" src="/img/soho-new-10.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="665" height="1182" src="/img/gallery/soho-soiree/soho-048.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-06 -->
-    <div class="gallery-item"><img src="/img/soho-new-06.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
-    <div class="gallery-item"><img src="/img/gallery/soho-soiree/soho-049.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-06.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="665" height="1182" src="/img/gallery/soho-soiree/soho-049.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-07 -->
-    <div class="gallery-item"><img src="/img/soho-new-07.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-07.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
 
   <!-- REMOVED: Stray empty div between Soho and Christmas galleries (orphaned from R6 toggle removal) -->
 </section>
@@ -420,29 +476,29 @@
   </div>
   <!-- ROUND 5 FIX #3 — Christmas gallery replaced with 15 specific photos in exact order -->
   <div class="gallery-visible" id="gallery-visible-christmas-nyc">
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-009.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-010.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/christmas-nyc/xmas-009.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/christmas-nyc/xmas-010.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 15 FIX #4 — xmas-new-02 near top for visual impact -->
-    <div class="gallery-item"><img src="/img/xmas-new-02.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="3195" height="2130" src="/img/xmas-new-02.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — xmas-new-01 added at position 2 -->
-    <div class="gallery-item"><img src="/img/xmas-new-01.jpg" alt="treehouse. NYC, Christmas in NYC" loading="lazy"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-016.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-018.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-019.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-021.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-022.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/xmas-new-01.jpg" alt="treehouse. NYC, Christmas in NYC" loading="lazy"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/christmas-nyc/xmas-016.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" fetchpriority="high" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/christmas-nyc/xmas-018.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/christmas-nyc/xmas-019.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1020" height="771" src="/img/gallery/christmas-nyc/xmas-021.jpg" alt="Christmas in NYC, treehouse. event" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/christmas-nyc/xmas-022.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 15 FIX #4 — xmas-new-03 mid gallery -->
-    <div class="gallery-item"><img src="/img/xmas-new-03.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-024.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-025.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-027.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-028.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-033.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/xmas-new-03.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/christmas-nyc/xmas-024.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/christmas-nyc/xmas-025.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/christmas-nyc/xmas-027.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/christmas-nyc/xmas-028.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/christmas-nyc/xmas-033.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 15 FIX #4 — xmas-new-04 near end -->
-    <div class="gallery-item"><img src="/img/xmas-new-04.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-038.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-040.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/christmas-nyc/xmas-048.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/xmas-new-04.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/christmas-nyc/xmas-038.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/christmas-nyc/xmas-040.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/christmas-nyc/xmas-048.jpg" alt="Christmas in NYC, treehouse. event" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
 
   <!-- REMOVED: Stray empty div between Christmas and Perry St galleries (orphaned from R5 toggle removal) -->
 </section>
@@ -460,32 +516,32 @@
   </div>
   <div class="gallery-visible" id="gallery-visible-perry-st">
 <!-- REMOVED R6: old gallery photos for gallery-visible-knox-day -->
-    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-002.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1200" height="800" src="/img/gallery/knox-day/knox-002.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
         <!-- ROUND 12 FIX #1 — knox-new-01.jpg added to Knox Day gallery -->
         <div class="gallery-item">
-          <img src="/img/knox-new-01.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <img width="2304" height="1536" src="/img/knox-new-01.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
           <div class="if">knox</div>
         </div>
-    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-008.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-010.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="540" height="360" src="/img/gallery/knox-day/knox-008.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="540" height="360" src="/img/gallery/knox-day/knox-010.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 16 FIX #2 — perry-new-01 at position 4 -->
-    <div class="gallery-item"><img src="/img/perry-new-01.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-013.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-014.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-015.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-016.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2304" height="1536" src="/img/perry-new-01.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="540" height="360" src="/img/gallery/knox-day/knox-013.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1200" height="800" src="/img/gallery/knox-day/knox-014.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="540" height="360" src="/img/gallery/knox-day/knox-015.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1200" height="800" src="/img/gallery/knox-day/knox-016.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 16 FIX #2 — perry-new-02 at position 8 -->
-    <div class="gallery-item"><img src="/img/perry-new-02.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2304" height="1536" src="/img/perry-new-02.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
         <!-- ROUND 12 FIX #1 — knox-new-02.jpg added to Knox Day gallery -->
         <div class="gallery-item">
-          <img src="/img/knox-new-02.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
+          <img width="1536" height="2048" src="/img/knox-new-02.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" style="width:100%;height:auto;display:block;" onerror="this.onerror=null;this.parentNode.classList.add('fail')">
           <div class="if">knox</div>
         </div>
-    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-017.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-018.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/knox-day/knox-020.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="360" height="480" src="/img/gallery/knox-day/knox-017.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1200" height="799" src="/img/gallery/knox-day/knox-018.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="540" height="360" src="/img/gallery/knox-day/knox-020.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 16 FIX #2 — perry-new-03 near end -->
-    <div class="gallery-item"><img src="/img/perry-new-03.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2304" height="1536" src="/img/perry-new-03.jpg" alt="Party on Perry St treehouse. NYC" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
   </div>
   <!-- REMOVED: Stray empty div between Perry St and West Village galleries (orphaned from R6 toggle removal) -->
 </section>
@@ -501,18 +557,18 @@
   </div>
   <div class="gallery-visible" id="gallery-visible-west-village">
 <!-- REMOVED R6: old gallery photos for gallery-visible-west-village -->
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-001.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-004.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-005.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-006.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-007.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-010.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-013.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-018.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-022.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-027.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-035.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/west-village/westvillage-038.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/west-village/westvillage-001.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="540" height="360" src="/img/gallery/west-village/westvillage-004.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/west-village/westvillage-005.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/west-village/westvillage-006.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/west-village/westvillage-007.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/west-village/westvillage-010.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/west-village/westvillage-013.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/west-village/westvillage-018.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/west-village/westvillage-022.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/west-village/westvillage-027.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="734" height="1070" src="/img/gallery/west-village/westvillage-035.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="792" height="990" src="/img/gallery/west-village/westvillage-038.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
   </div>
   <!-- REMOVED: Stray empty div after West Village gallery (orphaned from R6 toggle removal) -->
 
@@ -526,36 +582,36 @@
     </div>
   </div>
   <div class="gallery-visible" id="gallery-visible-springtime-opener">
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-01.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-02.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-03.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-04.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-05.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-06.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-07.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-08.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-09.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-10.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-11.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-12.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-13.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-14.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-15.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-16.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-17.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-18.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-19.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-20.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-21.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-22.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-23.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-24.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-25.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-26.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-27.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-28.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-29.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
-    <div class="gallery-item"><img src="/img/gallery/springtime-opener/party-30.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="752" height="1044" src="/img/gallery/springtime-opener/party-01.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2000" height="1506" src="/img/gallery/springtime-opener/party-02.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="768" height="1024" src="/img/gallery/springtime-opener/party-03.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="768" height="1024" src="/img/gallery/springtime-opener/party-04.jpg" alt="treehouse. Springtime Opener, April 25, 2026" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/springtime-opener/party-05.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1499" height="2000" src="/img/gallery/springtime-opener/party-06.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="768" height="1024" src="/img/gallery/springtime-opener/party-07.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/springtime-opener/party-08.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/springtime-opener/party-09.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1408" height="1760" src="/img/gallery/springtime-opener/party-10.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/springtime-opener/party-11.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="768" height="1024" src="/img/gallery/springtime-opener/party-12.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/springtime-opener/party-13.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="665" height="1182" src="/img/gallery/springtime-opener/party-14.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="768" height="1024" src="/img/gallery/springtime-opener/party-15.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/springtime-opener/party-16.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/springtime-opener/party-17.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/springtime-opener/party-18.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1024" height="768" src="/img/gallery/springtime-opener/party-19.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/springtime-opener/party-20.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/springtime-opener/party-21.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="2000" height="1333" src="/img/gallery/springtime-opener/party-22.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/springtime-opener/party-23.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1036" height="758" src="/img/gallery/springtime-opener/party-24.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="758" height="1036" src="/img/gallery/springtime-opener/party-25.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1024" height="768" src="/img/gallery/springtime-opener/party-26.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/springtime-opener/party-27.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="1086" height="724" src="/img/gallery/springtime-opener/party-28.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/springtime-opener/party-29.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
+    <div class="gallery-item"><img width="768" height="1024" src="/img/gallery/springtime-opener/party-30.jpg" alt="treehouse. Springtime Opener, April 25, 2026" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
   </div>
 </section>
 </section>
@@ -630,7 +686,7 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
       @treehouseevents.nyc
     </a>
-    <a href="mailto:events@tigertracks.ai" target="_blank" rel="noopener">events@tigertracks.ai</a>
+    <a href="mailto:treehouse@tigertracks.ai" target="_blank" rel="noopener">treehouse@tigertracks.ai</a>
     <a href="tel:+13016467758">(301) 646-7758</a>
     <!-- EXPANSION FIX #6 — sponsorship inquiries link in footer -->
     <a href="/sponsor.html#sp-contact">sponsorship inquiries</a>
@@ -691,15 +747,51 @@
 /* SMOOTH SCROLL */
 (function(){
   var nh=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav'))||72;
+
+  // The galleries load as they scroll past and push the page down, so a long
+  // jump (the waitlist buttons, or arriving from another page with a #link)
+  // can stop short. Keep re-aiming until the target has sat still under the
+  // nav for about two seconds, and give up the moment the visitor scrolls.
+  function settleOn(t){
+    var started=Date.now(), last=-1, still=0, stop=false;
+    var cancel=function(){ stop=true; };
+    window.addEventListener('wheel',cancel,{passive:true,once:true});
+    window.addEventListener('touchstart',cancel,{passive:true,once:true});
+    window.addEventListener('keydown',cancel,{once:true});
+    (function tick(){
+      setTimeout(function(){
+        if(stop || Date.now()-started>20000) return;
+        var off=t.getBoundingClientRect().top-nh;
+        var atEnd=window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2;
+        if(window.scrollY===last){                       // not mid-scroll
+          if(Math.abs(off)<4 || (off>0 && atEnd)){ if(++still>=7) return; }
+          else { still=0; window.scrollTo({top:window.scrollY+off,behavior:'auto'}); }
+        }
+        last=window.scrollY; tick();
+      },300);
+    })();
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click',function(e){
       var h=a.getAttribute('href');
-      if(h==='#') return;
+      if(!h || h==='#' || h.charAt(0)!=='#') return;   // RSVP buttons can be re-pointed at an outside link
       var t=document.querySelector(h);
       if(!t) return;
       e.preventDefault();
       window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-nh,behavior:'smooth'});
+      settleOn(t);
     });
+  });
+
+  // Arriving with a #link in the address (for example from the sponsor page).
+  window.addEventListener('load',function(){
+    var h=window.location.hash;
+    if(!h || h.length<2) return;
+    var t=null; try { t=document.querySelector(h); } catch(err){}
+    if(!t) return;
+    window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-nh,behavior:'auto'});
+    settleOn(t);
   });
 })();
 
@@ -752,12 +844,12 @@ document.querySelectorAll('img').forEach(function(img){
         email.value='';
         setTimeout(function(){ ok.classList.remove('show'); },6000);
       } else {
-        ok.textContent="something went wrong, email events@tigertracks.ai";
+        ok.textContent="something went wrong, email treehouse@tigertracks.ai";
         ok.classList.add('show');
         setTimeout(function(){ ok.classList.remove('show'); },8000);
       }
     }).catch(function(){
-      ok.textContent="offline, email events@tigertracks.ai";
+      ok.textContent="offline, email treehouse@tigertracks.ai";
       ok.classList.add('show');
       setTimeout(function(){ ok.classList.remove('show'); },8000);
     }).finally(function(){
@@ -959,9 +1051,14 @@ document.querySelectorAll('img').forEach(function(img){
         video.currentTime = 0;
       }
     });
-  }, { threshold: 0.4, rootMargin: "0px" });
+  }, { threshold: 0.25, rootMargin: "0px" });
 
   document.querySelectorAll(".gallery-video").forEach(function(video){
+    var tile = video.closest(".gallery-item");
+    if(tile){
+      video.addEventListener("playing", function(){ tile.classList.add("is-playing"); });
+      video.addEventListener("pause",   function(){ tile.classList.remove("is-playing"); });
+    }
     videoObs.observe(video);
   });
 })();
@@ -976,24 +1073,25 @@ document.querySelectorAll('img').forEach(function(img){
    to an undated state automatically. It will never again show a
    countdown to an event that has already happened.
 --------------------------------------------------------------------- */
-/* Venue: 75 Varick St, Tribeca. The operator brands it
-   Tribeca Rooftop + Tribeca 360 and lists 10 Desbrosses St on
-   correspondence. Same building, same room as October 18 2025.
-   The public label below uses "Tribeca Rooftop" to stay consistent
-   with the past-events marquee, which already names it that way.
-   Swap to "75 varick" here if you would rather lead with the address. */
+/* No event is announced right now. The values below are the working
+   details for the December party and are NOT confirmed: date, venue and
+   doors time all need Eliz's sign-off before `announced` goes to true.
+   `iso` needs the real doors time and `rsvp` needs the December RSVP or
+   ticket link. While `rsvp` is empty, or no event is live, every
+   .js-rsvp button points at the waitlist form (#join). */
 var TH_NEXT_EVENT = {
-  announced: true,                      // <- flip to false to un-announce everything
-  iso:      '2026-10-17T16:00:00-04:00',
-  label:    'next event · saturday october 17 · 75 varick',
-  short:    'Saturday October 17 · 75 Varick Rooftop · Invite only',
-  joinLine: "Invite only. Drop your email and we'll reach out before October 17th. No spam, just the invite.",
-  title:    'NEXT EVENT: SATURDAY OCTOBER 17',
-  dateBig:  'October 17th',
-  doors:    'Doors 4:00pm ET',
-  venueN:   '75 Varick Street Rooftop',
+  announced: false,                     // <- flip to true only once the date is confirmed
+  iso:      '2026-12-04T00:00:00-05:00', // set the real doors time before announcing
+  label:    'next event · friday december 4 · chelsea',
+  short:    'Friday December 4 · Chelsea · Invite only',
+  joinLine: "Invite only. Drop your email and we'll reach out before December 4th. No spam, just the invite.",
+  title:    'NEXT EVENT: FRIDAY DECEMBER 4',
+  dateBig:  'December 4th',
+  doors:    '',                         // e.g. 'Doors 7:00pm ET'
+  venueN:   'Chelsea',
   venueL:   'New York, NY',
-  meta:     '400 guests · Invite Only · Open Bar'
+  meta:     'Invite Only',
+  rsvp:     ''                          // December RSVP or ticket link
 };
 
 function thNextEventIsLive() {
@@ -1022,7 +1120,19 @@ function renderNextEvent() {
 
   // The full-bleed next-event section only exists when there is an event.
   var sec = document.getElementById('events');
-  if (sec) sec.hidden = !live;
+  // The section carries an inline display:flex, which beats the hidden
+  // attribute, so set display directly as well.
+  if (sec) { sec.hidden = !live; sec.style.display = live ? 'flex' : 'none'; }
+
+  // RSVP buttons: the event link when one is live and set, otherwise the waitlist.
+  if (live && TH_NEXT_EVENT.rsvp) {
+    document.querySelectorAll('.js-rsvp').forEach(function(a){
+      a.href = TH_NEXT_EVENT.rsvp;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      if (a.classList.contains('js-rsvp-nav')) a.textContent = 'get tickets';
+    });
+  }
   if (live) {
     var set = function(sel, val){
       document.querySelectorAll(sel).forEach(function(el){ el.textContent = val; });
@@ -1105,8 +1215,8 @@ if (backdrop) {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-  // ANALYTICS, Track all Partiful link clicks (primary conversion)
-  document.querySelectorAll('a[href*="partiful.com"]').forEach(function(link) {
+  // ANALYTICS, Track all invite and ticket button clicks (primary conversion)
+  document.querySelectorAll('.js-rsvp').forEach(function(link) {
     link.addEventListener('click', function() {
       if (typeof gtag !== 'undefined') {
         gtag('event', 'click_request_invite', {
