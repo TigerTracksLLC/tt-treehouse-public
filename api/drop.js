@@ -153,7 +153,7 @@ module.exports = async function handler(req, res) {
     if (body.action === 'story') {
       const names = clean(body.names, 80);
       const ig = clean(body.instagram, 60).replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[/?#].*$/, '').replace(/[^A-Za-z0-9._]/g, '').slice(0, 30);
-      const status = ['dating', 'engaged', 'married', 'business partners', 'tennis partners', 'book club', 'friends', 'other'].includes(body.status) ? body.status : '';
+      const status = ['dating', 'engaged', 'married', 'business partners', 'new job', 'tennis partners', 'run club', 'book club', 'supper club', 'friends', 'other'].includes(body.status) ? body.status : '';
       const share = ['names', 'anonymous', 'private'].includes(body.share) ? body.share : '';
       const party = clean(body.party, 80);
       const story = clean(body.story, 600);
