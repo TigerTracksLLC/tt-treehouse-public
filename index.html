@@ -192,6 +192,7 @@
     <!-- ROUND 8 FIX #3 — Heading reworded: guest-first, no brand ego (Option B) -->
     <h2>Some nights<br>stay with you.</h2>
     <!-- ROUND 8 FIX #3 — Body copy rewritten: guest experience, not brand pitch -->
+    <p style="margin-bottom:0.9rem;">As more of life moves online, real connection gets rarer and more valuable. treehouse. is where New York comes to find it.</p>
     <p>Open bar. Good music. The kind of crowd that makes the night. Seven events in.</p>
     <!-- ROUND 25 FIX #5 — Tags converted to anchor links; dinner nights→house parties; brand nights removed -->
     <div class="tags" style="justify-content:center;margin-top:1.5rem;">
@@ -276,10 +277,10 @@
   <!-- ROUND 8 FIX #4 — Full-bleed carousel background with overlay text -->
   <!-- Background carousel (absolute, fills section) -->
   <div class="event-bg-carousel" id="venueCarousel" style="position:absolute;inset:0;z-index:0;">
-    <div class="vc-slide active" style="position:absolute;inset:0;"><img src="/img/varick-1.jpg" alt="75 Varick Rooftop, NYC skyline at dusk" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-    <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/varick-2.jpg" alt="75 Varick Rooftop, venue interior" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-    <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/varick-3.jpg" alt="75 Varick Rooftop, event space" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-    <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/varick-4.jpg" alt="75 Varick Rooftop, rooftop view" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div class="vc-slide active" style="position:absolute;inset:0;"><img src="/img/xmas-new-01.jpg" alt="treehouse. Christmas party, December 2025" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/gallery/christmas-nyc/xmas-018.jpg" alt="treehouse. Christmas party, December 2025" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/xmas-new-03.jpg" alt="treehouse. Christmas party, December 2025" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/xmas-new-04.jpg" alt="treehouse. Christmas party, December 2025" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(10,28,10,0.85) 0%, rgba(10,28,10,0.55) 55%, rgba(10,28,10,0.1) 100%);z-index:1;pointer-events:none;"></div>
     <button class="vc-btn vc-prev" aria-label="Previous photo" style="z-index:3;">&#8592;</button>
     <button class="vc-btn vc-next" aria-label="Next photo" style="z-index:3;">&#8594;</button>
@@ -703,6 +704,15 @@
 </section>
 -->
 
+
+<!-- THE LIST: how invites work, plus the proof line. Copy approved by Eliz 11 Nov 2026. -->
+<section class="dk grain" id="the-list" style="padding:4.5rem 1.5rem;text-align:center;border-top:1px solid var(--ln10);">
+  <span class="lbl">// The List</span>
+  <h2 style="font-family:var(--ff-d);font-size:clamp(2.6rem,6vw,4.5rem);letter-spacing:0.02em;line-height:1;color:#E8E6DF;margin-bottom:1.5rem;">Everyone here knows someone here.</h2>
+  <p style="font-family:var(--ff-b);font-size:1.1rem;line-height:1.6;max-width:560px;margin:0 auto 1.25rem;color:#E8E6DF;opacity:0.88;">Request an invite, tell us who sent you, and we'll take it from there. The room is curated.</p>
+  <p style="font-family:var(--ff-e);font-style:italic;font-size:1.15rem;line-height:1.5;max-width:620px;margin:0 auto 2.25rem;color:#E8E6DF;opacity:0.75;">Seven parties. 390 people showed up in the rain. 797 requests for the last one.</p>
+  <a href="https://partiful.com/e/Ncw7yzgKZA7F48l3bpX5" target="_blank" rel="noopener noreferrer" class="btn btn-p js-rsvp">request invite</a>
+</section>
 
 <!-- JOIN -->
 <section class="dk grain join" id="join">
@@ -1142,25 +1152,23 @@ document.querySelectorAll('img').forEach(function(img){
    to an undated state automatically. It will never again show a
    countdown to an event that has already happened.
 --------------------------------------------------------------------- */
-/* No event is announced right now. The values below are the working
-   details for the December party and are NOT confirmed: date, venue and
-   doors time all need Eliz's sign-off before `announced` goes to true.
-   `iso` needs the real doors time and `rsvp` needs the December RSVP or
-   ticket link. While `rsvp` is empty, or no event is live, every
-   .js-rsvp button points at the waitlist form (#join). */
+/* The December party is announced: Friday 4 December 2026, Chelsea, 9pm.
+   Eliz confirmed the date, area and start time on 11 Nov 2026. The street
+   address is not public; it goes out to the list. To un-announce, set
+   `announced` to false and everything falls back to the undated state. */
 var TH_NEXT_EVENT = {
-  announced: false,                     // <- flip to true only once the date is confirmed
-  iso:      '2026-12-04T00:00:00-05:00', // set the real doors time before announcing
+  announced: true,
+  iso:      '2026-12-04T21:00:00-05:00', // 9pm ET
   label:    'next event · friday december 4 · chelsea',
   short:    'Friday December 4 · Chelsea · Invite only',
   joinLine: "Invite only. Drop your email and we'll reach out before December 4th. No spam, just the invite.",
-  title:    'NEXT EVENT: FRIDAY DECEMBER 4',
-  dateBig:  'December 4th',
-  doors:    '',                         // e.g. 'Doors 7:00pm ET'
-  venueN:   'Chelsea',
-  venueL:   'New York, NY',
+  title:    'A VERY SEXY CHRISTMAS',
+  dateBig:  'Friday December 4',
+  doors:    'Doors 9pm',
+  venueN:   'Chelsea, NYC',
+  venueL:   'The address goes out to the list',
   meta:     'Invite Only',
-  rsvp:     ''                          // December RSVP or ticket link
+  rsvp:     'https://partiful.com/e/Ncw7yzgKZA7F48l3bpX5'
 };
 
 function thNextEventIsLive() {
@@ -1199,7 +1207,6 @@ function renderNextEvent() {
       a.href = TH_NEXT_EVENT.rsvp;
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
-      if (a.classList.contains('js-rsvp-nav')) a.textContent = 'get tickets';
     });
   }
   if (live) {
