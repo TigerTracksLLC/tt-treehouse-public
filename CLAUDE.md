@@ -76,9 +76,12 @@ together.
 Who's met here: the homepage strip (`#met-here`) carries the dating angle,
 in Eliz's words that dating apps are dead and a room of friends of friends is
 better. The wider list of what has come out of the parties (couples,
-engagements, business partners, tennis partners, book clubs) is section 04 on
-`/connections`. Eliz confirmed each of those on 11 November 2026; add a kind of
-connection only when it has happened. She finds "engaged" as the payoff of a
+engagements, business partners, new jobs, tennis partners, run clubs, book
+clubs, supper clubs, friend groups) is section 04 on `/connections`. Eliz
+confirmed couples, engagements, business partners, tennis partners and book
+clubs on 11 November 2026; the other four were added the same day at her
+direction ("add whatever you think we should list") without individual
+confirmation. Ask her before adding more. She finds "engaged" as the payoff of a
 dating arc cringe, so keep it as one item among many, not the headline. No
 counts and no names unless confirmed. Stories come in through the "met someone
 here?" form (`action: 'story'`, stored under `stories/`, read in `/review`
