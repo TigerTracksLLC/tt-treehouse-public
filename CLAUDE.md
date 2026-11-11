@@ -73,14 +73,18 @@ made only when both people named each other, and both are messaged to confirm
 first. That copy is a promise to guests. Change the process and the copy
 together.
 
-Couples: the site says people who met at a party are dating and some are
-engaged. It prints no count and names nobody, on purpose. Do not add a number
-or a couple that Eliz has not confirmed. Couples send their story through the
-"is this you two?" form (`action: 'story'`, stored under `stories/`, read in
-`/review` under Couples). To publish one, confirm with the couple, respect
-their "can we share" answer, then add it to `TH_COUPLES` in `js/couples.js`.
-The story cards stay hidden while that list is empty. The homepage strip
-`#met-here` carries the same wording and links here; keep the two in step.
+Who's met here: the homepage strip (`#met-here`) carries the dating angle,
+in Eliz's words that dating apps are dead and a room of friends of friends is
+better. The wider list of what has come out of the parties (couples,
+engagements, business partners, tennis partners, book clubs) is section 04 on
+`/connections`. Eliz confirmed each of those on 11 November 2026; add a kind of
+connection only when it has happened. She finds "engaged" as the payoff of a
+dating arc cringe, so keep it as one item among many, not the headline. No
+counts and no names unless confirmed. Stories come in through the "met someone
+here?" form (`action: 'story'`, stored under `stories/`, read in `/review`
+under Met here). To publish one, confirm with the people in it, respect their
+"can we share" answer, then add it to `TH_COUPLES` in `js/couples.js`. The
+story cards stay hidden while that list is empty.
 
 ## Sponsorship packages (keep these in sync)
 
