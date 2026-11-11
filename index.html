@@ -185,27 +185,31 @@
 <!-- ABOUT -->
 <!-- ROUND 2 FIX #2 — Curate section moved above galleries -->
 <!-- MISSION: the statement gets its own cream band so it never competes with a photo. Wording approved by Eliz 11 Nov 2026.
-     The two prints are the ones Eliz chose on 11 Nov 2026: the treehouse. ice luge (cropped tight, no tablecloth) and her rooftop video, silent and looping. -->
+     Layout: wide statement on the left, the two prints as an overlapping cluster on the right (stacked on tablet and phone).
+     The prints are the ones Eliz chose: the treehouse. ice luge (cropped tight, no tablecloth) and her rooftop video, silent and looping. -->
 <style>
-  #mission { padding: clamp(4rem, 8vw, 7.5rem) clamp(1.5rem, 5vw, 4rem); background: var(--color-cream-light); text-align: center; overflow: hidden; }
-  #mission .mission-in { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; align-items: center; gap: 2.5rem; }
-  #mission .mission-rule { display: block; width: 56px; height: 2px; margin: 0 auto clamp(1.5rem, 2.6vw, 2.25rem); background: var(--accent); }
-  #mission .mission-lead { margin: 0 auto; max-width: 24em; font-family: var(--ff-e); font-weight: 400; font-size: clamp(1.3rem, 2.1vw, 1.9rem); line-height: 1.35; letter-spacing: -0.005em; color: var(--color-green); opacity: 0.82; text-wrap: balance; }
-  #mission .mission-big { margin: clamp(1rem, 1.8vw, 1.6rem) auto 0; max-width: 11em; font-family: var(--ff-e); font-weight: 400; font-style: italic; font-size: clamp(2.3rem, 4.9vw, 4.4rem); line-height: 1.06; letter-spacing: -0.02em; color: var(--color-green); text-wrap: balance; }
-  #mission .mission-prints { display: flex; justify-content: center; align-items: center; gap: 0; }
-  #mission .mission-print { margin: 0; padding: 7px 7px 26px; background: #fff; box-shadow: 0 1px 2px rgba(26,58,26,0.12), 0 14px 34px rgba(26,58,26,0.2); }
+  #mission { padding: clamp(4rem, 7vw, 6.5rem) clamp(1.5rem, 4vw, 3.5rem); background: var(--color-cream-light); text-align: center; overflow: hidden; }
+  #mission .mission-in { max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 1fr; align-items: center; gap: clamp(2.75rem, 6vw, 3.5rem); }
+  #mission .mission-rule { display: block; width: 64px; height: 3px; margin: 0 auto clamp(1.5rem, 2.4vw, 2.25rem); background: var(--accent); }
+  #mission .mission-copy { container-type: inline-size; }
+  #mission .mission-lead { margin: 0 auto; max-width: 19em; font-family: var(--ff-e); font-weight: 400; font-size: clamp(1.3rem, 2.3vw, 2.2rem); font-size: clamp(1.3rem, 4.6cqi, 2.5rem); line-height: 1.3; letter-spacing: -0.005em; color: var(--color-green); opacity: 0.85; text-wrap: balance; }
+  #mission .mission-big { margin: clamp(1rem, 1.6vw, 1.5rem) auto 0; font-family: var(--ff-e); font-weight: 700; font-style: italic; font-size: clamp(2.6rem, 6.4vw, 6.5rem); font-size: clamp(2.6rem, 13.6cqi, 7.5rem); line-height: 0.98; letter-spacing: -0.025em; color: var(--color-green); text-wrap: balance; }
+  #mission .mission-mark { background: linear-gradient(transparent 64%, rgba(126,184,50,0.5) 64%, rgba(126,184,50,0.5) 93%, transparent 93%); padding: 0 0.08em; margin: 0 -0.08em; }
+  #mission .mission-prints { width: min(100%, 560px); margin: 0 auto; }
+  #mission .mission-print { margin: 0; padding: 9px 9px 34px; background: #fff; box-shadow: 0 1px 2px rgba(26,58,26,0.12), 0 18px 44px rgba(26,58,26,0.22); }
   #mission .mission-print img, #mission .mission-print video { display: block; width: 100%; height: auto; object-fit: cover; }
-  #mission .mission-print.is-a { width: clamp(150px, 46vw, 210px); transform: rotate(-4deg) translateX(10px); }
+  #mission .mission-print.is-a { width: 78%; transform: rotate(-4deg); }
   #mission .mission-print.is-a img { aspect-ratio: 900 / 551; }
-  #mission .mission-print.is-b { width: clamp(108px, 31vw, 140px); transform: rotate(4deg) translate(-10px, 12px); }
+  #mission .mission-print.is-b { position: relative; z-index: 1; width: 52%; margin: -18% 0 0 auto; transform: rotate(4deg); }
   #mission .mission-print.is-b img, #mission .mission-print.is-b video { aspect-ratio: 4 / 5; }
   @media (min-width: 1080px) {
-    #mission .mission-in { grid-template-columns: clamp(200px, 21vw, 300px) minmax(0, 1fr) clamp(200px, 21vw, 300px); gap: clamp(1.5rem, 3vw, 3.5rem); }
-    #mission .mission-prints { display: contents; }
-    #mission .mission-print { padding: 10px 10px 38px; }
-    #mission .mission-print.is-a { order: 1; width: 100%; transform: rotate(-3.5deg) translateY(-14px); }
-    #mission .mission-copy { order: 2; }
-    #mission .mission-print.is-b { order: 3; width: 80%; justify-self: center; transform: rotate(3.5deg) translateY(18px); }
+    #mission { text-align: left; }
+    #mission .mission-in { grid-template-columns: minmax(0, 1.36fr) minmax(380px, 1fr); gap: clamp(2rem, 3.5vw, 4rem); }
+    #mission .mission-copy { order: 1; }
+    #mission .mission-prints { order: 2; width: 100%; }
+    #mission .mission-rule { margin-left: 0; }
+    #mission .mission-lead, #mission .mission-big { margin-left: 0; }
+    #mission .mission-print { padding: 12px 12px 44px; }
   }
 </style>
 <section class="lt" id="mission" aria-label="What treehouse. is for">
@@ -217,7 +221,7 @@
     <div class="mission-copy">
       <span class="mission-rule" aria-hidden="true"></span>
       <p class="mission-lead">As more of life moves online, real connection gets rarer and more valuable.</p>
-      <p class="mission-big">treehouse. is where New York comes to find it.</p>
+      <p class="mission-big">treehouse. is<br>where New&nbsp;York<br>comes to <span class="mission-mark">find it.</span></p>
     </div>
   </div>
 </section>
