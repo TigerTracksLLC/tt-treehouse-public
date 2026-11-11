@@ -7,8 +7,8 @@
 //   POST  { action: 'approve' | 'reject', urls: [] }  (admin)
 //   POST  { action: 'connect', first, instagram, interest?, party?, crush?, consent }   missed connections opt-in
 //   GET   ?action=connections  (admin)              everyone who opted in to missed connections
-//   POST  { action: 'story', names, instagram, party?, status, story?, share }   a couple who met at a party
-//   GET   ?action=stories      (admin)              couples' stories, for the Couples tab in /review
+//   POST  { action: 'story', names, instagram, party?, status, story?, share }   people who met at a party (dates, partners, book clubs)
+//   GET   ?action=stories      (admin)              their stories, for the Met here tab in /review
 //
 // Admin calls need header x-drop-key matching the DROP_ADMIN_KEY env var.
 
@@ -149,11 +149,11 @@ module.exports = async function handler(req, res) {
       return res.status(200).json({ ok: true });
     }
 
-    // ---------- a couple who met at a party ----------
+    // ---------- people who met at a party ----------
     if (body.action === 'story') {
       const names = clean(body.names, 80);
       const ig = clean(body.instagram, 60).replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/^@+/, '').replace(/[/?#].*$/, '').replace(/[^A-Za-z0-9._]/g, '').slice(0, 30);
-      const status = ['dating', 'engaged', 'married', 'other'].includes(body.status) ? body.status : '';
+      const status = ['dating', 'engaged', 'married', 'business partners', 'tennis partners', 'book club', 'friends', 'other'].includes(body.status) ? body.status : '';
       const share = ['names', 'anonymous', 'private'].includes(body.share) ? body.share : '';
       const party = clean(body.party, 80);
       const story = clean(body.story, 600);
