@@ -185,32 +185,34 @@
 <!-- ABOUT -->
 <!-- ROUND 2 FIX #2 — Curate section moved above galleries -->
 <!-- MISSION: the statement gets its own cream band so it never competes with a photo. Wording approved by Eliz 11 Nov 2026.
-     The two prints are guests at the 17 October 2026 party, already in that gallery. -->
+     The two prints are the ones Eliz chose on 11 Nov 2026: the treehouse. ice sculpture and the rooftop crowd. -->
 <style>
   #mission { padding: clamp(4rem, 8vw, 7.5rem) clamp(1.5rem, 5vw, 4rem); background: var(--color-cream-light); text-align: center; overflow: hidden; }
-  #mission .mission-in { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr; align-items: center; gap: 2.5rem; }
+  #mission .mission-in { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; align-items: center; gap: 2.5rem; }
   #mission .mission-rule { display: block; width: 56px; height: 2px; margin: 0 auto clamp(1.5rem, 2.6vw, 2.25rem); background: var(--accent); }
   #mission .mission-lead { margin: 0 auto; max-width: 24em; font-family: var(--ff-e); font-weight: 400; font-size: clamp(1.3rem, 2.1vw, 1.9rem); line-height: 1.35; letter-spacing: -0.005em; color: var(--color-green); opacity: 0.82; text-wrap: balance; }
   #mission .mission-big { margin: clamp(1rem, 1.8vw, 1.6rem) auto 0; max-width: 11em; font-family: var(--ff-e); font-weight: 400; font-style: italic; font-size: clamp(2.3rem, 4.9vw, 4.4rem); line-height: 1.06; letter-spacing: -0.02em; color: var(--color-green); text-wrap: balance; }
-  #mission .mission-prints { display: flex; justify-content: center; gap: 0; }
-  #mission .mission-print { margin: 0; width: clamp(120px, 34vw, 150px); padding: 7px 7px 26px; background: #fff; box-shadow: 0 1px 2px rgba(26,58,26,0.12), 0 14px 34px rgba(26,58,26,0.2); }
-  #mission .mission-print img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-  #mission .mission-print.is-a { transform: rotate(-5deg) translateX(8px); }
-  #mission .mission-print.is-b { transform: rotate(4deg) translate(-8px, 14px); }
+  #mission .mission-prints { display: flex; justify-content: center; align-items: center; gap: 0; }
+  #mission .mission-print { margin: 0; padding: 7px 7px 26px; background: #fff; box-shadow: 0 1px 2px rgba(26,58,26,0.12), 0 14px 34px rgba(26,58,26,0.2); }
+  #mission .mission-print img, #mission .mission-print video { display: block; width: 100%; height: auto; object-fit: cover; }
+  #mission .mission-print.is-a { width: clamp(150px, 46vw, 210px); transform: rotate(-4deg) translateX(10px); }
+  #mission .mission-print.is-a img { aspect-ratio: 900 / 551; }
+  #mission .mission-print.is-b { width: clamp(108px, 31vw, 140px); transform: rotate(4deg) translate(-10px, 12px); }
+  #mission .mission-print.is-b img, #mission .mission-print.is-b video { aspect-ratio: 4 / 5; }
   @media (min-width: 1080px) {
-    #mission .mission-in { grid-template-columns: minmax(170px, 240px) minmax(0, 1fr) minmax(170px, 240px); gap: clamp(1.5rem, 3vw, 3.5rem); }
+    #mission .mission-in { grid-template-columns: clamp(200px, 21vw, 300px) minmax(0, 1fr) clamp(200px, 21vw, 300px); gap: clamp(1.5rem, 3vw, 3.5rem); }
     #mission .mission-prints { display: contents; }
-    #mission .mission-print { width: 100%; padding: 10px 10px 38px; }
-    #mission .mission-print.is-a { order: 1; transform: rotate(-4deg) translateY(-18px); }
+    #mission .mission-print { padding: 10px 10px 38px; }
+    #mission .mission-print.is-a { order: 1; width: 100%; transform: rotate(-3.5deg) translateY(-14px); }
     #mission .mission-copy { order: 2; }
-    #mission .mission-print.is-b { order: 3; transform: rotate(3.5deg) translateY(26px); }
+    #mission .mission-print.is-b { order: 3; width: 80%; justify-self: center; transform: rotate(3.5deg) translateY(18px); }
   }
 </style>
 <section class="lt" id="mission" aria-label="What treehouse. is for">
   <div class="mission-in">
     <div class="mission-prints" aria-hidden="true">
-      <figure class="mission-print is-a"><img src="/img/gallery/tribeca-oct-2026/oct17-12.jpg" alt="" width="933" height="1400" loading="lazy" style="object-position:center 35%;"></figure>
-      <figure class="mission-print is-b"><img src="/img/gallery/tribeca-oct-2026/oct17-10.jpg" alt="" width="933" height="1400" loading="lazy" style="object-position:center 30%;"></figure>
+      <figure class="mission-print is-a"><img src="/img/mission-ice.jpg" alt="" width="900" height="551" loading="lazy"></figure>
+      <figure class="mission-print is-b"><img src="/img/mission-crowd.jpg" alt="" width="720" height="900" loading="lazy"></figure>
     </div>
     <div class="mission-copy">
       <span class="mission-rule" aria-hidden="true"></span>
