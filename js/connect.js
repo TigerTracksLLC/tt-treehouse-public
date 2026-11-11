@@ -90,7 +90,7 @@ sForm.addEventListener('submit', async (e) => {
   if (!okNames || !okIg || !status || !share) {
     sErr.textContent = !okNames ? 'Add both your names.'
       : !okIg ? 'Add an Instagram handle so we can reach you.'
-      : !status ? 'Tell us where you two are now.'
+      : !status ? 'Tell us what you are now.'
       : 'Tell us whether we can share it.';
     sErr.hidden = false;
     const first = !okNames ? sNames : !okIg ? sIg : sForm.querySelector(`input[name="${!status ? 'sStatus' : 'sShare'}"]`);
@@ -110,7 +110,7 @@ sForm.addEventListener('submit', async (e) => {
     sErr.textContent = 'That did not go through. Try again in a moment.';
     sErr.hidden = false;
     sSubmit.disabled = false;
-    sSubmit.textContent = 'send our story';
+    sSubmit.textContent = 'send your story';
   }
 });
 
