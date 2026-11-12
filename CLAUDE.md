@@ -39,7 +39,7 @@ The nav link keeps the wording "get on the list" when an event is live.
 
 Last event: Saturday 17 October 2026, Tribeca Rooftop. 415 tickets sold from
 797 invite requests. Its section is `#tribeca-oct-2026`
-(first in past events), with photos and one video in
+(first in past events, right below the `#past-events` heading), with photos and one video in
 `img/gallery/tribeca-oct-2026/`. New parties go in above it, newest first.
 
 ## Claims on this site must be true
@@ -121,6 +121,31 @@ dated line on this page a `data-until`.
 Forest green `#2D4A1E` and warm cream `#E8E6DF`. Lowercase wordmark,
 `treehouse.` with the full stop. No em dashes in copy. No promoter urgency
 language ("last chance", "don't miss out").
+
+Design pass, 11 November 2026 (Eliz's review list), lives in `rhythm.css`,
+loaded after `styles.css` on the homepage and sponsor page. Bump its `?v=`
+on both pages when it changes.
+
+- Type: Bebas Neue for headlines, Inter for everything else. Playfair italic
+  is a rare accent, used only for the mission line. Do not bring it back for
+  body copy, descriptions or buttons.
+- Color: sections rotate through forest green, near-black (`#0c0f0b`) and
+  cream. Cream is the deliberate break: the mission band, "Better than the
+  apps." and the list. One hot accent, orange `#FF5A1F` (`--hot`), for primary
+  buttons, countdown units, rules, ticker dots and key words. On cream, orange
+  text uses `--hot-deep` (`#C2410C`) so it stays readable; keep it large
+  (24px, or 19px bold), since small `#C2410C` on cream is under 4.5:1. Small
+  orange text on forest green also fails contrast (4.05:1): use cream there.
+  Orange text is fine at any size on near-black. No lime, no gold.
+- Eyebrows (`.lbl`) are plain small caps with no `//`.
+- The page H1 is the brand (the hero logo). The next event title is an H2.
+- The nav "past events" link goes to `#past-events`, the heading above the
+  newest party. "home" goes to the top.
+- The ticker lists past party names only, no dates, spelled as on the site
+  ("SoHo Soirée").
+- The footer shows Instagram and treehouse@tigertracks.ai. Never put a
+  personal phone number on the site.
+- The gallery watermark stays as is (Eliz's call, 11 November 2026).
 
 ## Working habits
 

@@ -74,7 +74,9 @@
 .mc-couples .sec-n span { color: var(--ink); border-color: var(--ink-20); }
 .mc-couples .sec-n::after { background: var(--ink-20); }
 .mc-couples .mc-h em { color: var(--blush); }
-.mc-couples .mc-p { color: var(--ink-70); }
+/* subtext under 'not just dates.': full-strength ink, larger, regular weight (11 Nov 2026) */
+.mc-couples .mc-p { color: var(--ink); }
+.mc-couples .mc-p-lg { margin-top: 1.5rem; max-width: 34ch; font-size: clamp(1.3rem, 5vw, 1.6rem); font-weight: 400; line-height: 1.45; letter-spacing: -.005em; }
 
 .mc-arc { list-style: none; margin: 2.6rem 0 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--ink-20); }
 .mc-arc li { display: grid; grid-template-columns: 64px 1fr; align-items: baseline; gap: .6rem; padding: 1.1rem 0; border-bottom: 1px solid var(--ink-20); }
