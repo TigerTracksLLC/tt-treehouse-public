@@ -128,3 +128,31 @@ footer.dk { background: var(--black); }
 .sp-tier.gold { border-color: rgba(255,90,31,0.6); box-shadow: 0 4px 20px rgba(255,90,31,0.18); }
 .sp-tier.gold:hover { box-shadow: 0 8px 32px rgba(255,90,31,0.28); }
 .sp-tier-badge { background: var(--hot); color: var(--black); }
+
+/* ---------- softer orange (11 Nov 2026, Eliz: "too bright, make it more translucent") ----------
+   Buttons are tinted glass: a see-through orange fill, a brighter orange edge and white text.
+   On cream sections the same glass reads as a light peach, so the text there is dark green.
+   Small orange accents (countdown units, dots, rules, numbers) use a translucent orange too. */
+:root {
+  --hot: rgba(255,106,58,0.82);
+  --accent: rgba(255,106,58,0.82);
+  --glass: rgba(255,90,31,0.42);
+  --glass-hover: rgba(255,90,31,0.6);
+  --glass-edge: rgba(255,128,80,0.9);
+}
+.btn-p, .btn-primary, .hero-ctas .btn-p, .sp-tier.gold .sp-tier-cta {
+  background: var(--glass); border: 1.5px solid var(--glass-edge); color: #fff; font-weight: 700;
+  -webkit-backdrop-filter: blur(10px) saturate(1.2); backdrop-filter: blur(10px) saturate(1.2);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+.btn-p:hover, .btn-primary:hover, .hero-ctas .btn-p:hover, .sp-tier.gold .sp-tier-cta:hover {
+  background: var(--glass-hover); border-color: var(--glass-edge); box-shadow: 0 6px 22px rgba(255,90,31,0.22);
+}
+.hero-ctas .btn-p { background: rgba(255,90,31,0.5); }
+/* cream sections: same glass, dark text */
+#met-here .btn-p, #the-list .btn-p, #sp-stats .btn-p {
+  background: rgba(255,90,31,0.2); border-color: rgba(194,65,12,0.8); color: #14290f; text-shadow: none;
+}
+#met-here .btn-p:hover, #the-list .btn-p:hover, #sp-stats .btn-p:hover { background: rgba(255,90,31,0.32); }
+.sp-tier-badge { background: rgba(255,90,31,0.35); color: #fff; border: 1px solid var(--glass-edge); }
+.sp-tier.gold { border-color: rgba(255,128,80,0.45); box-shadow: 0 4px 20px rgba(255,90,31,0.12); }

@@ -131,8 +131,10 @@ on both pages when it changes.
   body copy, descriptions or buttons.
 - Color: sections rotate through forest green, near-black (`#0c0f0b`) and
   cream. Cream is the deliberate break: the mission band, "Better than the
-  apps." and the list. One hot accent, orange `#FF5A1F` (`--hot`), for primary
-  buttons, countdown units, rules, ticker dots and key words. On cream, orange
+  apps." and the list. One hot accent, orange, for primary buttons, countdown
+  units, rules, ticker dots and key words. Eliz found the solid orange too
+  bright, so buttons are translucent "glass" (`--glass`, white text; dark text
+  on cream sections) and small accents use a translucent orange (`--hot`). On cream, orange
   text uses `--hot-deep` (`#C2410C`) so it stays readable; keep it large
   (24px, or 19px bold), since small `#C2410C` on cream is under 4.5:1. Small
   orange text on forest green also fails contrast (4.05:1): use cream there.
