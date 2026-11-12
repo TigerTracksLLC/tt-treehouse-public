@@ -6,16 +6,15 @@
 
    COLOR: sections rotate through forest green, near-black and cream. Cream is the
    deliberate break (mission band, "Better than the apps.", the list). One hot accent,
-   orange, for primary buttons, countdown units, rules, dots and key words.
+   terracotta orange, for primary buttons, countdown units, rules, dots and key words.
    On cream, orange text uses --hot-deep so it stays readable. */
 
 :root {
-  --hot: #FF5A1F;
-  --hot-hover: #FF7240;
-  --hot-deep: #C2410C;
+  --hot: #E07A52;
+  --hot-hover: #C2552F;
+  --hot-deep: #B4502F;
   --black: #0c0f0b;
-  --accent: #FF5A1F;
-  --adk: #E8501A;
+  --accent: #E07A52;
 }
 
 /* ---------- type ---------- */
@@ -41,13 +40,8 @@ h3 { font-family: var(--ff-b); font-weight: 600; letter-spacing: 0; }
 .nav-links a:hover, .nav-links a:focus-visible { opacity: 1; text-decoration-color: transparent; }
 .nav-links a.nav-active { opacity: 1; color: var(--hot); }
 
-/* ---------- buttons: the primary button is the hot accent ---------- */
-.btn-p, .btn-primary, .hero-ctas .btn-p {
-  background: var(--hot); border-color: var(--hot); color: var(--black); font-weight: 700;
-}
-.btn-p:hover, .btn-primary:hover, .hero-ctas .btn-p:hover {
-  background: var(--hot-hover); border-color: var(--hot-hover); filter: none; box-shadow: 0 6px 22px rgba(255,90,31,0.35);
-}
+/* ---------- buttons: see "softer orange" at the bottom of this file ---------- */
+.btn-p:hover, .btn-primary:hover { filter: none; }
 
 /* ---------- cursor: hidden until the mouse moves, never on touch screens ---------- */
 .cur, .cur-r { opacity: 0; }
@@ -96,7 +90,7 @@ body:not(.cur-live) .cur, body:not(.cur-live) .cur-r { opacity: 0; }
 #the-list .lbl { color: #1a3a1a; }
 #the-list h2 { color: #14290f; }
 #the-list .tl-p { color: #14290f; }
-#the-list .tl-proof { color: var(--hot-deep); font-weight: 700; }   /* 19.2px bold: large text, so #C2410C on cream passes AA */
+#the-list .tl-proof { color: var(--hot-deep); font-weight: 700; }   /* 19.2px bold: large text, so #B4502F on cream passes AA */
 #the-list.grain::before { opacity: 0.05; }
 
 /* small caps lines on green: cream, not orange (orange text is too low-contrast at this size) */
@@ -107,8 +101,8 @@ body:not(.cur-live) .cur, body:not(.cur-live) .cur-r { opacity: 0; }
 
 /* leftover lime from styles.css */
 .ev-section { border-top-color: rgba(240,237,232,0.08); }
-.join-row:focus-within { box-shadow: 0 0 0 3px rgba(255,90,31,0.25); }
-.sp-form-success { background: rgba(255,90,31,0.12); border-color: rgba(255,90,31,0.4); }
+.join-row:focus-within { box-shadow: 0 0 0 3px rgba(185,78,44,0.25); }
+.sp-form-success { background: rgba(185,78,44,0.12); border-color: rgba(185,78,44,0.4); }
 
 /* nav bar once scrolled: near-black */
 .nav.sc { background: rgba(12,15,11,0.9); }
@@ -122,37 +116,37 @@ footer.dk { background: var(--black); }
 
 /* ---------- sponsor page: the featured tier uses the same hot accent, not gold ---------- */
 .sp-tier.gold { --gold: var(--hot); }
-.sp-tier.gold .sp-tier-div { background: rgba(255,90,31,0.4); }
-.sp-tier.gold .sp-tier-cta { background: var(--hot); border-color: var(--hot); color: var(--black); font-weight: 700; }
-.sp-tier.gold .sp-tier-cta:hover { background: var(--hot-hover); border-color: var(--hot-hover); }
-.sp-tier.gold { border-color: rgba(255,90,31,0.6); box-shadow: 0 4px 20px rgba(255,90,31,0.18); }
-.sp-tier.gold:hover { box-shadow: 0 8px 32px rgba(255,90,31,0.28); }
-.sp-tier-badge { background: var(--hot); color: var(--black); }
+.sp-tier.gold .sp-tier-div { background: rgba(185,78,44,0.4); }
+.sp-tier.gold { border-color: rgba(185,78,44,0.6); box-shadow: 0 4px 20px rgba(185,78,44,0.18); }
+.sp-tier.gold:hover { box-shadow: 0 8px 32px rgba(185,78,44,0.28); }
 
-/* ---------- softer orange (11 Nov 2026, Eliz: "too bright, make it more translucent") ----------
-   Buttons are tinted glass: a see-through orange fill, a brighter orange edge and white text.
-   On cream sections the same glass reads as a light peach, so the text there is dark green.
-   Small orange accents (countdown units, dots, rules, numbers) use a translucent orange too. */
+/* ---------- softer orange (11 Nov 2026) ----------
+   Eliz found the bright orange too loud. Buttons are a solid terracotta with white text (5:1),
+   the same on every background, so they never go brown on dark sections or pastel on cream.
+   Over photos (the hero and the next event) the button is translucent glass instead.
+   Small accents on dark sections (countdown units, dots, rules, numbers) use a lighter terracotta.
+   Orange text on cream uses --hot-deep. */
 :root {
-  --hot: rgba(255,106,58,0.82);
-  --accent: rgba(255,106,58,0.82);
-  --glass: rgba(255,90,31,0.42);
-  --glass-hover: rgba(255,90,31,0.6);
-  --glass-edge: rgba(255,128,80,0.9);
+  --terra: #B94E2C;
+  --terra-hover: #C2552F;
+  --hot: #E07A52;
+  --accent: #E07A52;
+  --hot-deep: #B4502F;
 }
-.btn-p, .btn-primary, .hero-ctas .btn-p, .sp-tier.gold .sp-tier-cta {
-  background: var(--glass); border: 1.5px solid var(--glass-edge); color: #fff; font-weight: 700;
-  -webkit-backdrop-filter: blur(10px) saturate(1.2); backdrop-filter: blur(10px) saturate(1.2);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
-}
-.btn-p:hover, .btn-primary:hover, .hero-ctas .btn-p:hover, .sp-tier.gold .sp-tier-cta:hover {
-  background: var(--glass-hover); border-color: var(--glass-edge); box-shadow: 0 6px 22px rgba(255,90,31,0.22);
-}
-.hero-ctas .btn-p { background: rgba(255,90,31,0.5); }
-/* cream sections: same glass, dark text */
+.btn-p, .btn-primary, .sp-tier.gold .sp-tier-cta,
 #met-here .btn-p, #the-list .btn-p, #sp-stats .btn-p {
-  background: rgba(255,90,31,0.2); border-color: rgba(194,65,12,0.8); color: #14290f; text-shadow: none;
+  background: var(--terra); border: 1.5px solid var(--terra); color: #fff; font-weight: 700; text-shadow: none;
 }
-#met-here .btn-p:hover, #the-list .btn-p:hover, #sp-stats .btn-p:hover { background: rgba(255,90,31,0.32); }
-.sp-tier-badge { background: rgba(255,90,31,0.35); color: #fff; border: 1px solid var(--glass-edge); }
-.sp-tier.gold { border-color: rgba(255,128,80,0.45); box-shadow: 0 4px 20px rgba(255,90,31,0.12); }
+.btn-p:hover, .btn-primary:hover, .sp-tier.gold .sp-tier-cta:hover,
+#met-here .btn-p:hover, #the-list .btn-p:hover, #sp-stats .btn-p:hover {
+  background: var(--terra-hover); border-color: var(--terra-hover); box-shadow: 0 6px 20px rgba(185,78,44,0.28);
+}
+/* over photos: tinted glass */
+.hero-ctas .btn-p, #events .btn-p {
+  background: rgba(185,78,44,0.55); border: 1.5px solid rgba(224,122,82,0.95); color: #fff;
+  -webkit-backdrop-filter: blur(10px) saturate(1.2); backdrop-filter: blur(10px) saturate(1.2);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.hero-ctas .btn-p:hover, #events .btn-p:hover { background: rgba(185,78,44,0.75); border-color: rgba(224,122,82,0.95); }
+.sp-tier-badge { background: var(--terra); color: #fff; border: 0; }
+.sp-tier.gold { border-color: rgba(224,122,82,0.5); box-shadow: 0 4px 20px rgba(185,78,44,0.15); }

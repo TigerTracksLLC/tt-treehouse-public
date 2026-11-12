@@ -132,12 +132,14 @@ on both pages when it changes.
 - Color: sections rotate through forest green, near-black (`#0c0f0b`) and
   cream. Cream is the deliberate break: the mission band, "Better than the
   apps." and the list. One hot accent, orange, for primary buttons, countdown
-  units, rules, ticker dots and key words. Eliz found the solid orange too
-  bright, so buttons are translucent "glass" (`--glass`, white text; dark text
-  on cream sections) and small accents use a translucent orange (`--hot`). On cream, orange
-  text uses `--hot-deep` (`#C2410C`) so it stays readable; keep it large
-  (24px, or 19px bold), since small `#C2410C` on cream is under 4.5:1. Small
-  orange text on forest green also fails contrast (4.05:1): use cream there.
+  units, rules, ticker dots and key words. Eliz found the bright orange too
+  loud, so buttons are a solid terracotta (`--terra`, white text) everywhere
+  except over photos (hero, next event), where they are translucent glass.
+  Small accents on dark sections use a lighter terracotta (`--hot`). On cream, orange
+  text uses `--hot-deep` (`#B4502F`) so it stays readable; keep it large
+  (24px, or 19px bold), since small `#B4502F` on cream is under 4.5:1 (4.07 on
+  `#E8E6DF`, 4.36 on `#f0ede8`). Small orange text on forest green also fails
+  contrast (3.35:1): use cream there.
   Orange text is fine at any size on near-black. No lime, no gold.
 - Eyebrows (`.lbl`) are plain small caps with no `//`.
 - The page H1 is the brand (the hero logo). The next event title is an H2.
