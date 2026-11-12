@@ -29,22 +29,23 @@
   <meta name="description" content="treehouse. throws the best parties in New York. Invite only. Open bar. Join the waitlist for the next one.">
   <meta property="og:title" content="treehouse. events | new york city">
   <meta property="og:description" content="The best night out in New York. Invite only. Open bar. You'll want to be there.">
-  <meta property="og:image" content="/img/hero-new.jpg">
+  <meta property="og:image" content="https://treehouseevents.cliffeliz.ai/img/hero-new.jpg">
   <meta property="og:url" content="https://treehouseevents.cliffeliz.ai">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="treehouse. events | new york city">
-  <meta name="twitter:image" content="/img/hero-new.jpg">
+  <meta name="twitter:image" content="https://treehouseevents.cliffeliz.ai/img/hero-new.jpg">
   <!-- PHASE 2 FIX #2 — Additional SEO meta tags -->
   <meta name="twitter:description" content="NYC's most sought-after invite-only event series. Open bar. Join the waitlist for the next one.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- AUDIT FIX #15 — font-display:swap confirmed via Google Fonts URL -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- EXPANSION FIX #1 — CSS extracted to styles.css for shared use with sponsor.html -->
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/rhythm.css?v=2026-11-11d">
 <script src="/photos.js"></script>
 <!-- COUNTDOWN FIX — syncCountdown2 removed; unified updateCountdown handles all IDs -->
 </head>
@@ -64,14 +65,14 @@
   <!-- AUDIT FIX #10 — Nav simplified to 3 links: Past Events | Sponsor | Get Tickets -->
   <div class="nav-links">
     <!-- ROUND 25 FIX #4 — Home added as first nav item -->
-    <a href="#about">home</a>
+    <a href="#hero">home</a>
     <div class="nav-sub">
-      <a href="#tribeca-oct-2026" aria-haspopup="true">past events<span class="nav-caret" aria-hidden="true"></span></a>
+      <a href="#past-events" aria-haspopup="true">past events<span class="nav-caret" aria-hidden="true"></span></a>
       <div class="nav-sub-menu"><a href="/drop">share your content</a></div>
     </div>
-    <!-- EXPANSION FIX #3 — sponsor nav link now points to sponsor.html --><a href="/sponsor.html" class="hi">sponsor</a>
+    <a href="/sponsor.html">sponsor</a>
     <a href="https://partiful.com/e/Ncw7yzgKZA7F48l3bpX5" target="_blank" rel="noopener noreferrer" class="js-rsvp js-rsvp-nav">get on the list</a>
-    <a href="/connections" class="hi">missed connections</a>
+    <a href="/connections">missed connections</a>
   </div>
   <button class="ham" id="ham" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
     <span></span><span></span><span></span>
@@ -85,12 +86,12 @@
   <!-- AUDIT FIX #10 — Mobile nav simplified -->
   <nav aria-label="Mobile navigation">
     <!-- ROUND 25 FIX #4 — Home added as first mobile nav item -->
-    <a href="#about">home</a>
-    <a href="#tribeca-oct-2026">past events</a>
+    <a href="#hero">home</a>
+    <a href="#past-events">past events</a>
     <a href="/drop" class="mob-sub">share your content</a>
     <!-- EXPANSION FIX #3 — mobile sponsor nav link --><a href="/sponsor.html">sponsor</a>
     <a href="https://partiful.com/e/Ncw7yzgKZA7F48l3bpX5" target="_blank" rel="noopener noreferrer" class="js-rsvp js-rsvp-nav">get on the list</a>
-    <a href="/connections" class="hi">missed connections</a>
+    <a href="/connections">missed connections</a>
   </nav>
 </div>
 
@@ -106,9 +107,9 @@
     <div class="hero-eye" data-a="f" aria-label="New York City · Invite Only">
       New York City <span aria-hidden="true">·</span> Invite Only
     </div>
-    <div class="hero-wm" data-a="f" data-d="1">
-      <img src="/img/logo.png" alt="treehouse." height="120" style="filter:brightness(0) invert(1);">
-    </div>
+    <h1 class="hero-wm" data-a="f" data-d="1">
+      <img src="/img/logo.png" alt="treehouse. events, New York City" height="120" style="filter:brightness(0) invert(1);">
+    </h1>
     <div class="hero-rule" data-a="f" data-d="2" aria-hidden="true"></div>
     <!-- REMOVED R17: hero tagline -- "you already know someone who's been." -->
     <!-- ROUND 4 FIX #3 — Countdown replaces static hero badge -->
@@ -148,37 +149,21 @@
 -->
 
 
-<!-- MARQUEE -->
+<!-- MARQUEE: past party names, one format (no dates). Listed twice so the loop is seamless. -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-track">
     <span class="marquee-item">Tribeca Rooftop<span class="marquee-dot"></span></span>
-    <span class="marquee-item">SoHo Soiree<span class="marquee-dot"></span></span>
-<!-- ABOUT: duplicate removed (nested comment caused rendering bug) -->
-
-<!-- VIDEO REEL -->
-<!-- AUDIT FIX #2 — Video: poster frame, preload metadata, full-bleed, proper height -->
-<!-- ROUND 8 FIX #5 — vibe section moved below April 25 -->
-
+    <span class="marquee-item">Springtime Opener<span class="marquee-dot"></span></span>
     <span class="marquee-item">Christmas in NYC<span class="marquee-dot"></span></span>
-    <!-- REMOVED R6: <span class="marquee-item">Dinner Parties<span class="marquee-dot"></span></span> -->
-    <!-- ROUND 16 FIX #1 — renamed Knox Day to Party on Perry St --><span class="marquee-item">Party on Perry St<span class="marquee-dot"></span></span>
+    <span class="marquee-item">SoHo Soirée<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Party on Perry St<span class="marquee-dot"></span></span>
     <span class="marquee-item">West Village<span class="marquee-dot"></span></span>
-    <!-- REMOVED 11 Sep 2026: "The Hamptons" listed among past events, but the
-         15 July Hamptons party was cancelled and no gallery exists for it.
-         Restore this line if there was in fact a Hamptons event. -->
-    <span class="marquee-item">April 25th<span class="marquee-dot"></span></span>
-    <span class="marquee-item">October 17th<span class="marquee-dot"></span></span>
     <span class="marquee-item">Tribeca Rooftop<span class="marquee-dot"></span></span>
-    <span class="marquee-item">SoHo Soiree<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Springtime Opener<span class="marquee-dot"></span></span>
     <span class="marquee-item">Christmas in NYC<span class="marquee-dot"></span></span>
-    <!-- REMOVED R6: <span class="marquee-item">Dinner Parties<span class="marquee-dot"></span></span> -->
-    <!-- ROUND 16 FIX #1 — renamed Knox Day to Party on Perry St --><span class="marquee-item">Party on Perry St<span class="marquee-dot"></span></span>
+    <span class="marquee-item">SoHo Soirée<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Party on Perry St<span class="marquee-dot"></span></span>
     <span class="marquee-item">West Village<span class="marquee-dot"></span></span>
-    <!-- REMOVED 11 Sep 2026: "The Hamptons" listed among past events, but the
-         15 July Hamptons party was cancelled and no gallery exists for it.
-         Restore this line if there was in fact a Hamptons event. -->
-    <span class="marquee-item">April 25th<span class="marquee-dot"></span></span>
-    <span class="marquee-item">October 17th<span class="marquee-dot"></span></span>
   </div>
 </div>
 
@@ -193,10 +178,10 @@
   #mission .mission-in { max-width: 1560px; margin: 0 auto; display: grid; grid-template-columns: 1fr; align-items: center; gap: clamp(2rem, 4vw, 2.75rem); }
   #mission .mission-copy { container-type: inline-size; }
   #mission .mission-rule { display: block; width: 64px; height: 3px; margin: 0 auto clamp(1rem, 1.5vw, 1.4rem); background: var(--accent); }
-  #mission .mission-lead { margin: 0 auto; font-family: var(--ff-e); font-weight: 400; font-size: clamp(1.2rem, 2.1vw, 1.9rem); font-size: clamp(1.2rem, 2.95cqi, 2.1rem); line-height: 1.3; letter-spacing: -0.005em; color: var(--color-green); opacity: 0.85; text-wrap: balance; }
+  #mission .mission-lead { margin: 0 auto; font-family: var(--ff-b); font-weight: 500; font-size: clamp(1.2rem, 2.1vw, 1.9rem); font-size: clamp(1.2rem, 2.95cqi, 2.1rem); line-height: 1.3; letter-spacing: -0.005em; color: var(--color-green); opacity: 0.85; text-wrap: balance; }
   #mission .mission-big { margin: clamp(0.6rem, 1vw, 0.9rem) auto 0; font-family: var(--ff-e); font-weight: 700; font-style: italic; font-size: clamp(2.5rem, 4.4vw, 5rem); font-size: clamp(2.5rem, 7.95cqi, 6rem); line-height: 1.02; letter-spacing: -0.025em; color: var(--color-green); text-wrap: balance; }
   #mission .mission-big br { display: none; }
-  #mission .mission-mark { background: linear-gradient(transparent 64%, rgba(126,184,50,0.5) 64%, rgba(126,184,50,0.5) 93%, transparent 93%); padding: 0 0.08em; margin: 0 -0.08em; }
+  #mission .mission-mark { background: linear-gradient(transparent 64%, rgba(185,78,44,0.2) 64%, rgba(185,78,44,0.2) 93%, transparent 93%); padding: 0 0.08em; margin: 0 -0.08em; }
   #mission .mission-prints { display: flex; align-items: center; justify-content: center; width: min(100%, 520px); margin: 0 auto; }
   #mission .mission-print { margin: 0; padding: 8px 8px 26px; background: #fff; box-shadow: 0 1px 2px rgba(26,58,26,0.12), 0 14px 34px rgba(26,58,26,0.22); }
   #mission .mission-print img, #mission .mission-print video { display: block; width: 100%; height: auto; object-fit: cover; }
@@ -269,16 +254,16 @@
   #met-here h2 { margin: 0; }
   /* type tuned for contrast and readability (11 Nov 2026): full-strength ink, regular weight, bolder italic */
   #met-here .lbl { opacity: .85; font-weight: 600; color: #1a3a1a; }
-  #met-here h2 em { font-style: italic; font-weight: 700; }
-  #met-here .met-p { margin: 1.5rem 0 0; max-width: 42ch; font-size: clamp(1.12rem, 1.4vw, 1.3rem); font-weight: 400; line-height: 1.6; color: #14290f; opacity: 1; }
+  #met-here h2 { font-size: clamp(3.2rem, 7vw, 6rem); line-height: .9; color: #14290f; }
+  #met-here h2 em { font-style: normal; color: var(--hot-deep, #B4502F); }
+  #met-here .met-p { margin: 1.6rem 0 0; max-width: 34ch; font-size: clamp(1.3rem, 1.9vw, 1.6rem); font-weight: 400; line-height: 1.5; letter-spacing: -.005em; color: #14290f; opacity: 1; }
   #met-here .met-acts { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .75rem; }
   #met-here .met-acts .btn { padding: 16px 28px; }
   #met-here .met-arc { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(26,58,26,.3); }
   #met-here .met-arc li { display: grid; grid-template-columns: 128px 1fr; align-items: baseline; gap: .75rem; padding: 1.1rem 0; border-bottom: 1px solid rgba(26,58,26,.3); }
   #met-here .met-arc span { font-size: .76rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #1a3a1a; opacity: .8; }
-  #met-here .met-arc b { font-family: var(--ff-e); font-weight: 400; font-size: clamp(1.9rem, 6vw, 3rem); line-height: 1.05; letter-spacing: -.02em; color: #14290f; }
-  #met-here .met-arc li + li b { font-style: italic; }
-  #met-here .met-arc li:last-child b { color: #c9500f; }
+  #met-here .met-arc b { font-family: var(--ff-d); font-weight: 400; font-size: clamp(2.2rem, 6.5vw, 3.4rem); line-height: 1; letter-spacing: .01em; color: #14290f; }
+  #met-here .met-arc li:last-child b { color: var(--hot-deep, #B4502F); }
   @media (min-width: 900px) { #met-here .met-in { grid-template-columns: 1.1fr .9fr; gap: 6rem; } }
   @media (max-width: 768px) { #met-here { padding: 64px 0; } #met-here .met-acts .btn { width: 100%; } }
   /* nav: "share your content" sits under "past events" (hover or keyboard focus on desktop, indented on phones) */
@@ -298,7 +283,7 @@
 <section class="lt" id="met-here" aria-labelledby="met-here-title">
   <div class="met-in">
     <div>
-      <span class="lbl">// Missed Connections</span>
+      <span class="lbl">Missed Connections</span>
       <h2 id="met-here-title">Better than<br><em>the apps.</em></h2>
       <p class="met-p">Dating apps are dead. At treehouse. the room is friends of friends, so the person you noticed is only a few degrees from you, and you met them in person, not through a bio. Didn't get their name? Tell us. If it's mutual, we make the intro.</p>
       <div class="met-acts">
@@ -326,7 +311,7 @@
     <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/gallery/christmas-nyc/xmas-018.jpg" alt="treehouse. Christmas party, December 2025" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
     <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/xmas-new-03.jpg" alt="treehouse. Christmas party, December 2025" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
     <div class="vc-slide" style="position:absolute;inset:0;"><img src="/img/xmas-new-04.jpg" alt="treehouse. Christmas party, December 2025" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-    <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(10,28,10,0.85) 0%, rgba(10,28,10,0.55) 55%, rgba(10,28,10,0.1) 100%);z-index:1;pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.08) 100%);z-index:1;pointer-events:none;"></div>
     <button class="vc-btn vc-prev" aria-label="Previous photo" style="z-index:3;">&#8592;</button>
     <button class="vc-btn vc-next" aria-label="Next photo" style="z-index:3;">&#8594;</button>
     <div class="vc-dots" style="z-index:3;">
@@ -342,12 +327,12 @@
     <!-- Top-left: event title -->
     <div style="align-self:flex-start;max-width:700px;">
       <!-- ROUND 25 FIX #6 — Event title above countdown -->
-      <h1 style="font-family:var(--ff-d);font-size:clamp(3rem,8vw,7rem);line-height:0.9;color:#E8E6DF;margin-bottom:0;letter-spacing:0.02em;text-align:left;"id="event-title">NEXT EVENT</h1>
+      <h2 style="font-family:var(--ff-d);font-size:clamp(3rem,8vw,7rem);line-height:0.9;color:#E8E6DF;margin-bottom:0;letter-spacing:0.02em;text-align:left;" id="event-title">NEXT EVENT</h2>
     </div>
     <!-- Bottom-right: countdown + details + CTA -->
     <!-- FIX #1 Round 46 — dark green frosted panel for readability -->
     <div class="event-details-panel" style="align-self:flex-end;text-align:right;max-width:520px;">
-      <span class="lbl reveal-child" style="margin-bottom:1rem;color:rgba(240,237,232,0.65);display:block;">// Next Event</span>
+      <span class="lbl reveal-child" style="margin-bottom:1rem;color:rgba(240,237,232,0.65);display:block;">Next Event</span>
       <h2 class="event-date reveal-child" id="event-date-big" style="font-size:clamp(2.5rem,6vw,5rem);line-height:0.9;margin-bottom:1rem;">&nbsp;</h2>
       <!-- ROUND 8 FIX #4 — Prominent countdown in this section -->
       <!-- ROUND 28 FIX #2 — Reduced margin-bottom to close gap between countdown and venue -->
@@ -375,7 +360,7 @@
 <!-- ROUND 30 POLISH — vibe section has its own padding -->
 <section class="dk grain no-pad" id="vibe" style="padding:4rem 0;">
   <div style="width:100%;max-width:100%;padding:0;text-align:center;">
-    <span class="lbl reveal-child" style="display:block;margin-bottom:1.5rem;padding:0 clamp(1.5rem,5vw,5rem);">// The Vibe</span>
+    <span class="lbl reveal-child" style="display:block;margin-bottom:1.5rem;padding:0 clamp(1.5rem,5vw,5rem);">The Vibe</span>
     <div style="width:100%;overflow:hidden;border-radius:0;">
       <video autoplay muted loop playsinline controls
         poster="/img/hero-new.jpg"
@@ -414,11 +399,16 @@
   .gallery-item.is-video.is-playing .vid-badge { opacity:0; }
   /* Legibility over bright video and photo backgrounds. */
   .curate-copy p { color:#F0EDE8; font-weight:500; font-size:1.15rem; text-shadow:0 1px 3px rgba(0,0,0,0.8), 0 0 22px rgba(0,0,0,0.6); }
-  .hero-ctas .btn-p { background:#E8E6DF; border-color:#E8E6DF; color:#2D4A1E; }
 </style>
+<!-- PAST EVENTS: the nav's "past events" link lands here. Newest party first below. -->
+<section id="past-events" aria-labelledby="past-events-title">
+  <div class="ev-header">
+    <h2 id="past-events-title">Past events</h2>
+  </div>
+</section>
 <section class="dk ev-section no-pad" id="tribeca-oct-2026">
   <div class="ev-header reveal">
-    <span class="lbl reveal-child">// treehouse. NYC</span>
+    <span class="lbl reveal-child">treehouse. NYC</span>
     <h2 class="ev-title reveal-child">TRIBECA ROOFTOP. OCTOBER 17, 2026.</h2>
     <p class="ev-desc reveal-child">Back on the Tribeca rooftop. Nearly 800 requests for the list, a sax player on the roof, and a surprise burger delivery.</p>
     <div class="ev-meta-row">
@@ -452,7 +442,7 @@
 
 <!-- FOR BRANDS: figures must match sponsor.html -->
 <section class="dk grain" id="for-brands" style="padding:4.5rem 1.5rem;text-align:center;border-top:1px solid var(--ln10);border-bottom:1px solid var(--ln10);">
-  <span class="lbl">// For Brands</span>
+  <span class="lbl">For Brands</span>
   <h2 style="font-family:var(--ff-d);font-size:clamp(2.6rem,6vw,4.5rem);letter-spacing:0.02em;line-height:1;color:#E8E6DF;margin-bottom:2rem;">Put your brand in the room.</h2>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem 4rem;max-width:960px;margin:0 auto 2.5rem;">
     <div style="flex:1 1 200px;max-width:260px;"><div style="font-family:var(--ff-d);font-size:3.2rem;line-height:1;color:var(--accent);">1.8M+</div><p style="font-family:var(--ff-b);font-size:0.9rem;line-height:1.5;opacity:0.8;margin-top:0.5rem;">combined following of the accounts that posted about October 17</p></div>
@@ -465,7 +455,7 @@
 <!-- PARTY 7: SPRINGTIME OPENER -->
 <section class="dk ev-section grain" id="springtime-opener">
   <div class="ev-header reveal">
-    <span class="lbl reveal-child">// treehouse. NYC</span>
+    <span class="lbl reveal-child">treehouse. NYC</span>
     <h2 class="ev-title reveal-child">SPRINGTIME OPENER. APRIL 25, 2026.</h2>
     <p class="ev-desc reveal-child">Open bar on the rooftop at 75 Varick. The first party of the season. 390 guests, in the rain.</p>
     <div class="ev-meta-row">
@@ -505,7 +495,7 @@
 <!-- PARTY 3: CHRISTMAS IN NYC -->
 <section class="dk ev-section grain" id="christmas-nyc">
   <div class="ev-header reveal">
-    <span class="lbl reveal-child">// treehouse. NYC</span>
+    <span class="lbl reveal-child">treehouse. NYC</span>
     <h2 class="ev-title reveal-child">CHRISTMAS IN NYC. DECEMBER 2025.</h2>
     <p class="ev-desc reveal-child">December in New York. Everyone dressed up and nobody left early.</p>
     <div class="ev-meta-row">
@@ -546,7 +536,7 @@
 <!-- ROUND 30 POLISH — gallery sections are full-bleed -->
 <section class="dk ev-section no-pad" id="tribeca-rooftop">
   <div class="ev-header reveal">
-    <span class="lbl reveal-child">// treehouse. NYC</span>
+    <span class="lbl reveal-child">treehouse. NYC</span>
     <!-- AUDIT FIX #12 — Dates added to all event titles -->
     <h2 class="ev-title reveal-child">TRIBECA ROOFTOP. OCTOBER 2025.</h2>
     <p class="ev-desc reveal-child">Pumpkins, disco balls, and the Tribeca skyline. The bar opens at three and lasts through sunset.</p> <!-- FIX -->
@@ -609,8 +599,8 @@
 <!-- PARTY 2: SOHO SOIREE -->
 <section class="dk ev-section grain" id="soho-soiree">
   <div class="ev-header reveal">
-    <span class="lbl reveal-child">// treehouse. NYC</span>
-    <h2 class="ev-title reveal-child">SOHO SOIREE. MAY 2025.</h2>
+    <span class="lbl reveal-child">treehouse. NYC</span>
+    <h2 class="ev-title reveal-child">SOHO SOIRÉE. MAY 2025.</h2>
     <p class="ev-desc reveal-child">SoHo rooftop, late spring, birthday cake. The kind of party that makes people cancel their other plans.</p>
     <div class="ev-meta-row">
       <!-- REMOVED R20: location text under gallery header <span class="ev-date">SoHo, New York City</span> -->
@@ -622,7 +612,7 @@
 <!-- REMOVED R6: old gallery photos for gallery-visible-soho-soiree -->
     <!-- REMOVED R14: duplicate soho first photo (soho-001.jpg) — keeping second instance -->
     <!-- ROUND 15 FIX #3a — swapped: was photo 2, now photo 1 -->
-    <div class="gallery-item"><img width="1639" height="2049" src="/img/soho-new-01.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="1639" height="2049" src="/img/soho-new-01.jpg" alt="treehouse. NYC, SoHo Soirée" loading="lazy"></div>
     <!-- ROUND 8 FIX #6 — soho-new-01 -->
     <!-- ROUND 15 FIX #3a — swapped: was photo 1, now photo 2 -->
     <div class="gallery-item"><img width="724" height="1086" src="/img/gallery/soho-soiree/soho-005.jpg" alt="treehouse. event photo" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
@@ -630,32 +620,32 @@
     <div class="gallery-item"><img width="665" height="1182" src="/img/gallery/soho-soiree/soho-010.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <div class="gallery-item"><img width="959" height="1200" src="/img/gallery/soho-soiree/soho-012.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-02 -->
-    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-02.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-02.jpg" alt="treehouse. NYC, SoHo Soirée" loading="lazy"></div>
     <!-- ROUND 15 FIX #3b — soho-new-08 -->
     <div class="gallery-item"><img width="2172" height="1448" src="/img/soho-new-08.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <div class="gallery-item"><img width="959" height="1200" src="/img/gallery/soho-soiree/soho-014.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <div class="gallery-item"><img width="800" height="1200" src="/img/gallery/soho-soiree/soho-016.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-03 -->
-    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-03.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-03.jpg" alt="treehouse. NYC, SoHo Soirée" loading="lazy"></div>
     <div class="gallery-item"><img width="360" height="638" src="/img/gallery/soho-soiree/soho-023.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <div class="gallery-item"><img width="1200" height="800" src="/img/gallery/soho-soiree/soho-025.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 15 FIX #3b — soho-new-09 -->
     <div class="gallery-item"><img width="2172" height="1448" src="/img/soho-new-09.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-04 -->
-    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-04.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-04.jpg" alt="treehouse. NYC, SoHo Soirée" loading="lazy"></div>
     <div class="gallery-item"><img width="800" height="1200" src="/img/gallery/soho-soiree/soho-030.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <div class="gallery-item"><img width="1200" height="800" src="/img/gallery/soho-soiree/soho-039.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-05 -->
-    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-05.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-05.jpg" alt="treehouse. NYC, SoHo Soirée" loading="lazy"></div>
     <div class="gallery-item"><img width="800" height="1200" src="/img/gallery/soho-soiree/soho-042.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 15 FIX #3b — soho-new-10 -->
     <div class="gallery-item"><img width="2172" height="1448" src="/img/soho-new-10.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <div class="gallery-item"><img width="665" height="1182" src="/img/gallery/soho-soiree/soho-048.jpg" alt="treehouse. event photo" loading="eager" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-06 -->
-    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-06.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-06.jpg" alt="treehouse. NYC, SoHo Soirée" loading="lazy"></div>
     <div class="gallery-item"><img width="665" height="1182" src="/img/gallery/soho-soiree/soho-049.jpg" alt="treehouse. event photo" loading="lazy" onerror="this.onerror=null;this.parentNode.style.display='none'"></div>
     <!-- ROUND 8 FIX #6 — soho-new-07 -->
-    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-07.jpg" alt="treehouse. NYC, SoHo Soiree" loading="lazy"></div>
+    <div class="gallery-item"><img width="2305" height="1537" src="/img/soho-new-07.jpg" alt="treehouse. NYC, SoHo Soirée" loading="lazy"></div>
 
   <!-- REMOVED: Stray empty div between Soho and Christmas galleries (orphaned from R6 toggle removal) -->
 </section>
@@ -664,7 +654,7 @@
 <!-- ROUND 16 FIX #1 — section id renamed from knox-day to perry-st -->
         <section class="dk ev-section grain" id="perry-st">
   <div class="ev-header reveal">
-    <span class="lbl reveal-child">// treehouse. NYC</span>
+    <span class="lbl reveal-child">treehouse. NYC</span>
     <h2 class="ev-title reveal-child"><!-- ROUND 16 FIX #1 — heading renamed -->PARTY ON PERRY ST</h2>
     <p class="ev-desc reveal-child">Open sky, open bar, DJ set that runs until the sun goes down.</p>
     <div class="ev-meta-row">
@@ -705,7 +695,7 @@
 <!-- PARTY 6: WEST VILLAGE -->
 <section class="dk ev-section grain" id="west-village">
   <div class="ev-header reveal">
-    <span class="lbl reveal-child">// treehouse. NYC</span>
+    <span class="lbl reveal-child">treehouse. NYC</span>
     <h2 class="ev-title reveal-child">WEST VILLAGE</h2><!-- ROUND 3 FIX #7 — date removed -->
     <p class="ev-desc reveal-child">The West Village at night. Cocktails, good lighting, the crowd that always shows up dressed.</p>
     <div class="ev-meta-row">
@@ -737,7 +727,7 @@
 <!-- REMOVED: How It Works
 <section class="lt" id="how-it-works">
   <div class="w hiw-inner">
-    <span class="lbl reveal-child" data-a="u" style="margin-bottom:1rem">// How It Works</span>
+    <span class="lbl reveal-child" data-a="u" style="margin-bottom:1rem">How It Works</span>
     <h2 data-a="l">How to<br>get in.</h2>
     <div class="hiw-steps" data-a="u" data-d="1">
       <div class="hiw-step"><span class="hiw-n">01</span><h3 class="hiw-t">Apply</h3><p class="hiw-d">Drop your email below. We'll reach out before the next event.</p></div>
@@ -751,18 +741,18 @@
 
 
 <!-- THE LIST: how invites work, plus the proof line. Copy approved by Eliz 11 Nov 2026. -->
-<section class="dk grain" id="the-list" style="padding:4.5rem 1.5rem;text-align:center;border-top:1px solid var(--ln10);">
-  <span class="lbl">// The List</span>
-  <h2 style="font-family:var(--ff-d);font-size:clamp(2.6rem,6vw,4.5rem);letter-spacing:0.02em;line-height:1;color:#E8E6DF;margin-bottom:1.5rem;">Everyone here knows someone here.</h2>
-  <p style="font-family:var(--ff-b);font-size:1.1rem;line-height:1.6;max-width:560px;margin:0 auto 1.25rem;color:#E8E6DF;opacity:0.88;">Request an invite, tell us who sent you, and we'll take it from there. The room is curated.</p>
-  <p style="font-family:var(--ff-e);font-style:italic;font-size:1.15rem;line-height:1.5;max-width:620px;margin:0 auto 2.25rem;color:#E8E6DF;opacity:0.75;">Seven parties. 390 people showed up in the rain. 797 requests for the last one.</p>
+<section class="grain" id="the-list" style="padding:4.5rem 1.5rem;text-align:center;">
+  <span class="lbl">The List</span>
+  <h2 style="font-size:clamp(2.6rem,6vw,4.5rem);line-height:1;margin-bottom:1.5rem;">Everyone here knows someone here.</h2>
+  <p class="tl-p" style="font-family:var(--ff-b);font-size:1.15rem;line-height:1.6;max-width:560px;margin:0 auto 1.25rem;">Request an invite, tell us who sent you, and we'll take it from there. The room is curated.</p>
+  <p class="tl-proof" style="font-family:var(--ff-b);font-size:1.2rem;line-height:1.5;max-width:620px;margin:0 auto 2.25rem;">Seven parties. 390 people showed up in the rain. 797 requests for the last one.</p>
   <a href="https://partiful.com/e/Ncw7yzgKZA7F48l3bpX5" target="_blank" rel="noopener noreferrer" class="btn btn-p js-rsvp">request invite</a>
 </section>
 
 <!-- JOIN -->
 <section class="dk grain join" id="join">
   <div class="join-inner">
-    <span class="lbl reveal-child" data-a="u">// Get Access</span>
+    <span class="lbl reveal-child" data-a="u">Get Access</span>
     <h2 data-a="l">Not ready to RSVP?</h2>
     <p class="join-body" id="join-body-line" data-a="u" data-d="1">Invite only. <a href="https://partiful.com/e/Ncw7yzgKZA7F48l3bpX5" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Request your spot on Partiful</a>, or drop your email and we'll reach out before the next one. No spam, just the invite.</p>
     <!-- AUDIT FIX #9 — Scarcity line above email form -->
@@ -810,7 +800,6 @@
       @treehouseevents.nyc
     </a>
     <a href="mailto:treehouse@tigertracks.ai" target="_blank" rel="noopener">treehouse@tigertracks.ai</a>
-    <a href="tel:+13016467758">(301) 646-7758</a>
     <!-- EXPANSION FIX #6 — sponsorship inquiries link in footer -->
     <a href="/sponsor.html#sp-contact">sponsorship inquiries</a>
     <a href="/drop">share your content</a>
@@ -831,6 +820,7 @@
   var mx=0,my=0,rx=0,ry=0,raf=null;
   document.addEventListener('mousemove',function(e){
     mx=e.clientX; my=e.clientY;
+    if(mx||my) document.body.classList.add('cur-live');   // show the cursor only once it has a real position
     dot.style.left=mx+'px'; dot.style.top=my+'px';
     if(!raf) raf=requestAnimationFrame(ar);
   },{passive:true});
@@ -844,7 +834,7 @@
     s.addEventListener('mouseleave',function(){ document.body.classList.remove('ci'); });
   });
   document.addEventListener('mouseleave',function(){ dot.style.opacity='0'; ring.style.opacity='0'; });
-  document.addEventListener('mouseenter',function(){ dot.style.opacity='1'; ring.style.opacity='0.7'; });
+  document.addEventListener('mouseenter',function(){ dot.style.opacity=''; ring.style.opacity=''; });   // rhythm.css shows them once the mouse has moved
 })();
 
 /* NAV */
@@ -876,16 +866,17 @@
   // jump (the waitlist buttons, or arriving from another page with a #link)
   // can stop short. Keep re-aiming until the target has sat still under the
   // nav for about two seconds, and give up the moment the visitor scrolls.
+  var aim=0;   // only the latest jump keeps re-aiming
   function settleOn(t){
-    var started=Date.now(), last=-1, still=0, stop=false;
+    var started=Date.now(), last=-1, still=0, stop=false, my=++aim;
     var cancel=function(){ stop=true; };
     window.addEventListener('wheel',cancel,{passive:true,once:true});
     window.addEventListener('touchstart',cancel,{passive:true,once:true});
     window.addEventListener('keydown',cancel,{once:true});
     (function tick(){
       setTimeout(function(){
-        if(stop || Date.now()-started>20000) return;
-        var off=t.getBoundingClientRect().top-nh;
+        if(stop || my!==aim || Date.now()-started>20000) return;
+        var off=t.id==='hero' ? -window.scrollY : t.getBoundingClientRect().top-nh;
         var atEnd=window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2;
         if(window.scrollY===last){                       // not mid-scroll
           if(Math.abs(off)<4 || (off>0 && atEnd)){ if(++still>=7) return; }
@@ -903,7 +894,7 @@
       var t=document.querySelector(h);
       if(!t) return;
       e.preventDefault();
-      window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-nh,behavior:'smooth'});
+      window.scrollTo({top:t.id==='hero' ? 0 : t.getBoundingClientRect().top+window.scrollY-nh,behavior:'smooth'});
       settleOn(t);
     });
   });

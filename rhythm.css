@@ -1,0 +1,152 @@
+/* rhythm.css · design pass, 11 Nov 2026. Loads after styles.css on index.html and sponsor.html.
+   Bump the ?v= on both <link> tags when you change it (css files are cached for a day).
+
+   TYPE: two typefaces. Bebas Neue for headlines, Inter for everything else.
+   Playfair Display italic is a rare accent: only the mission line (.mission-big) uses it.
+
+   COLOR: sections rotate through forest green, near-black and cream. Cream is the
+   deliberate break (mission band, "Better than the apps.", the list). One hot accent,
+   terracotta orange, for primary buttons, countdown units, rules, dots and key words.
+   On cream, orange text uses --hot-deep so it stays readable. */
+
+:root {
+  --hot: #E07A52;
+  --hot-hover: #C2552F;
+  --hot-deep: #B4502F;
+  --black: #0c0f0b;
+  --accent: #E07A52;
+}
+
+/* ---------- type ---------- */
+h2 { font-family: var(--ff-d); font-weight: 400; letter-spacing: 0.01em; line-height: 0.95; }
+h2 em { font-style: normal; }
+h3 { font-family: var(--ff-b); font-weight: 600; letter-spacing: 0; }
+.hero-sub, .ev-desc, .join-ok, .hiw-t, .venue-n,
+.sp-stats-venues p, .sp-stats-quote blockquote, .sp-tier-desc, .sp-form-success {
+  font-family: var(--ff-b); font-style: normal;
+}
+.event-date { font-family: var(--ff-d); font-weight: 400; letter-spacing: 0.01em; }
+.venue-n { font-weight: 600; }
+.ev-desc { font-size: 1rem; line-height: 1.6; opacity: 0.82; }
+.join-ok { font-weight: 500; }
+.mob a { font-family: var(--ff-d); font-weight: 400; letter-spacing: 0.04em; font-size: 2.6rem; }
+.mob a.mob-sub { font-family: var(--ff-b); font-style: normal; font-size: 1rem; font-weight: 500; letter-spacing: 0.04em; }
+
+/* eyebrows: plain small caps, no slashes */
+.lbl { font-weight: 600; letter-spacing: 0.18em; opacity: 0.78; }
+
+/* ---------- nav: every link styled the same ---------- */
+.nav-links a, .nav-links a.hi { opacity: 0.72; text-decoration-color: transparent; }
+.nav-links a:hover, .nav-links a:focus-visible { opacity: 1; text-decoration-color: transparent; }
+.nav-links a.nav-active { opacity: 1; color: var(--hot); }
+
+/* ---------- buttons: see "softer orange" at the bottom of this file ---------- */
+.btn-p:hover, .btn-primary:hover { filter: none; }
+
+/* ---------- cursor: hidden until the mouse moves, never on touch screens ---------- */
+.cur, .cur-r { opacity: 0; }
+body.cur-live .cur { opacity: 1; }
+body.cur-live .cur-r { opacity: 0.7; }
+/* styles.css shows the ring on hover (body.ch); keep it hidden until the mouse has a real position,
+   or it can appear stuck in the top-left corner when a link scrolls under a still pointer */
+body:not(.cur-live) .cur, body:not(.cur-live) .cur-r { opacity: 0; }
+@media (hover: none), (pointer: coarse) { .cur, .cur-r { display: none !important; } }
+
+/* ---------- hero: let the skyline and crowd show ---------- */
+.hero-bg { background: var(--black); }
+.hero-bg img { opacity: 1; filter: saturate(1.05); }
+.hero-bg::after {
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.08) 26%, rgba(0,0,0,0.12) 58%, rgba(0,0,0,0.72) 100%),
+    radial-gradient(ellipse 60% 55% at 50% 52%, rgba(0,0,0,0.38) 0%, transparent 70%);
+}
+.hero-eye { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.28em; opacity: 0.95; white-space: nowrap; text-shadow: 0 1px 10px rgba(0,0,0,0.5); }
+.hero-wm { margin: 0; line-height: 0; font-size: inherit; letter-spacing: normal; text-transform: none; }
+.hero-rule { background: var(--hot); opacity: 1; }
+.countdown-label {
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem); font-weight: 600; letter-spacing: 0.1em;
+  color: #fff; opacity: 1; text-shadow: 0 1px 12px rgba(0,0,0,0.6); text-wrap: balance;
+}
+.hero-countdown .countdown-num { text-shadow: 0 2px 18px rgba(0,0,0,0.45); }
+@media (max-width: 600px) {
+  .hero-eye { font-size: 0.66rem; letter-spacing: 0.16em; gap: 0.6rem; }
+  .hero-eye::before, .hero-eye::after { width: 1.25rem; }
+  .countdown-label { font-size: 0.9rem; letter-spacing: 0.06em; }
+}
+
+/* ---------- ticker ---------- */
+.marquee-wrap { background: var(--black); border-color: rgba(240,237,232,0.08); }
+.marquee-item { font-size: 1.05rem; letter-spacing: 0.16em; opacity: 0.85; }
+.marquee-dot { background: var(--hot); opacity: 1; }
+
+/* ---------- section rhythm (homepage) ---------- */
+#vibe, #for-brands, #christmas-nyc, #soho-soiree, #west-village { background: var(--black); }
+#past-events { background: var(--g); color: var(--linen); padding-top: clamp(3rem, 6vw, 5rem); }
+#past-events .ev-header { padding-bottom: 0; }
+#past-events h2 { margin: 0; font-size: clamp(3.4rem, 10vw, 8.5rem); line-height: .9; }
+
+/* the list: the third cream break */
+#the-list { background: var(--linen); color: #14290f; }
+#the-list .lbl { color: #1a3a1a; }
+#the-list h2 { color: #14290f; }
+#the-list .tl-p { color: #14290f; }
+#the-list .tl-proof { color: var(--hot-deep); font-weight: 700; }   /* 19.2px bold: large text, so #B4502F on cream passes AA */
+#the-list.grain::before { opacity: 0.05; }
+
+/* small caps lines on green: cream, not orange (orange text is too low-contrast at this size) */
+.scarcity-line { color: var(--linen); opacity: 0.85; }
+.join-ok { color: var(--linen); }
+.sp-contact-email { color: var(--linen); }
+.sp-contact-email:hover { color: var(--hot); }
+
+/* leftover lime from styles.css */
+.ev-section { border-top-color: rgba(240,237,232,0.08); }
+.join-row:focus-within { box-shadow: 0 0 0 3px rgba(185,78,44,0.25); }
+.sp-form-success { background: rgba(185,78,44,0.12); border-color: rgba(185,78,44,0.4); }
+
+/* nav bar once scrolled: near-black */
+.nav.sc { background: rgba(12,15,11,0.9); }
+
+/* footer: near-black, readable links */
+footer.dk { background: var(--black); }
+.foot-links a { opacity: 0.72; font-size: 0.78rem; }
+.foot-links a:hover { color: var(--hot); }
+.foot-tag { opacity: 0.55; }
+.foot-copy { opacity: 0.45; }
+
+/* ---------- sponsor page: the featured tier uses the same hot accent, not gold ---------- */
+.sp-tier.gold { --gold: var(--hot); }
+.sp-tier.gold .sp-tier-div { background: rgba(185,78,44,0.4); }
+.sp-tier.gold { border-color: rgba(185,78,44,0.6); box-shadow: 0 4px 20px rgba(185,78,44,0.18); }
+.sp-tier.gold:hover { box-shadow: 0 8px 32px rgba(185,78,44,0.28); }
+
+/* ---------- softer orange (11 Nov 2026) ----------
+   Eliz found the bright orange too loud. Buttons are a solid terracotta with white text (5:1),
+   the same on every background, so they never go brown on dark sections or pastel on cream.
+   Over photos (the hero and the next event) the button is translucent glass instead.
+   Small accents on dark sections (countdown units, dots, rules, numbers) use a lighter terracotta.
+   Orange text on cream uses --hot-deep. */
+:root {
+  --terra: #B94E2C;
+  --terra-hover: #C2552F;
+  --hot: #E07A52;
+  --accent: #E07A52;
+  --hot-deep: #B4502F;
+}
+.btn-p, .btn-primary, .sp-tier.gold .sp-tier-cta,
+#met-here .btn-p, #the-list .btn-p, #sp-stats .btn-p {
+  background: var(--terra); border: 1.5px solid var(--terra); color: #fff; font-weight: 700; text-shadow: none;
+}
+.btn-p:hover, .btn-primary:hover, .sp-tier.gold .sp-tier-cta:hover,
+#met-here .btn-p:hover, #the-list .btn-p:hover, #sp-stats .btn-p:hover {
+  background: var(--terra-hover); border-color: var(--terra-hover); box-shadow: 0 6px 20px rgba(185,78,44,0.28);
+}
+/* over photos: tinted glass */
+.hero-ctas .btn-p, #events .btn-p {
+  background: rgba(185,78,44,0.55); border: 1.5px solid rgba(224,122,82,0.95); color: #fff;
+  -webkit-backdrop-filter: blur(10px) saturate(1.2); backdrop-filter: blur(10px) saturate(1.2);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.hero-ctas .btn-p:hover, #events .btn-p:hover { background: rgba(185,78,44,0.75); border-color: rgba(224,122,82,0.95); }
+.sp-tier-badge { background: var(--terra); color: #fff; border: 0; }
+.sp-tier.gold { border-color: rgba(224,122,82,0.5); box-shadow: 0 4px 20px rgba(185,78,44,0.15); }
